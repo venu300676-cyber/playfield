@@ -26,6 +26,22 @@ No build step — open `index.html` directly in a browser, or serve the folder:
 python3 -m http.server 8000
 ```
 
+## Deploying (GitHub Pages)
+
+`.github/workflows/deploy-pages.yml` publishes the repo root straight to
+GitHub Pages on every push to `main` (or via manual "Run workflow" from the
+Actions tab, on any branch). GitHub Pages only serves from a public repo
+unless the account is on a paid plan, so two manual steps are required once
+(neither is available to automate from here):
+
+1. Repo Settings → General → Danger Zone → **Change repository visibility**
+   → Public (only if you're fine with the source, including `STRATEGY.md`,
+   being publicly readable — the live site only links to the HTML pages).
+2. Repo Settings → Pages → Build and deployment → **Source: GitHub Actions**.
+
+After that, merging to `main` (or manually dispatching the workflow) deploys
+to `https://<owner>.github.io/<repo>/`.
+
 ## Before launching
 
 Search the codebase for `placeholder-note` (CSS class) and `[Placeholder`
