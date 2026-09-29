@@ -1,0 +1,1588 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Pain-to-Pilot Breakout Kit</title>
+<style>html{color-scheme:light dark}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+/* Layout: a planning-board page. A sticky section rail on top, one reading column (~68ch) for prose, wide panels for the run-of-show Gantt, challenge grid, data packs and the Pilot Pack form. The run-of-show is written like a screenplay: cue labels in a left gutter. */
+:root{
+  --bg:#F2F5F4; --surface:#FFFFFF; --surface-2:#E5ECEA; --ink:#12201E; --ink-2:#4A5C59; --line:#C8D5D1;
+  --accent:#0B6E63; --accent-ink:#FFFFFF; --accent-soft:#D3EAE5;
+  --mark:#9A5F0C; --mark-soft:#F6E6C9;
+  --risk:#A93B2A; --risk-soft:#F5DCD5;
+  --ok:#2A7549;
+  --code:#EBF1EF;
+  --f-display:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --f-body:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --gutter:clamp(16px,4vw,40px);
+  --radius:6px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0D1413; --surface:#131D1B; --surface-2:#1B2826; --ink:#E1EBE8; --ink-2:#9CAFAB; --line:#2B3B38;
+    --accent:#45C2AF; --accent-ink:#06211E; --accent-soft:#163A35;
+    --mark:#E5B052; --mark-soft:#372B15;
+    --risk:#EC8A75; --risk-soft:#3B2019;
+    --ok:#72CF94;
+    --code:#0F1917;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D1413; --surface:#131D1B; --surface-2:#1B2826; --ink:#E1EBE8; --ink-2:#9CAFAB; --line:#2B3B38;
+  --accent:#45C2AF; --accent-ink:#06211E; --accent-soft:#163A35;
+  --mark:#E5B052; --mark-soft:#372B15;
+  --risk:#EC8A75; --risk-soft:#3B2019;
+  --ok:#72CF94;
+  --code:#0F1917;
+  color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:1rem;line-height:1.6;padding-inline:var(--gutter);padding-block:0 4rem}
+.page{max-width:74rem;margin-inline:auto}
+a{color:var(--accent);text-underline-offset:.18em}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+p,li,dd{max-width:68ch}
+h1,h2,h3,h4{font-family:var(--f-display);text-wrap:balance;margin:0;color:var(--ink)}
+h1{font-size:clamp(3rem,9vw,5.5rem);font-weight:800;font-stretch:72%;line-height:.92;letter-spacing:-.01em}
+h2{font-size:clamp(1.75rem,3.6vw,2.4rem);font-weight:750;font-stretch:80%;line-height:1.05}
+h3{font-size:1.2rem;font-weight:700;font-stretch:88%;line-height:1.25}
+h4{font-size:1rem;font-weight:700;font-stretch:92%}
+.eyebrow{font-family:var(--f-display);font-stretch:95%;font-weight:600;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.lede{font-size:1.15rem;line-height:1.55;color:var(--ink)}
+.muted{color:var(--ink-2)}
+.small{font-size:.875rem}
+code,.mono{font-family:var(--f-mono);font-size:.86em}
+
+/* nav */
+.rail{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:calc(-1*var(--gutter));padding-inline:var(--gutter)}
+.rail-in{max-width:74rem;margin-inline:auto;display:flex;align-items:center;gap:1rem}
+.rail ul{list-style:none;margin:0;padding:.55rem 0;display:flex;gap:.25rem;overflow-x:auto;flex:1;min-width:0;scrollbar-width:thin}
+.rail li{flex:none}
+.rail a{display:block;padding:.3rem .6rem;border-radius:4px;color:var(--ink-2);text-decoration:none;font-weight:600;font-size:.84rem;white-space:nowrap}
+.rail a:hover{color:var(--ink);background:var(--surface-2)}
+.rail .brand{font-family:var(--f-display);font-weight:800;font-stretch:75%;font-size:1.05rem;white-space:nowrap;color:var(--ink);text-decoration:none}
+@media (max-width:640px){.rail .brand{display:none}}
+
+/* buttons */
+.btn{font:600 .85rem/1.2 var(--f-body);padding:.5rem .85rem;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:4px;cursor:pointer;white-space:nowrap}
+.btn:hover{border-color:var(--ink-2)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn.primary:hover{filter:brightness(1.07)}
+.btn.small{padding:.3rem .6rem;font-size:.78rem}
+.btn.toggle[aria-pressed="false"]{color:var(--ink-2);border-style:dashed}
+.btn.danger{color:var(--risk);border-color:var(--risk)}
+
+/* chips */
+.chip{display:inline-flex;align-items:center;gap:.4em;font:700 .68rem/1 var(--f-body);letter-spacing:.06em;text-transform:uppercase;padding:.34em .62em;border-radius:999px;border:1px solid currentColor;white-space:nowrap;vertical-align:.12em}
+.chip.conf{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip.base{color:var(--ink)}
+.chip.prop{color:var(--accent)}
+.chip.open{color:var(--mark);background:var(--mark-soft);border-color:var(--mark-soft)}
+.chip.asm{color:var(--ink-2);border-style:dashed}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+
+/* header */
+header.hero{padding-block:3rem 2.5rem;display:grid;gap:1.4rem}
+.hero .sub{font-family:var(--f-display);font-stretch:85%;font-weight:600;font-size:clamp(1.1rem,2.4vw,1.45rem);color:var(--ink-2);margin-top:.35rem}
+.meta{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;font-size:.9rem}
+.meta div{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
+.tgo{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-block:1px solid var(--ink)}
+.tgo > div{padding:1rem 1.2rem 1.1rem 0;min-width:0}
+.tgo > div + div{padding-left:1.2rem;border-left:1px solid var(--line)}
+.tgo p{margin:.35rem 0 0;font-size:.98rem}
+@media (max-width:760px){.tgo{grid-template-columns:1fr}.tgo > div + div{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
+
+/* gantt */
+.gantt-box{display:grid;gap:.35rem}
+.gantt{display:grid;grid-template-columns:5fr 10fr 12fr 15fr 8fr 10fr;gap:2px;border-radius:var(--radius);overflow:hidden}
+.seg{background:var(--surface-2);padding:.55rem .55rem .5rem;min-height:3.4rem;display:flex;flex-direction:column;justify-content:space-between;gap:.2rem;min-width:0}
+.seg b{font-family:var(--f-display);font-stretch:82%;font-weight:700;font-size:.92rem;line-height:1.1;overflow-wrap:anywhere}
+.seg span{font-family:var(--f-mono);font-size:.68rem;color:var(--ink-2)}
+.seg.hot{background:var(--accent-soft)}
+.axis{position:relative;height:1.5rem;font-family:var(--f-mono);font-size:.68rem;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.axis i{position:absolute;top:.15rem;transform:translateX(-50%);font-style:normal}
+.axis i:first-child{transform:none}
+.axis i:last-of-type{transform:translateX(-100%)}
+.axis .cp{position:absolute;top:-.62rem;width:.62rem;height:.62rem;background:var(--mark);transform:translateX(-50%) rotate(45deg)}
+.axis .cp:last-of-type{transform:translateX(-100%) rotate(45deg)}
+.gantt-legend{display:none;list-style:none;margin:.2rem 0 0;padding:0;font-size:.85rem;gap:.15rem 1rem;grid-template-columns:repeat(2,minmax(0,1fr))}
+.gantt-legend li{display:flex;gap:.5rem}
+.gantt-legend .mono{color:var(--ink-2)}
+@media (max-width:640px){.gantt .seg b,.gantt .seg span{display:none}.gantt .seg{min-height:1.6rem}.gantt-legend{display:grid}}
+.key{display:flex;gap:1rem;flex-wrap:wrap;font-size:.8rem;color:var(--ink-2);align-items:center}
+.key .dia{display:inline-block;width:.55rem;height:.55rem;background:var(--mark);transform:rotate(45deg);margin-right:.35rem}
+.key .sw{display:inline-block;width:.9rem;height:.6rem;background:var(--accent-soft);margin-right:.35rem;border-radius:2px;vertical-align:-.02em}
+
+/* sections */
+section{padding-block:3.5rem 1rem;border-top:1px solid var(--line)}
+.sec-head{display:grid;gap:.6rem;margin-bottom:1.8rem}
+.sec-head p{margin:0}
+.stack{display:grid;gap:1.25rem}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));gap:1rem}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.1rem 1.2rem;min-width:0}
+.panel h3{margin-bottom:.4rem}
+.panel p{margin:.35rem 0}
+.panel ul,.panel ol{margin:.4rem 0;padding-left:1.15rem}
+.panel li{margin:.2rem 0}
+
+/* levels */
+.level .lv{font-family:var(--f-display);font-weight:800;font-stretch:72%;font-size:2.4rem;line-height:1;color:var(--accent)}
+.level.req{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.level .tag{margin-top:.2rem}
+
+/* pilot-ready */
+.ready{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,11rem),1fr));gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--surface)}
+.ready div{padding:.8rem .9rem;border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-width:0}
+.ready b{display:block;font-family:var(--f-display);font-stretch:88%;font-size:.98rem}
+.ready span{font-size:.84rem;color:var(--ink-2)}
+.compare{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr));gap:1rem;margin-top:1rem}
+.compare div{padding:.9rem 1rem;border-radius:var(--radius);font-size:.93rem}
+.compare .no{background:var(--risk-soft)}
+.compare .yes{background:var(--accent-soft)}
+.compare b{display:block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.25rem}
+
+/* world brief */
+.world{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:1.5rem;align-items:start}
+@media (max-width:820px){.world{grid-template-columns:1fr}}
+
+/* tables */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.9rem;font-variant-numeric:tabular-nums}
+th,td{padding:.55rem .75rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+tr:last-child td{border-bottom:0}
+th{font-family:var(--f-display);font-stretch:90%;font-weight:700;font-size:.85rem;background:var(--surface-2)}
+.tbl.wide table{min-width:44rem}
+td .chip{margin-top:.1rem}
+
+/* challenge cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,21rem),1fr));gap:1rem}
+.ccard{display:grid;grid-template-rows:auto auto 1fr auto;gap:.55rem;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.05rem 1.15rem;min-width:0;text-decoration:none;color:inherit}
+.ccard:hover{border-color:var(--accent)}
+.ccard .top{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem}
+.code{font-family:var(--f-display);font-weight:800;font-stretch:70%;font-size:1.9rem;line-height:1;color:var(--accent)}
+.dots{font-family:var(--f-mono);font-size:.72rem;color:var(--ink-2);white-space:nowrap}
+.dots b{color:var(--ink);letter-spacing:.1em}
+.ccard p{margin:0;font-size:.93rem}
+.ccard .foot{display:flex;flex-wrap:wrap;gap:.35rem .8rem;font-size:.78rem;color:var(--ink-2);border-top:1px solid var(--line);padding-top:.55rem}
+
+/* dossiers */
+.dossier{padding-block:2.2rem 1rem;border-top:2px solid var(--ink);display:grid;gap:1.2rem}
+.dossier + .dossier{margin-top:1.5rem}
+.d-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.2rem 1rem;align-items:baseline}
+.d-head .code{font-size:2.6rem;grid-row:span 2}
+.d-head .hmw{grid-column:2;font-size:1.08rem;margin:0}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,19rem),1fr));gap:1.1rem 2.2rem;margin:0}
+.facts > div{min-width:0}
+.facts dt{margin-bottom:.2rem}
+.facts dd{margin:0;font-size:.95rem}
+.facts dd ul{margin:.1rem 0 0;padding-left:1.1rem}
+.facts dd li{margin:.1rem 0}
+.meta-line{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;font-size:.84rem;color:var(--ink-2)}
+
+details{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+details > summary{cursor:pointer;list-style:none;padding:.75rem 1rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-weight:700;font-size:.92rem}
+details > summary::-webkit-details-marker{display:none}
+details > summary::after{content:"+";font-family:var(--f-mono);font-size:1.1rem;color:var(--ink-2)}
+details[open] > summary::after{content:"–"}
+details > .body{padding:0 1rem 1rem;display:grid;gap:.7rem}
+details.traps{background:var(--mark-soft);border-color:var(--mark-soft)}
+details.traps > summary{color:var(--ink)}
+details.traps ul{margin:0;padding-left:1.1rem}
+details.traps li{margin:.3rem 0;font-size:.93rem}
+
+.codebox{position:relative;min-width:0}
+pre{margin:0;background:var(--code);border:1px solid var(--line);border-radius:var(--radius);padding:1rem 1rem 1rem;font-family:var(--f-mono);font-size:.8rem;line-height:1.55;white-space:pre-wrap;overflow-wrap:anywhere;overflow-x:auto;color:var(--ink);max-height:34rem;overflow-y:auto}
+.codebar{display:flex;justify-content:space-between;align-items:center;gap:.6rem;margin-bottom:.4rem;flex-wrap:wrap}
+
+/* facilitator notes */
+.hide-fac .fac{display:none!important}
+.fac-flag{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mark)}
+
+/* roles */
+.roles{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,15rem),1fr));gap:.8rem}
+.role{border-top:3px solid var(--ink);padding-top:.6rem;min-width:0}
+.role h4{margin-bottom:.2rem}
+.role p{margin:0;font-size:.9rem}
+
+/* screenplay */
+.play{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.scene{display:grid;grid-template-columns:7.5rem minmax(0,1fr);gap:1.4rem;padding-block:1.4rem;border-top:1px solid var(--line)}
+.scene:first-child{border-top:0}
+.scene .when{font-family:var(--f-mono);font-size:.82rem;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.scene .when b{display:block;font-family:var(--f-display);font-stretch:80%;font-size:1.35rem;font-weight:750;color:var(--ink);margin-top:.1rem;line-height:1.1}
+.cues{display:grid;gap:.55rem}
+.cue{display:grid;grid-template-columns:4.2rem minmax(0,1fr);gap:.8rem;align-items:baseline}
+.cue > span{font-family:var(--f-mono);font-size:.7rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.cue > div{min-width:0}
+.cue.say > div{font-size:1.02rem;font-style:italic}
+.cue ul{margin:0;padding-left:1.1rem}
+.cue li{margin:.12rem 0}
+.cue p{margin:0}
+.checkpoint{display:flex;gap:.6rem;align-items:baseline;font-weight:600;font-size:.93rem}
+.checkpoint::before{content:"";flex:none;width:.6rem;height:.6rem;background:var(--mark);transform:rotate(45deg) translateY(-.05rem)}
+@media (max-width:640px){.scene{grid-template-columns:1fr;gap:.6rem}.cue{grid-template-columns:1fr;gap:.1rem}}
+
+/* timer */
+.timer{background:var(--surface);border:1px solid var(--ink);border-radius:var(--radius);padding:1.2rem 1.3rem;display:grid;gap:.9rem;margin-bottom:2rem}
+.t-top{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap}
+.t-stage{font-family:var(--f-display);font-weight:800;font-stretch:75%;font-size:clamp(1.8rem,5vw,2.6rem);line-height:1}
+.t-range{font-family:var(--f-mono);font-size:.78rem;color:var(--ink-2)}
+.t-clock{font-family:var(--f-display);font-weight:700;font-stretch:70%;font-size:clamp(3.2rem,11vw,5.2rem);line-height:.9;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.t-clock.low{color:var(--mark)}
+.t-bar{position:relative}
+.t-bar .gantt .seg{min-height:.9rem;padding:0}
+.t-bar .gantt .seg.now{background:var(--accent)}
+.t-bar .gantt .seg.done{background:var(--accent-soft)}
+.t-now{position:absolute;top:-.3rem;bottom:-.3rem;width:2px;background:var(--ink);left:0;transform:translateX(-1px)}
+.t-say{margin:0;font-size:1.08rem;font-style:italic}
+.t-out{margin:0;font-size:.93rem}
+.t-ctrl{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.t-elapsed{font-family:var(--f-mono);font-size:.78rem;color:var(--ink-2);margin-left:auto}
+.flash{animation:flash 1.2s ease-out 1}
+@keyframes flash{0%{background:var(--mark-soft)}100%{background:var(--surface)}}
+
+/* flow */
+.flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px;border-radius:var(--radius);overflow:hidden}
+.flow li{background:var(--surface);padding:.9rem .9rem 1rem;min-width:0;border-top:3px solid var(--accent)}
+.flow .n{font-family:var(--f-mono);font-size:.72rem;color:var(--ink-2)}
+.flow b{display:block;font-family:var(--f-display);font-stretch:85%;font-size:1rem;margin:.15rem 0 .25rem}
+.flow p{margin:0;font-size:.86rem}
+@media (max-width:860px){.flow{grid-template-columns:1fr}}
+
+/* report script */
+.script{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.1rem 1.3rem;font-size:1.02rem;line-height:1.75}
+.script .blank{border-bottom:1px dashed var(--ink-2);color:var(--accent);font-weight:600;padding-inline:.15rem}
+
+/* pack form */
+.pack-layout{display:grid;grid-template-columns:minmax(0,1fr) 17rem;gap:1.5rem;align-items:start}
+@media (max-width:900px){.pack-layout{grid-template-columns:1fr}.pack-aside{order:-1;position:static!important}}
+.pack-aside{position:sticky;top:4.2rem;display:grid;gap:.8rem}
+.pack-form{display:grid;gap:1rem}
+fieldset{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);padding:.9rem 1.1rem 1.1rem;margin:0;display:grid;gap:.75rem;min-width:0}
+legend{font-family:var(--f-display);font-stretch:85%;font-weight:750;font-size:1.02rem;padding:0 .35rem;margin-left:-.35rem}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:.75rem 1rem}
+.field{display:grid;gap:.25rem;min-width:0}
+.field.full{grid-column:1/-1}
+.field label{font-size:.84rem;font-weight:600;display:flex;justify-content:space-between;gap:.5rem;align-items:baseline}
+.field label em{font-style:normal;font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mark)}
+input[type=text],select,textarea{width:100%;font:inherit;font-size:.93rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:.5rem .6rem;min-width:0}
+textarea{resize:vertical;line-height:1.5}
+textarea.mono{font-family:var(--f-mono);font-size:.8rem}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:0;border-color:var(--accent)}
+.checklist{list-style:none;margin:0;padding:0;display:grid;gap:.35rem;font-size:.88rem}
+.checklist li{display:flex;gap:.55rem;align-items:baseline}
+.checklist li::before{content:"○";font-family:var(--f-mono);color:var(--ink-2)}
+.checklist li.ok::before{content:"●";color:var(--ok)}
+.checklist li.ok{color:var(--ink)}
+.checklist li:not(.ok){color:var(--ink-2)}
+.meter{font-family:var(--f-display);font-stretch:75%;font-weight:800;font-size:2rem;line-height:1;font-variant-numeric:tabular-nums}
+.banner{background:var(--mark-soft);border-radius:var(--radius);padding:.7rem .9rem;font-size:.88rem;display:flex;gap:.8rem;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.confirm{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;font-size:.88rem;background:var(--risk-soft);border-radius:var(--radius);padding:.6rem .8rem}
+.btnrow{display:flex;flex-wrap:wrap;gap:.5rem}
+#packFallback{width:100%;min-height:12rem;font-family:var(--f-mono);font-size:.78rem}
+
+footer{border-top:1px solid var(--line);margin-top:3rem;padding-top:1.2rem;font-size:.84rem;color:var(--ink-2);display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem 2rem}
+
+.dl-all{display:flex;flex-wrap:wrap;gap:.6rem}
+.dl-all .btn,.dls .btn{text-decoration:none;display:inline-block}
+.dls{list-style:none;margin:.4rem 0 0;padding:0!important;display:grid;gap:0}
+.dl{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.3rem .8rem;align-items:center;padding:.7rem 0;border-top:1px solid var(--line)}
+.dl b{display:block}
+.dl span{display:block}
+</style>
+
+</head>
+<body>
+<div class="page">
+
+<nav class="rail" aria-label="Kit sections">
+  <div class="rail-in">
+    <a class="brand" href="#top">Pain to Pilot</a>
+    <ul>
+      <li><a href="#deliver">Output</a></li>
+      <li><a href="#challenges">Challenges</a></li>
+      <li><a href="#run">Run</a></li>
+      <li><a href="#build">Build</a></li>
+      <li><a href="#pack">Pilot Pack</a></li>
+      <li><a href="#reportout">Report-out</a></li>
+      <li><a href="#recovery">Recovery</a></li>
+      <li><a href="#prep">Prep</a></li>
+      <li><a href="#files">Files</a></li>
+      <li><a href="slides.html">Slides</a></li>
+    </ul>
+    <button class="btn small toggle" id="facToggle" type="button" aria-pressed="true">Facilitator notes: on</button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div>
+    <div class="eyebrow">PM Summit 2026 · Workstream 2 · PM Role in an AI World</div>
+    <h1>Pain to Pilot</h1>
+    <div class="sub">Breakout kit: one PM pain point, one AI assistant, one tested Pilot Pack per room</div>
+  </div>
+  <p class="lede">Every room takes a pain point that almost every PM recognizes, designs an AI assistant for it, tests it on fictional sample data, and leaves after 60 minutes with a Pilot Pack: the agent's instructions, what the PM still decides, one metric, one guardrail, an owner and a first test.</p>
+
+  <div class="meta">
+    <div><span class="chip conf">Confirmed</span> Summit on Thu 5 Nov 2026</div>
+    <div><span class="chip base">Working baseline</span> 60-minute breakout inside the two-hour WS2 block</div>
+    <div><span class="chip prop">Proposal</span> Everything in this kit, draft v0.1 for WS2 review</div>
+    <div><a href="#files">Files and room slides</a></div>
+  </div>
+
+  <div class="tgo" aria-label="Topic, goal and outcome">
+    <div><div class="eyebrow">Topic</div><p>Turn a real PM pain point into an AI assistant that is valuable, governable and ready for a first test.</p></div>
+    <div><div class="eyebrow">Goal</div><p>Each mixed-experience room designs, tests and pressure-tests one assistant, while the PM keeps judgment and decision ownership.</p></div>
+    <div><div class="eyebrow">Outcome</div><p>One Pilot Pack per room, in the same format everywhere, so packs can be compared across rooms and regions and turned into pilots.</p></div>
+  </div>
+
+  <div class="gantt-box" aria-label="60-minute run of show">
+    <div class="gantt">
+      <div class="seg"><b>Orient</b><span>5′</span></div>
+      <div class="seg"><b>Frame the pain</b><span>10′</span></div>
+      <div class="seg"><b>Design the agent</b><span>12′</span></div>
+      <div class="seg hot"><b>Build &amp; challenge</b><span>15′ · two sub-teams</span></div>
+      <div class="seg"><b>Fix &amp; decide</b><span>8′</span></div>
+      <div class="seg"><b>Package &amp; commit</b><span>10′</span></div>
+    </div>
+    <div class="axis" aria-hidden="true">
+      <i style="left:0">00</i><i style="left:8.333%">05</i><i style="left:25%">15</i><i style="left:45%">27</i><i style="left:70%">42</i><i style="left:83.333%">50</i><i style="left:100%">60</i>
+      <span class="cp" style="left:25%"></span><span class="cp" style="left:45%"></span><span class="cp" style="left:70%"></span><span class="cp" style="left:83.333%"></span><span class="cp" style="left:100%"></span>
+    </div>
+    <ul class="gantt-legend">
+      <li><span class="mono">00–05</span> Orient</li>
+      <li><span class="mono">05–15</span> Frame the pain</li>
+      <li><span class="mono">15–27</span> Design the agent</li>
+      <li><span class="mono">27–42</span> Build &amp; challenge</li>
+      <li><span class="mono">42–50</span> Fix &amp; decide</li>
+      <li><span class="mono">50–60</span> Package &amp; commit</li>
+    </ul>
+    <div class="key"><span><span class="dia"></span>Checkpoint the timekeeper calls</span><span><span class="sw"></span>Room splits into Builders and Challengers</span></div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ DELIVERABLE ============ -->
+<section id="deliver">
+  <div class="sec-head">
+    <div class="eyebrow">What every room delivers</div>
+    <h2>One Pilot Pack, three levels of ambition</h2>
+    <p>Every room must reach Level 1. That alone meets the WS2 definition of done <span class="chip conf">Confirmed</span>: one AI use case, an owner and a first test per room. Levels 2 and 3 depend on tool access and on how experienced the room is, so a room of AI beginners and a room of power users both finish with something real.</p>
+  </div>
+
+  <div class="grid-3">
+    <div class="panel level req">
+      <div class="lv">Level 1</div>
+      <h3>Designed</h3>
+      <div class="tag"><span class="chip conf">Required for every room</span></div>
+      <p>Pilot Pack complete. Agent instructions written. Owner, first test, metric and guardrail named.</p>
+      <p class="muted small">Works with pen and paper.</p>
+    </div>
+    <div class="panel level">
+      <div class="lv">Level 2</div>
+      <h3>Tested</h3>
+      <div class="tag"><span class="chip prop">Target for most rooms</span></div>
+      <p>Instructions run against the sample data, either in the approved AI tool or in the “Be the agent” paper test. Three tests recorded and at least one fix made.</p>
+      <p class="muted small">Works without a tool.</p>
+    </div>
+    <div class="panel level">
+      <div class="lv">Level 3</div>
+      <h3>Working agent</h3>
+      <div class="tag"><span class="chip open">Depends on tool decision</span></div>
+      <p>Saved as a reusable agent or prompt in the approved tool, so the owner can run it the next working day.</p>
+      <p class="muted small">Needs agent-building access in the room.</p>
+    </div>
+  </div>
+
+  <div class="stack" style="margin-top:2.2rem">
+    <h3>What “agent” means in this kit</h3>
+    <p>An agent here is a reusable set of instructions with fixed inputs, rules, an output format and a human checkpoint, which any PM can run again. It can live as a saved prompt, a custom assistant, or an agent in whatever tool is approved. The instructions are the asset. The tool can be swapped.</p>
+
+    <h3 style="margin-top:.8rem">The pilot-ready test</h3>
+    <p>From the knowledge base: a case is pilot-ready only if all six are present. The Pilot Pack form checks them live.</p>
+    <div class="ready">
+      <div><b>User and problem</b><span>Specific person, specific moment</span></div>
+      <div><b>Data source</b><span>Usable, and allowed</span></div>
+      <div><b>Value measure</b><span>Observable, not a feeling</span></div>
+      <div><b>Human checkpoint</b><span>What the PM decides</span></div>
+      <div><b>Owner</b><span>Name, or role plus who confirms</span></div>
+      <div><b>First test</b><span>Bounded in scope and time</span></div>
+    </div>
+    <div class="compare">
+      <div class="no"><b>Fails the test</b>“Use AI for project handovers.”</div>
+      <div class="yes"><b>Passes the test</b>“A one-page, source-cited handover brief for PMs inheriting a running project, checked in a 30-minute call with the previous PM, piloted on the next two handovers. Metric: working days to handover sign-off.”</div>
+    </div>
+    <p class="muted small">The handover example is deliberately not one of the six room challenges. It is the worked example preloaded in the Pilot Pack form.</p>
+  </div>
+</section>
+
+<!-- ============ CHALLENGES ============ -->
+<section id="challenges">
+  <div class="sec-head">
+    <div class="eyebrow">Six challenges <span class="chip prop">Proposal</span></div>
+    <h2>One pain point per room</h2>
+    <p>Each challenge is a pain almost every PM recognizes, can be worked in an hour with fictional data, and needs no confidential information. Together the six cover all six themes from the 31 July content map. Cards frame the problem and the inputs; they never contain the solution. As the September proposal put it: curate inputs, not answers.</p>
+  </div>
+
+  <div class="cards">
+    <a class="ccard" href="#c1">
+      <div class="top"><span class="code">C1</span><span class="dots">Build <b>●●○</b></span></div>
+      <h3>Status Report Treadmill</h3>
+      <p>Cut the time spent turning scattered updates into a trustworthy weekly status, without handing the status call to the AI.</p>
+      <div class="foot"><span>Metrics and value</span><span>Entry and mixed rooms</span></div>
+    </a>
+    <a class="ccard" href="#c2">
+      <div class="top"><span class="code">C2</span><span class="dots">Build <b>●○○</b></span></div>
+      <h3>Meetings Without Memory</h3>
+      <p>Capture every decision and action from a project meeting, owned and dated, within an hour of the meeting ending.</p>
+      <div class="foot"><span>Practical AI adoption</span><span>Entry rooms</span></div>
+    </a>
+    <a class="ccard" href="#c3">
+      <div class="top"><span class="code">C3</span><span class="dots">Build <b>●●○</b></span></div>
+      <h3>The Silent Risk</h3>
+      <p>Spot emerging risks in everyday project conversation before they become issues, while people keep ownership of every risk.</p>
+      <div class="foot"><span>Risk and quality</span><span>Mixed rooms</span></div>
+    </a>
+    <a class="ccard" href="#c4">
+      <div class="top"><span class="code">C4</span><span class="dots">Build <b>●●○</b></span></div>
+      <h3>Decision Brief in 30 Minutes</h3>
+      <p>Turn conflicting inputs into a balanced one-page decision brief for management, without the AI making the recommendation.</p>
+      <div class="foot"><span>Decision-making and accountability</span><span>Mixed rooms</span></div>
+    </a>
+    <a class="ccard" href="#c5">
+      <div class="top"><span class="code">C5</span><span class="dots">Build <b>●●○</b></span></div>
+      <h3>Lessons Nobody Learns</h3>
+      <p>Bring the right past lessons to a PM at the moment they can still act on them, instead of filing them at project close.</p>
+      <div class="foot"><span>Redefining the PM role</span><span>Mixed rooms</span></div>
+    </a>
+    <a class="ccard" href="#c6">
+      <div class="top"><span class="code">C6</span><span class="dots">Build <b>●●●</b></span></div>
+      <h3>Change Request Ripple</h3>
+      <p>See the ripple effect of a change request across functions in hours instead of days, so the change board decides on facts.</p>
+      <div class="foot"><span>Stakeholder and team dynamics</span><span>Experienced rooms</span></div>
+    </a>
+  </div>
+
+  <div class="world" style="margin-top:2.6rem">
+    <div class="stack">
+      <div class="eyebrow">The sample-data world</div>
+      <h3 style="font-size:1.5rem">Project KESTREL (fictional)</h3>
+      <p>All six data packs come from one invented project, so rooms can build on shared context and facilitators only learn one story. KESTREL brings a new sensor-hub chip and its evaluation kit to a lead customer. The current week is calendar week 38 in the story.</p>
+      <p>Every name, date, figure and company is invented. The packs contain deliberate traps (contradictions, missing inputs, personal details, unsourced claims) so the tests in the room have something real to catch.</p>
+      <p class="small muted">Rooms paste only this fictional data into AI tools. Real project data enters a pilot only through an approved tool and with data approval.</p>
+    </div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Milestone</th><th>Baseline</th><th>Forecast</th><th>Owner</th></tr></thead>
+        <tbody>
+          <tr><td>Design freeze</td><td>CW34</td><td>CW34 (done)</td><td>Aiko, Design</td></tr>
+          <tr><td>Tape-out</td><td>CW40</td><td>CW40</td><td>Aiko, Design</td></tr>
+          <tr><td>Load board ready</td><td>CW41</td><td>CW43</td><td>Priya, Test</td></tr>
+          <tr><td>First samples + test ready</td><td>CW46</td><td>CW46</td><td>Priya, Test</td></tr>
+          <tr><td>Qualification start</td><td>CW48</td><td>CW48</td><td>Daniel, Quality</td></tr>
+          <tr><td>Customer sampling</td><td>CW50</td><td>CW50</td><td>Sofia, Marketing</td></tr>
+        </tbody>
+      </table>
+      <p class="small muted" style="margin:.6rem .75rem .7rem">Also on the team: Marco (Verification), Lukas (Software and tools), Chen (Operations). The PM is you.</p>
+    </div>
+  </div>
+
+  <!-- C1 -->
+  <article class="dossier" id="c1">
+    <div class="d-head"><span class="code">C1</span><h3 style="font-size:1.6rem">Status Report Treadmill</h3><p class="hmw">How might we cut the time a PM spends turning scattered updates into a trustworthy weekly status, without handing the status call to the AI?</p></div>
+    <div class="meta-line"><span>Theme: Metrics and value measurement</span><span>Room fit: entry and mixed</span><span>Build effort: medium</span></div>
+    <dl class="facts">
+      <div><dt class="eyebrow">Who feels it</dt><dd>The PM who compiles the report; team leads who get chased for input; managers and customers who read reports that vary in format and quality.</dd></div>
+      <div><dt class="eyebrow">What happens today</dt><dd>Updates arrive in different formats (mail, chat, tracker) and at different times. The PM chases missing input, reconciles it with the plan, then rewrites the same content for the team, for management and sometimes for the customer.</dd></div>
+      <div><dt class="eyebrow">Baseline to measure in the room</dt><dd><ul><li>Hours per week per PM spent on status</li><li>Number of audience versions</li><li>Chasing messages per week</li><li>How often a sent status is corrected later</li></ul></dd></div>
+      <div><dt class="eyebrow">Trusted sources</dt><dd>Plan or schedule tool (the source of truth for dates), issue tracker, RAID log, team updates.</dd></div>
+      <div><dt class="eyebrow">Constraints</dt><dd>The overall status rating and the message to management stay with the PM. Dates come from the plan, never from generated text. Customer versions carry no internal-only content.</dd></div>
+      <div><dt class="eyebrow">Questions to explore</dt><dd><ul><li>Which step is the real time sink: collecting, reconciling or writing?</li><li>How would the assistant notice an update that contradicts the plan?</li><li>What does the PM check before pressing Send?</li><li>What should happen when an update is missing?</li></ul></dd></div>
+      <div><dt class="eyebrow">Stretch goal</dt><dd>One set of inputs, three audience versions, with a list of what differs between them and why.</dd></div>
+    </dl>
+    <details>
+      <summary>Sample data pack C1 · weekly inputs, CW38</summary>
+      <div class="body">
+        <div class="codebar"><span class="small muted">Paste into the approved tool together with your instructions.</span><button class="btn small" type="button" data-copy="d1">Copy data</button></div>
+<pre id="d1">CONTEXT: Project KESTREL (fictional). A new sensor-hub chip and evaluation kit for lead customer "Customer Alpha". Current week: CW38.
+
+WEEKLY INPUTS RECEIVED, CW38
+
+[Email] Aiko (Design lead):
+Hi, design status: timing closure on the PMU block still open, 3 paths failing, team working the weekend. Everything else frozen. Should be OK for tape-out CW40 if we close by Wednesday.
+
+[Chat] Marco (Verification):
+Regression at 92% coverage, target is 95 before tape-out. 2 new bugs this week, both low.
+
+[Email] Priya (Test Engineering):
+Test program development on track. Waiting for the load board from the vendor, now expected CW43 (vendor delay).
+
+[Chat] Lukas (Software/Tools):
+Eval kit SDK beta done 🎉. Also FYI Customer Alpha's contract says we owe them a demo of low-power mode at their November tech day, legal is still reviewing the penalty clause.
+
+[Email] Daniel (Quality):
+Qualification plan approved. Need samples by CW46 latest to start qualification CW48.
+
+[Chat] Chen (Operations):
+Substrate order confirmed. No issues.
+
+(No update received from Sofia, Product Marketing.)
+
+MILESTONE TRACKER (export)
+| Milestone                  | Baseline | Forecast    | Owner  |
+| Design freeze              | CW34     | CW34 (done) | Aiko   |
+| Tape-out                   | CW40     | CW40        | Aiko   |
+| Load board ready           | CW41     | CW43        | Priya  |
+| First samples + test ready | CW46     | CW46        | Priya  |
+| Qualification start        | CW48     | CW48        | Daniel |
+| Customer sampling          | CW50     | CW50        | Sofia  |
+
+LAST WEEK'S STATUS (CW37)
+Overall: GREEN. Schedule: GREEN. Top risk: PMU timing closure.</pre>
+      </div>
+    </details>
+    <details class="traps fac">
+      <summary><span><span class="fac-flag">Facilitator only</span> · traps hidden in the C1 data</span></summary>
+      <div class="body"><ul>
+        <li>Priya writes “on track”, yet the load board moved from CW41 to CW43 and the tracker still shows “First samples + test ready” unchanged at CW46. A good assistant flags the conflict. A weak one repeats last week’s GREEN.</li>
+        <li>Lukas mentions contract terms and a penalty clause. This must never reach a customer version and is questionable in any status.</li>
+        <li>Sofia’s update is missing. The assistant should report it as missing, not invent a marketing status.</li>
+        <li>Aiko’s team is working the weekend. That is a people signal the PM may want to raise; the AI should not judge it.</li>
+        <li>Chen reports “no issues”, while the C3 pack shows the supplier moved the substrate order. Useful if two rooms compare notes later.</li>
+      </ul></div>
+    </details>
+  </article>
+
+  <!-- C2 -->
+  <article class="dossier" id="c2">
+    <div class="d-head"><span class="code">C2</span><h3 style="font-size:1.6rem">Meetings Without Memory</h3><p class="hmw">How might we make sure every decision and action from a project meeting is captured, owned and followed up within an hour of the meeting ending?</p></div>
+    <div class="meta-line"><span>Theme: Practical AI adoption and approved tools</span><span>Room fit: entry</span><span>Build effort: low</span></div>
+    <dl class="facts">
+      <div><dt class="eyebrow">Who feels it</dt><dd>The PM who chairs and takes notes at the same time; attendees; people who missed the meeting.</dd></div>
+      <div><dt class="eyebrow">What happens today</dt><dd>Notes are written while chairing. Minutes go out late or not at all. Actions have no owner or date. Decisions are re-opened the next week because nobody recorded them.</dd></div>
+      <div><dt class="eyebrow">Baseline to measure in the room</dt><dd><ul><li>Time from meeting end to minutes sent</li><li>Share of actions with an owner and a due date</li><li>Decisions re-discussed per month</li></ul></dd></div>
+      <div><dt class="eyebrow">Trusted sources</dt><dd>Meeting transcript or notes (only where recording and transcription are allowed), action tracker, decision log.</dd></div>
+      <div><dt class="eyebrow">Constraints</dt><dd>Transcription needs consent and must follow local policy. The PM confirms what counts as a decision. Nobody gets an action they did not accept. Personal remarks stay out of the minutes.</dd></div>
+      <div><dt class="eyebrow">Questions to explore</dt><dd><ul><li>How do you tell a decision from a discussion?</li><li>Who confirms owners and dates?</li><li>Where do actions live after the meeting?</li><li>What do people who were absent need?</li></ul></dd></div>
+      <div><dt class="eyebrow">Stretch goal</dt><dd>Draft follow-up reminders for every action due in the coming week.</dd></div>
+    </dl>
+    <details>
+      <summary>Sample data pack C2 · weekly sync transcript, CW38</summary>
+      <div class="body">
+        <div class="codebar"><span class="small muted">Paste into the approved tool together with your instructions.</span><button class="btn small" type="button" data-copy="d2">Copy data</button></div>
+<pre id="d2">CONTEXT: Project KESTREL (fictional). A new sensor-hub chip and evaluation kit for lead customer "Customer Alpha". Current week: CW38.
+
+KESTREL WEEKLY SYNC, Tuesday CW38. Auto-transcribed excerpt.
+
+PM: OK, let's start. Aiko, timing closure?
+Aiko: Three paths still failing on the PMU. We think we can close by Wednesday. If not, we need to talk about options.
+PM: What's the fallback if Wednesday doesn't work?
+Aiko: Honestly, either we slip tape-out or we tape out and fix it in a metal respin.
+Sofia: Slipping is really hard for Customer Alpha. Let's propose to steering that we keep CW40 no matter what.
+Daniel: I'm not comfortable with that without a quality view.
+PM: OK, let's not decide that here. Aiko, send me the status Wednesday evening and I'll prepare options for steering on Thursday.
+Aiko: Will do.
+Priya: The load board is late, CW43 now. Someone needs to check with the vendor whether they can expedite.
+PM: Yes, that's important.
+Lukas: Quick one: SDK beta is out. We agreed last week to release it to Customer Alpha only after the quality review, right?
+Daniel: Right, that's still the plan. I can do the review by end of next week.
+PM: Good. Chen, anything?
+Chen: All fine. By the way, I'm out from the 3rd for two weeks, family matter, my mother is in hospital.
+PM: Sorry to hear that. Who covers operations?
+Chen: I'll ask Ravi, not confirmed yet.
+PM: One more thing. From now on, every eval kit shipment needs an export-control check before it leaves. That's decided. Operations, please implement.
+Chen: OK.
+PM: Thanks all, same time next week.</pre>
+      </div>
+    </details>
+    <details class="traps fac">
+      <summary><span><span class="fac-flag">Facilitator only</span> · traps hidden in the C2 data</span></summary>
+      <div class="body"><ul>
+        <li>Sofia’s “let’s propose to steering that we keep CW40” is a proposal the PM explicitly deferred. It is not a decision.</li>
+        <li>“Someone needs to check with the vendor” has no owner. It must be flagged, not assigned to Priya by guesswork.</li>
+        <li>“End of next week” is relative. The assistant should turn it into a date only if it knows the meeting date, and flag it otherwise.</li>
+        <li>Chen’s family situation is personal. Only “Chen out for two weeks from the 3rd, cover not confirmed” belongs in minutes, and “the 3rd” names no month.</li>
+        <li>The real decisions: an export-control check before every eval kit shipment, and the SDK release to Customer Alpha gated on the quality review (re-confirmed).</li>
+      </ul></div>
+    </details>
+  </article>
+
+  <!-- C3 -->
+  <article class="dossier" id="c3">
+    <div class="d-head"><span class="code">C3</span><h3 style="font-size:1.6rem">The Silent Risk</h3><p class="hmw">How might we spot emerging risks in everyday project conversation before they become issues, while people keep ownership of every risk?</p></div>
+    <div class="meta-line"><span>Theme: Risk and quality in AI-augmented projects</span><span>Room fit: mixed</span><span>Build effort: medium</span></div>
+    <dl class="facts">
+      <div><dt class="eyebrow">Who feels it</dt><dd>The PM, risk owners, and managers who review risk.</dd></div>
+      <div><dt class="eyebrow">What happens today</dt><dd>The RAID log is updated just before reviews. Risks are mentioned in mails and stand-ups but never logged. Ratings go stale. Milestone reviews bring surprises.</dd></div>
+      <div><dt class="eyebrow">Baseline to measure in the room</dt><dd><ul><li>Days since the last RAID update</li><li>Issues last quarter that were never logged as risks</li><li>Time spent preparing a risk review</li></ul></dd></div>
+      <div><dt class="eyebrow">Trusted sources</dt><dd>RAID log, team updates, mail and chat (within policy), plan.</dd></div>
+      <div><dt class="eyebrow">Constraints</dt><dd>The assistant suggests; people rate, own and close risks. Every suggestion quotes its source. No blame on individuals. Supplier information may be confidential.</dd></div>
+      <div><dt class="eyebrow">Questions to explore</dt><dd><ul><li>What makes a message a signal rather than noise?</li><li>What would make a PM trust a suggested risk?</li><li>How often should it run?</li><li>Who approves a new entry in the log?</li></ul></dd></div>
+      <div><dt class="eyebrow">Stretch goal</dt><dd>Suggest updates to existing entries as well as new ones, with the evidence for each change.</dd></div>
+    </dl>
+    <details>
+      <summary>Sample data pack C3 · RAID log and two weeks of snippets</summary>
+      <div class="body">
+        <div class="codebar"><span class="small muted">Paste into the approved tool together with your instructions.</span><button class="btn small" type="button" data-copy="d3">Copy data</button></div>
+<pre id="d3">CONTEXT: Project KESTREL (fictional). A new sensor-hub chip and evaluation kit for lead customer "Customer Alpha". Current week: CW38.
+
+RAID LOG (excerpt, last updated CW33)
+| ID | Type       | Description                                          | Prob | Impact | Owner  | Status      |
+| R1 | Risk       | PMU timing closure may not be achieved before tape-out | M  | H      | Aiko   | Open        |
+| R2 | Risk       | Load board vendor capacity                           | L    | M      | Priya  | Closed CW30 |
+| R3 | Risk       | Qualification lab slot availability CW48             | M    | M      | Daniel | Open        |
+| I1 | Issue      | SDK documentation behind schedule                    | -    | L      | Lukas  | Open        |
+| D1 | Dependency | Customer Alpha to provide use-case spec by CW36      | -    | M      | Sofia  | Open        |
+
+SNIPPETS FROM MAIL AND CHAT, CW36 to CW38
+1. Priya (CW37): Vendor says the load board is now CW43, their test line is overbooked again.
+2. Chen (CW38): FYI the supplier moved our substrate order to their next allocation cycle. They say it "should still be fine".
+3. Sofia (CW36): Customer Alpha's spec will come "soon", they're reorganizing.
+4. Marco (CW38): Two new low-severity bugs, nothing blocking.
+5. Lukas (CW37): Lol, the coffee machine on floor 3 is broken again, productivity risk!
+6. Daniel (CW38): Lab confirmed our CW48 slot.
+7. Aiko (CW38): Team is doing another weekend. Third in a row. Honestly, if Tom had done the constraints right in July we wouldn't be here.</pre>
+      </div>
+    </details>
+    <details class="traps fac">
+      <summary><span><span class="fac-flag">Facilitator only</span> · traps hidden in the C3 data</span></summary>
+      <div class="body"><ul>
+        <li>Snippet 1: the vendor capacity problem is back, but R2 is closed. A reopen candidate.</li>
+        <li>Snippet 2: a new supply risk, even though Chen sounds relaxed (and reported “no issues” in the C1 inputs).</li>
+        <li>Snippet 3: D1 was due in CW36 and is overdue. An escalation candidate.</li>
+        <li>Snippet 5 is noise. Snippet 6 lowers R3; closing it is the PM’s call, not the assistant’s.</li>
+        <li>Snippet 7 holds a team-fatigue signal and blames a named person. The risk is fatigue and schedule pressure; the name stays out.</li>
+        <li>The log was last updated in CW33, five weeks ago.</li>
+      </ul></div>
+    </details>
+  </article>
+
+  <!-- C4 -->
+  <article class="dossier" id="c4">
+    <div class="d-head"><span class="code">C4</span><h3 style="font-size:1.6rem">Decision Brief in 30 Minutes</h3><p class="hmw">How might we help a PM turn conflicting inputs into a clear, balanced decision brief for management, fast, without the AI making the recommendation?</p></div>
+    <div class="meta-line"><span>Theme: Decision-making with AI and human accountability</span><span>Room fit: mixed</span><span>Build effort: medium</span></div>
+    <dl class="facts">
+      <div><dt class="eyebrow">Who feels it</dt><dd>The PM; the decision makers in steering or management; the functions whose input shapes the options.</dd></div>
+      <div><dt class="eyebrow">What happens today</dt><dd>An escalation needs options, impacts and a clear ask. The PM spends hours collecting views and writing. Briefs come out long, tilted toward one function, or without the actual ask, and the decision slips to the next meeting.</dd></div>
+      <div><dt class="eyebrow">Baseline to measure in the room</dt><dd><ul><li>Hours to prepare one decision brief</li><li>Meetings before a decision is taken</li><li>How often management asks for more information</li></ul></dd></div>
+      <div><dt class="eyebrow">Trusted sources</dt><dd>Function inputs, plan, cost data, decision log.</dd></div>
+      <div><dt class="eyebrow">Constraints</dt><dd>The recommendation is the PM’s. Every number traces to an input. Options are presented fairly. Commercial and cost data may be confidential.</dd></div>
+      <div><dt class="eyebrow">Questions to explore</dt><dd><ul><li>What does a decision maker need on one page?</li><li>How do you stop the assistant from favoring the loudest input?</li><li>Which numbers must come from systems?</li></ul></dd></div>
+      <div><dt class="eyebrow">Link to the summit</dt><dd>Complements the Driving Decision Making session. If that session shares a decision framework, rooms reuse it here. <span class="chip asm">Assumption</span></dd></div>
+      <div><dt class="eyebrow">Stretch goal</dt><dd>A pre-mortem line per option: “If we choose this and it fails, the most likely reason is …”</dd></div>
+    </dl>
+    <details>
+      <summary>Sample data pack C4 · tape-out decision inputs</summary>
+      <div class="body">
+        <div class="codebar"><span class="small muted">Paste into the approved tool together with your instructions.</span><button class="btn small" type="button" data-copy="d4">Copy data</button></div>
+<pre id="d4">CONTEXT: Project KESTREL (fictional). A new sensor-hub chip and evaluation kit for lead customer "Customer Alpha". Current week: CW38.
+
+DECISION NEEDED: tape-out timing. Steering meeting Thursday CW38.
+
+Situation: PMU block timing closure is still failing on 3 paths (as of Tuesday CW38). Tape-out is planned for CW40.
+
+INPUTS RECEIVED
+- Aiko (Design): A clean fix needs 3 more weeks. Alternative: tape out on time and fix it later in a metal-layer respin ("metal fix"), which takes about 6 weeks after first samples. Recommends delaying tape-out by 3 weeks.
+- Sofia (Marketing): Customer Alpha's design-in window closes at the end of the year. "If we are late, they will walk away." Recommends keeping CW40.
+- Daniel (Quality): Qualifying silicon with a known timing issue means requalification after any metal fix. Concerned about taping out on time.
+- Chen (Operations): Metal-fix respin mask cost is approx. EUR 180k. A 3-week slip costs nothing directly but loses our wafer start slot; the next slot is 2 weeks later.
+- Lukas (Software): A firmware workaround could mask the issue, in low-power mode only. About 2 weeks of effort. Not validated.
+
+CONSTRAINTS
+- Remaining budget reserve: EUR 150k.
+- Customer sampling committed for CW50.</pre>
+      </div>
+    </details>
+    <details class="traps fac">
+      <summary><span><span class="fac-flag">Facilitator only</span> · traps hidden in the C4 data</span></summary>
+      <div class="body"><ul>
+        <li>“They will walk away” has no source. It should be marked as an unverified claim.</li>
+        <li>A 3-week slip also loses the wafer start slot, and the next one is 2 weeks later. The real delay may be 5 weeks.</li>
+        <li>The metal fix (EUR 180k) exceeds the remaining reserve (EUR 150k). That needs an approval nobody mentioned.</li>
+        <li>The firmware workaround has no quality view and is not validated.</li>
+        <li>Customer sampling in CW50 looks at risk under every option. The brief should say so plainly.</li>
+        <li>In the C2 sync, Aiko expected to close “by Wednesday”; here a clean fix needs 3 weeks. Inconsistent confidence worth a question.</li>
+      </ul></div>
+    </details>
+  </article>
+
+  <!-- C5 -->
+  <article class="dossier" id="c5">
+    <div class="d-head"><span class="code">C5</span><h3 style="font-size:1.6rem">Lessons Nobody Learns</h3><p class="hmw">How might we bring the right past lessons to a PM at the moment they can still act on them, instead of filing them at project close?</p></div>
+    <div class="meta-line"><span>Theme: Redefining the PM role</span><span>Room fit: mixed</span><span>Build effort: medium</span></div>
+    <dl class="facts">
+      <div><dt class="eyebrow">Who feels it</dt><dd>PMs entering a new phase; the PMO; functional leads who keep solving the same problems.</dd></div>
+      <div><dt class="eyebrow">What happens today</dt><dd>Lessons are collected at closure in slides or spreadsheets and rarely read again. The same problems repeat, and finding the relevant lesson is slow.</dd></div>
+      <div><dt class="eyebrow">Baseline to measure in the room</dt><dd><ul><li>Did you look at past lessons at your last phase start?</li><li>Repeated issues you can name</li><li>Time to find a relevant lesson</li></ul></dd></div>
+      <div><dt class="eyebrow">Trusted sources</dt><dd>Lessons-learned repository, retrospectives, closure reports, ticket history.</dd></div>
+      <div><dt class="eyebrow">Constraints</dt><dd>Lessons may name people or suppliers and must be anonymized. Old lessons may be outdated. The PM decides what applies.</dd></div>
+      <div><dt class="eyebrow">Questions to explore</dt><dd><ul><li>What makes a lesson reusable: context, trigger, action?</li><li>At which project moment should it appear?</li><li>How would you know a lesson was actually applied?</li></ul></dd></div>
+      <div><dt class="eyebrow">Stretch goal</dt><dd>Turn the top three lessons into checklist items for the next milestone review.</dd></div>
+    </dl>
+    <details>
+      <summary>Sample data pack C5 · lessons repository and new project profile</summary>
+      <div class="body">
+        <div class="codebar"><span class="small muted">Paste into the approved tool together with your instructions.</span><button class="btn small" type="button" data-copy="d5">Copy data</button></div>
+<pre id="d5">CONTEXT: Project KESTREL (fictional). A new sensor-hub chip and evaluation kit for lead customer "Customer Alpha". Current week: CW38.
+
+LESSONS-LEARNED REPOSITORY (extract)
+L01 | HERON (2023)  | ATE hardware ordered after tape-out arrived 5 weeks late; first-sample testing slipped. Action: order test hardware at design freeze.
+L02 | HERON (2023)  | Qualification lab booked 4 weeks ahead was not enough in Q4. Action: book 10+ weeks ahead for Q4.
+L03 | HERON (2023)  | Customer samples shipped before qualification start caused 2 customer escalations. Action: agree sample status (engineering vs qualified) in writing.
+L04 | OSPREY (2022) | Weekly status via the PMtrack tool was ignored by management. Action: use PMtrack dashboards.
+L05 | OSPREY (2022) | Late spec changes from the lead customer caused 2 respins. Action: freeze the customer spec with sign-off before design freeze.
+L06 | OSPREY (2022) | Test engineer John was unresponsive and caused delays.
+L07 | PLOVER (2024) | SDK released without quality review led to customer-found bugs. Action: gate SDK releases on quality review.
+L08 | PLOVER (2024) | Export-control classification of eval kits done late blocked shipments for 3 weeks. Action: classify eval kits at the kit design review.
+L09 | WREN (2024)   | Single-source load board vendor; capacity crunch in Q3. Action: qualify a second vendor or reserve capacity early.
+L10 | WREN (2024)   | Early engineering samples built customer trust and won the design-in. Action: ship early engineering samples with clear errata.
+
+NEW PROJECT PROFILE
+Project: KESTREL. Entering phase "tape-out to customer sampling" (CW40 to CW50).
+Known pressure points: test hardware timing, qualification slot, lead-customer expectations, SDK release, eval kit shipments.
+Note: the PMtrack tool was retired in 2025.</pre>
+      </div>
+    </details>
+    <details class="traps fac">
+      <summary><span><span class="fac-flag">Facilitator only</span> · traps hidden in the C5 data</span></summary>
+      <div class="body"><ul>
+        <li>L04 refers to a retired tool. Out of date.</li>
+        <li>L06 names and blames a person and has no action. Exclude it or anonymize it.</li>
+        <li>L03 and L10 contradict each other on early samples. That is a PM judgment, not an AI choice.</li>
+        <li>L01 says “ATE hardware”; KESTREL says “load board”. A good assistant matches them, and L09 applies too.</li>
+        <li>L07 and L08 match decisions already taken in the C2 sync. A useful confirmation that the lessons work.</li>
+      </ul></div>
+    </details>
+  </article>
+
+  <!-- C6 -->
+  <article class="dossier" id="c6">
+    <div class="d-head"><span class="code">C6</span><h3 style="font-size:1.6rem">Change Request Ripple</h3><p class="hmw">How might we see the ripple effect of a change request across functions in hours instead of days, so the change board decides on facts?</p></div>
+    <div class="meta-line"><span>Theme: Stakeholder and team dynamics</span><span>Room fit: experienced</span><span>Build effort: high</span></div>
+    <dl class="facts">
+      <div><dt class="eyebrow">Who feels it</dt><dd>The PM, functional leads, the change control board, customer-facing teams.</dd></div>
+      <div><dt class="eyebrow">What happens today</dt><dd>A change request arrives. The PM mails each function. Answers come late and in different shapes. Schedule, cost and risk impact are assembled by hand, and the decision slips while the customer waits.</dd></div>
+      <div><dt class="eyebrow">Baseline to measure in the room</dt><dd><ul><li>Days from change request to decision</li><li>Functions contacted</li><li>Follow-up rounds needed</li></ul></dd></div>
+      <div><dt class="eyebrow">Trusted sources</dt><dd>Plan with dependencies, specification, resource plan, change request form.</dd></div>
+      <div><dt class="eyebrow">Constraints</dt><dd>Each function owns its impact estimate. The assistant drafts questions and a first dependency view; it never commits dates. Customer commitments need approval.</dd></div>
+      <div><dt class="eyebrow">Questions to explore</dt><dd><ul><li>Which functions does the change touch, and how would you know?</li><li>What must each function answer?</li><li>What does the change board need on one page?</li></ul></dd></div>
+      <div><dt class="eyebrow">Stretch goal</dt><dd>A draft reply to the customer that commits to nothing except a decision date.</dd></div>
+    </dl>
+    <details>
+      <summary>Sample data pack C6 · change request CR-014 and plan dependencies</summary>
+      <div class="body">
+        <div class="codebar"><span class="small muted">Paste into the approved tool together with your instructions.</span><button class="btn small" type="button" data-copy="d6">Copy data</button></div>
+<pre id="d6">CONTEXT: Project KESTREL (fictional). A new sensor-hub chip and evaluation kit for lead customer "Customer Alpha". Current week: CW38.
+
+CHANGE REQUEST CR-014
+Received: Monday CW38, from Customer Alpha via Sofia (Marketing).
+Request 1: Pull in customer samples from CW50 to CW47 (their tech day is in CW48).
+Request 2: Add an "ultra-low-power standby" mode to the evaluation kit, demonstrable at the tech day.
+
+PLAN EXCERPT WITH DEPENDENCIES
+Tape-out CW40 -> wafer fab (5 weeks) -> first samples CW46
+First samples + load board (now CW43) -> test program on ATE -> samples tested
+Qualification start CW48 (6 weeks)
+Customer sampling CW50 (engineering samples)
+Eval kit software: SDK beta done CW37 -> quality review CW39 -> SDK 1.0 CW45
+Chip ROM content is frozen at tape-out (CW40).
+
+FUNCTIONS AND CONTACTS
+Design: Aiko | Verification: Marco | Test: Priya | Software: Lukas (team at 50% on another project until CW44) | Quality: Daniel | Operations: Chen | Marketing: Sofia</pre>
+      </div>
+    </details>
+    <details class="traps fac">
+      <summary><span><span class="fac-flag">Facilitator only</span> · traps hidden in the C6 data</span></summary>
+      <div class="body"><ul>
+        <li>Samples in CW47 would ship before qualification starts in CW48. Only engineering samples are possible, which connects to lesson L03 in the C5 pack.</li>
+        <li>The standby mode may need silicon or ROM support, and ROM freezes at tape-out in CW40. Design must answer within two weeks. The assistant cannot know this and should ask.</li>
+        <li>Software capacity is at 50% until CW44, so the new feature competes with SDK 1.0.</li>
+        <li>First samples in CW46 depend on the load board, now CW43. CW47 leaves one week of margin for test.</li>
+      </ul></div>
+    </details>
+  </article>
+
+  <div class="panel" style="margin-top:2rem">
+    <h3>Regional swap card</h3>
+    <p>A region may replace one challenge with a local pain point it submitted, if the new card meets the same standard: a named pain, users, a baseline to measure, trusted sources, constraints, open questions, and fictional or approved sample data with at least two traps. Swap cards need WS2 review before the kit freeze, so rooms never start from a blank page.</p>
+  </div>
+</section>
+
+<!-- ============ RUN ============ -->
+<section id="run">
+  <div class="sec-head">
+    <div class="eyebrow">Run the room <span class="chip prop">Proposal</span></div>
+    <h2>The 60-minute screenplay</h2>
+    <p>This flow keeps the stages of the 10 September proposal (orient, validate, shape, pressure-test, recommend). Because the topic is given, the 7-minute selection step becomes build time. If WS2 prefers rooms to choose between two or three cards, take the 5 minutes from Design.</p>
+  </div>
+
+  <div class="timer" id="timer" aria-live="polite">
+    <div class="t-top">
+      <div>
+        <div class="eyebrow">Room timer</div>
+        <div class="t-stage" id="tStage">Orient</div>
+        <div class="t-range" id="tRange">00:00–05:00</div>
+      </div>
+      <div class="t-clock" id="tClock">05:00</div>
+    </div>
+    <div class="t-bar">
+      <div class="gantt" id="tGantt">
+        <div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div>
+      </div>
+      <div class="t-now" id="tNow"></div>
+    </div>
+    <p class="t-say" id="tSay">“We leave in 60 minutes with a Pilot Pack we can test, not a finished system. Let’s name roles and read the card.”</p>
+    <p class="t-out"><b>Checkpoint:</b> <span id="tOut">Roles named. Card read aloud. Tool open, or paper mode chosen.</span></p>
+    <div class="t-ctrl">
+      <button class="btn primary" id="tStart" type="button">Start</button>
+      <button class="btn" id="tNext" type="button">Next stage</button>
+      <button class="btn" id="tReset" type="button">Reset</button>
+      <button class="btn toggle" id="tSound" type="button" aria-pressed="true">Chime on</button>
+      <span class="t-elapsed" id="tElapsed">Minute 0 of 60</span>
+    </div>
+  </div>
+
+  <h3 style="margin-bottom:.8rem">Roles</h3>
+  <div class="roles">
+    <div class="role"><h4>Facilitator</h4><p>Runs the process, protects time and voices. Needs no AI expertise and never writes the answer.</p></div>
+    <div class="role"><h4>Scribe and team lead</h4><p>Owns the Pilot Pack, synthesizes, gives the report-out.</p></div>
+    <div class="role"><h4>Timekeeper</h4><p>Runs the timer, calls each checkpoint, defends the last 10 minutes.</p></div>
+    <div class="role"><h4>Builder (1–2)</h4><p>Hands on the approved AI tool. Narrates what they type. Named before the summit so access is checked in advance.</p></div>
+    <div class="role"><h4>Challenger (1–2)</h4><p>The room’s AI steward. Tests value, data, confidentiality, quality, tool approval and accountability.</p></div>
+    <div class="role"><h4>Everyone</h4><p>Brings a real example, challenges assumptions, plays the agent in the paper test.</p></div>
+  </div>
+  <p class="small muted" style="margin-top:.8rem">Rooms of five or fewer combine Facilitator with Timekeeper, and Scribe with Challenger.</p>
+
+  <h3 style="margin:2.4rem 0 .4rem">Minute by minute</h3>
+  <ol class="play">
+    <li class="scene">
+      <div class="when">00:00–05:00<b>Orient</b></div>
+      <div class="cues">
+        <div class="cue say"><span>Say</span><div>“In the next 60 minutes we turn one PM pain point into an AI assistant we can actually test. We are not building a production system. We leave with a Pilot Pack: the problem, a baseline, the agent’s instructions, what the PM still decides, one guardrail, one metric, an owner and a first test.”</div></div>
+        <div class="cue"><span>Do</span><div><ul><li>Name the Scribe, Timekeeper, Builders and Challengers.</li><li>Read the challenge card aloud (1 minute). Show the Pilot Pack.</li><li>Check the approved tool is open on the Builder’s screen. If not, choose paper mode now.</li></ul></div></div>
+        <div class="checkpoint">05:00 · Roles named, card read, tool or paper mode chosen</div>
+      </div>
+    </li>
+    <li class="scene">
+      <div class="when">05:00–15:00<b>Frame the pain</b></div>
+      <div class="cues">
+        <div class="cue say"><span>Say</span><div>“Twenty seconds each: when did this pain last hit you, and what did it cost you?”</div></div>
+        <div class="cue"><span>Ask</span><div><ul><li>Who exactly feels it?</li><li>What happens today, step by step? Which step eats the most time or causes the most errors?</li><li>What number shows the pain today?</li><li>Where is the source of truth?</li></ul></div></div>
+        <div class="cue"><span>Decide</span><div><p>The slice: one user, one moment, one output.</p></div></div>
+        <div class="cue"><span>Rule</span><div><p>No number? Take a show-of-hands range and mark it “to be measured in the first test”.</p></div></div>
+        <div class="checkpoint">15:00 · One-sentence problem and a baseline in Pilot Pack sections 1–2</div>
+      </div>
+    </li>
+    <li class="scene">
+      <div class="when">15:00–27:00<b>Design the agent</b></div>
+      <div class="cues">
+        <div class="cue say"><span>Say</span><div>“Brief the assistant like a smart new colleague who knows nothing about our project.”</div></div>
+        <div class="cue"><span>Ask</span><div><ul><li>What goes in, and what comes out for whom?</li><li>Which steps can the assistant do?</li><li>Which facts must come from a system rather than from the AI’s words?</li><li>What does the PM decide, never the AI?</li><li>What must never appear in the output?</li></ul></div></div>
+        <div class="cue"><span>Do</span><div><p>Fill the blueprint scaffold from <a href="#build">Build the agent</a>. Write the three tests.</p></div></div>
+        <div class="checkpoint">27:00 · Instructions drafted, PM decision named, three tests written</div>
+      </div>
+    </li>
+    <li class="scene">
+      <div class="when">27:00–42:00<b>Build &amp; challenge</b></div>
+      <div class="cues">
+        <div class="cue"><span>Split</span><div><p>The room works as two sub-teams in parallel.</p></div></div>
+        <div class="cue"><span>Builders</span><div><p>Paste the instructions and the sample data into the approved tool. Run T1, T2 and T3. Record pass or fail and keep the output. No tool? Run “Be the agent”.</p></div></div>
+        <div class="cue"><span>Challengers</span><div><p>Pressure-test with seven checks: value (who saves what?), data (available and allowed?), quality (what if it is wrong?), tool (approved, with access?), accountability (who signs off?), adoption (would you use it on Monday?), metric (can we really measure it?).</p></div></div>
+        <div class="cue say"><span>Say</span><div>“Challengers, your job is to find the reason this pilot would fail, then write the guardrail that prevents it.”</div></div>
+        <div class="checkpoint">42:00 · Test results recorded, top three risks listed</div>
+      </div>
+    </li>
+    <li class="scene">
+      <div class="when">42:00–50:00<b>Fix &amp; decide</b></div>
+      <div class="cues">
+        <div class="cue say"><span>Say</span><div>“Builders, what broke? Challengers, what worries you most?”</div></div>
+        <div class="cue"><span>Do</span><div><ul><li>Add one rule to the instructions for each failed test.</li><li>Pick the one guardrail and the one metric that matter most.</li><li>Decide which level the room reached.</li></ul></div></div>
+        <div class="checkpoint">50:00 · Final instructions, one guardrail, one metric, level decided</div>
+      </div>
+    </li>
+    <li class="scene">
+      <div class="when">50:00–60:00<b>Package &amp; commit</b></div>
+      <div class="cues">
+        <div class="cue say"><span>Say</span><div>“Who runs the first test in the next two weeks? If we can’t name a person, which role, and who confirms the name by when?”</div></div>
+        <div class="cue"><span>Do</span><div><ul><li>Complete owner, first test, start date and report-out.</li><li>Rehearse the 90-second report-out once.</li><li>Submit the Pilot Pack and keep a local copy.</li></ul></div></div>
+        <div class="cue"><span>Rule</span><div><p>If behind, cut solution detail. Never cut owner, first test, metric or guardrail.</p></div></div>
+        <div class="checkpoint">60:00 · Pilot Pack submitted</div>
+      </div>
+    </li>
+  </ol>
+
+  <div class="grid-3" style="margin-top:2rem">
+    <div class="panel">
+      <h3>Inclusion prompts</h3>
+      <ul>
+        <li>“Let’s hear from someone who hasn’t spoken yet.”</li>
+        <li>“Who here would use this on Monday? What would stop you?”</li>
+        <li>“What would a PM new to AI need to trust this output?”</li>
+        <li>To an expert: “Please narrate what you type so we can all follow.”</li>
+        <li>“Does anyone think this is the wrong slice? Say it now.”</li>
+      </ul>
+    </div>
+    <div class="panel fac">
+      <div class="fac-flag">Facilitator only</div>
+      <h3>Rescue questions</h3>
+      <p class="small muted">Ask questions; do not hand over answers.</p>
+      <ul>
+        <li>Stuck on the problem: “Walk me through last Friday. What did you open first?”</li>
+        <li>Solution too big: “What is the smallest version a PM could run tomorrow with copy and paste?”</li>
+        <li>Output too generic: “Could someone outside this room run the first test from what we wrote?”</li>
+        <li>Tests all pass: “Did we run the trap? Every pack has at least two.”</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BUILD ============ -->
+<section id="build">
+  <div class="sec-head">
+    <div class="eyebrow">Build the agent</div>
+    <h2>Blueprint, three tests, and a paper fallback</h2>
+    <p>The scaffold gives every room the same shape and the same safety rules. The room fills in the brackets; the rules are defaults a room may tighten but should not drop.</p>
+  </div>
+
+  <div class="codebar"><h3>Agent blueprint scaffold</h3><button class="btn small" type="button" data-copy="scaffold">Copy scaffold</button></div>
+<pre id="scaffold">AGENT BLUEPRINT
+Name: [short, memorable]
+Job: Helps [which user] to [task] so that [outcome].
+Used when: [trigger, e.g. every Friday before the status report, after each project meeting]
+Inputs: [what the PM pastes, uploads or connects]
+Source of truth: [which system wins when inputs disagree]
+
+===== INSTRUCTIONS (paste into the approved AI tool) =====
+ROLE
+You are an assistant to a project manager on a cross-functional product development project.
+
+TASK
+From the inputs I give you, produce [output] for [audience].
+Steps:
+1. [ ]
+2. [ ]
+3. [ ]
+
+RULES
+- Use only the information in the inputs. Do not invent facts, dates, names or numbers.
+- For every item you report, name the input it came from.
+- If inputs are missing, unclear or contradict each other, list them under NEEDS PM CHECK. Do not resolve them yourself.
+- Do not make [the decision the PM keeps]. Prepare it and label it PM DECISION.
+- Leave out [what must never appear, e.g. personal details, contract terms].
+- Keep the output to [length], in a [tone] tone.
+
+OUTPUT FORMAT
+[headings or table the PM wants to receive]
+NEEDS PM CHECK: [list]
+===== END INSTRUCTIONS =====
+
+Human checkpoint: before using the output, the PM checks [ ].
+Guardrails: allowed data [ ]. Not allowed [ ]. Tool: approved tool only.
+Tests:
+T1 Normal:   [input] -> pass if [ ]
+T2 Trap:     [contradiction or gap] -> pass if listed under NEEDS PM CHECK
+T3 Boundary: [content that must not appear] -> pass if left out or flagged</pre>
+
+  <div class="tbl" style="margin-top:1.6rem">
+    <table>
+      <thead><tr><th>Test</th><th>What you feed it</th><th>Pass when</th></tr></thead>
+      <tbody>
+        <tr><td><b>T1 Normal</b></td><td>The full sample data pack</td><td>The output has the agreed structure and every item names its source.</td></tr>
+        <tr><td><b>T2 Trap</b></td><td>A contradiction or gap you found in the pack. Every pack has at least two.</td><td>The assistant lists it under NEEDS PM CHECK instead of smoothing it over.</td></tr>
+        <tr><td><b>T3 Boundary</b></td><td>Content that must not appear: a personal detail, a contract term, a blaming remark</td><td>It is left out, or flagged for the PM.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small muted">Record pass or fail and what you changed. A failed test followed by a fix is a better report-out than three easy passes.</p>
+
+  <div class="grid-3" style="margin-top:1.6rem">
+    <div class="panel">
+      <h3>Be the agent: the paper test</h3>
+      <p class="small muted">8–10 minutes. Counts as Level 2. Needs no tool, no login and no network.</p>
+      <ol>
+        <li>Pick a “human agent” who did not write the instructions.</li>
+        <li>Give them only the instructions and the printed sample data.</li>
+        <li>They produce the output aloud or on paper, following the instructions literally. Where the instructions are silent, they say “my instructions don’t tell me” and stop that step.</li>
+        <li>Everyone else notes each gap. Each gap becomes one new rule.</li>
+        <li>Run the trap: does the agent notice the contradiction? If not, which rule would make it?</li>
+      </ol>
+      <p class="small">Beginners learn quickly from this why precise instructions matter, and experts cannot rush past it.</p>
+    </div>
+    <div class="panel">
+      <h3>Tool readiness <span class="chip open">Open decision</span></h3>
+      <ul>
+        <li>Which AI tool is approved for the breakout, and whether participants can build agents in it, is not yet confirmed. It decides whether Level 3 is possible.</li>
+        <li>Rooms use only the fictional KESTREL data, or project data already approved for that tool.</li>
+        <li>No customer or confidential data goes into an unapproved or public tool, in the room or afterwards.</li>
+        <li>Builders test their login during pre-work, not in the room.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PILOT PACK ============ -->
+<section id="pack">
+  <div class="sec-head">
+    <div class="eyebrow">Pilot Pack</div>
+    <h2>The room’s output, in one comparable format</h2>
+    <p>These fields follow the AI Opportunity Canvas from the knowledge base, plus the agent instructions and test results. Use the form to rehearse, or to capture a room’s output when the official capture tool is down. Your draft stays in this browser only. “Copy Pilot Pack” gives plain text for the capture tool, Teams or mail; copying an empty form gives a blank template for printing.</p>
+  </div>
+
+  <div class="pack-layout">
+    <div class="pack-form" id="packForm">
+      <div class="banner" id="exampleBanner" hidden>
+        <span><b>Worked example loaded:</b> a project handover agent at Level 2. Clear it before a room starts.</span>
+      </div>
+      <!-- fieldsets generated from the PACK schema in the script below -->
+    </div>
+    <aside class="pack-aside" aria-label="Pilot Pack status">
+      <div class="panel">
+        <div class="eyebrow">Mandatory fields</div>
+        <div class="meter" id="packMeter">0 / 10</div>
+      </div>
+      <div class="panel">
+        <div class="eyebrow" style="margin-bottom:.4rem">Pilot-ready check</div>
+        <ul class="checklist" id="readyList">
+          <li data-need="pk-opp pk-users">User and problem</li>
+          <li data-need="pk-source">Data source</li>
+          <li data-need="pk-metric">Value measure</li>
+          <li data-need="pk-decision">Human checkpoint</li>
+          <li data-need="pk-owner">Owner</li>
+          <li data-need="pk-scope">Bounded first test</li>
+        </ul>
+      </div>
+      <div class="btnrow">
+        <button class="btn primary" id="packCopy" type="button">Copy Pilot Pack</button>
+        <button class="btn" id="packExample" type="button">Load worked example</button>
+        <button class="btn danger" id="packClear" type="button">Clear form</button>
+      </div>
+      <div class="confirm" id="clearConfirm" hidden>
+        <span>Clear every field?</span>
+        <button class="btn small danger" id="clearYes" type="button">Yes, clear</button>
+        <button class="btn small" id="clearNo" type="button">Cancel</button>
+      </div>
+      <textarea id="packFallback" readonly hidden aria-label="Pilot Pack as text"></textarea>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ REPORT-OUT ============ -->
+<section id="reportout">
+  <div class="sec-head">
+    <div class="eyebrow">Report-out and after the summit <span class="chip prop">Proposal</span></div>
+    <h2>Ninety seconds per room, then a 30-day pilot</h2>
+  </div>
+
+  <h3 style="margin-bottom:.6rem">Report-out script</h3>
+  <div class="script">
+    <span class="blank">Room</span> tackled <span class="blank">challenge</span> for <span class="blank">users</span>.
+    Today it costs <span class="blank">baseline</span>.
+    Our agent <span class="blank">does what</span>, and the PM still decides <span class="blank">what</span>.
+    We reached <span class="blank">level</span>; our most useful test result was <span class="blank">finding</span>.
+    We will know it works when <span class="blank">metric moves</span>.
+    <span class="blank">Owner</span> runs the first test by <span class="blank">date</span>, guarded by <span class="blank">guardrail</span>.
+  </div>
+  <p class="small muted">If report-out time is halved, read three parts only: the pain, what the agent does and what the PM decides, and the next step.</p>
+
+  <h3 style="margin:2.2rem 0 .6rem">Prioritization rubric</h3>
+  <p>Regions run a quick vote (“which pilot would you use next month?”, two votes each). A WS2 panel then scores every pack 1–5 on four criteria. Voting model and decision authority are <span class="chip open">Open decisions</span>.</p>
+  <div class="tbl wide">
+    <table>
+      <thead><tr><th>Criterion</th><th>Scores 1 when</th><th>Scores 5 when</th></tr></thead>
+      <tbody>
+        <tr><td><b>PM value</b></td><td>Saves little time, for few PMs</td><td>Saves measurable time or errors for most PMs</td></tr>
+        <tr><td><b>Ready now</b></td><td>Needs new data access or an unapproved tool</td><td>Runs with approved tools and data today</td></tr>
+        <tr><td><b>Safe</b></td><td>Human checkpoint or guardrail unclear</td><td>Explicit checkpoint, tested guardrail, no hidden confidentiality issue</td></tr>
+        <tr><td><b>Reusable</b></td><td>Fits one team’s way of working</td><td>Works across teams and regions with little change</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="margin:2.2rem 0 .8rem">From rooms to pilots</h3>
+  <ol class="flow">
+    <li><span class="n">Summit day</span><b>Rooms</b><p>Each room submits one Pilot Pack.</p></li>
+    <li><span class="n">Summit day</span><b>Regional vote</b><p>Participants vote; each region names its favorite.</p></li>
+    <li><span class="n">Week 1</span><b>Merge by challenge</b><p>WS2 compares the regional packs for each challenge and merges the best rules and tests into one v1 agent.</p></li>
+    <li><span class="n">Weeks 2–5</span><b>30-day pilot</b><p>One owner per challenge; three to five PMs run v1 against the room baseline.</p></li>
+    <li><span class="n">Day 30</span><b>Adopt, iterate or stop</b><p>Readout in local PM communities or SPARK; results posted on the SharePoint hub.</p></li>
+  </ol>
+  <p class="small muted" style="margin-top:.8rem">Because every region works the same six challenges, week 1 yields up to six merged agents, each shaped by several regions. The post-summit owner and decision forum are open decisions.</p>
+</section>
+
+<!-- ============ RECOVERY ============ -->
+<section id="recovery">
+  <div class="sec-head">
+    <div class="eyebrow">When things go wrong</div>
+    <h2>Fifteen likely failures and the move for each</h2>
+    <p>Covers the ten mock-run scenarios in the knowledge base plus failures specific to building agents. Use it in the facilitator briefing and inject a few as test events in the mock run.</p>
+  </div>
+  <div class="tbl wide">
+    <table>
+      <thead><tr><th>Situation</th><th>Early sign</th><th>What the facilitator does</th></tr></thead>
+      <tbody>
+        <tr><td>The room debates whether the pain is real</td><td>Minute 8, still debating</td><td>“The card’s pain is given; our job is the slice.” Use the room’s own examples to pick one user and one moment.</td></tr>
+        <tr><td>No baseline number</td><td>Silence at “what does it cost?”</td><td>Show of hands for a range. Write it as an estimate and make measuring it part of the first test.</td></tr>
+        <tr><td>One expert dominates</td><td>Same voice at every question</td><td>Make them Builder and ask them to narrate. Run the next question as a 20-second round.</td></tr>
+        <tr><td>Beginners go quiet</td><td>Cameras off, no questions</td><td>Give them the Challenger role, or make one of them the agent in the paper test.</td></tr>
+        <tr><td>Tool login fails or the network drops</td><td>Builder stuck for over 3 minutes</td><td>Switch to “Be the agent”. Level 2 is still reachable.</td></tr>
+        <tr><td>Room wants an unapproved or public AI tool</td><td>“Let’s just use …”</td><td>Park it. Keep the instructions tool-agnostic and record tool approval as a pilot prerequisite.</td></tr>
+        <tr><td>Real confidential data seems necessary</td><td>“We need the real customer file”</td><td>Use the KESTREL pack now. Add data approval as a prerequisite in section 8.</td></tr>
+        <tr><td>The solution grows too big</td><td>Talk of integrations and dashboards</td><td>“What is the smallest version a PM could run tomorrow with copy and paste?”</td></tr>
+        <tr><td>The output is generic</td><td>“AI for reporting”</td><td>Run the pilot-ready check: user, data source, metric, human checkpoint, owner, bounded test.</td></tr>
+        <tr><td>The AI output looks perfect</td><td>No test failed</td><td>Run the trap test. Polished-looking output is exactly when checks matter.</td></tr>
+        <tr><td>Behind at minute 50</td><td>Pilot Pack sections 7–10 empty</td><td>Cut solution detail. Never cut owner, first test, metric or guardrail.</td></tr>
+        <tr><td>Nobody will own the pilot</td><td>Silence at “who runs it?”</td><td>Write the owner role and who confirms a name within five working days, by default the regional lead.</td></tr>
+        <tr><td>The scribe loses the form or link</td><td>Link broken, laptop off</td><td>Use the offline copy or paper. Photograph it and submit.</td></tr>
+        <tr><td>Report-out time is halved</td><td>Host cuts to 45 seconds</td><td>Read three parts only: the pain, the agent and what the PM decides, the next step.</td></tr>
+        <tr><td>The facilitator is missing</td><td>Room not started at 02:00</td><td>The scribe runs the room from this page; the timer paces it.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ PREP ============ -->
+<section id="prep">
+  <div class="sec-head">
+    <div class="eyebrow">Preparation and open decisions</div>
+    <h2>What has to happen before 5 November</h2>
+  </div>
+
+  <div class="grid-3">
+    <div class="panel">
+      <h3>Participants</h3>
+      <p class="small muted">About 15 minutes, sent one week before</p>
+      <ul>
+        <li>Read your room’s challenge card.</li>
+        <li>Recall one real moment this pain hit you. Describe it; do not bring confidential documents.</li>
+        <li>Estimate what it costs you per week or per month.</li>
+        <li>Builders only: log in to the approved tool and paste the scaffold once.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Facilitators</h3>
+      <p class="small muted">About 60 minutes</p>
+      <ul>
+        <li>Attend a 30-minute WS2 briefing.</li>
+        <li>Walk through your card, including its traps. Try the timer. Fill the Pilot Pack with the worked example.</li>
+        <li>Prepare offline copies: card, sample data, blank Pilot Pack.</li>
+        <li>Know your room’s Builder and backup.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Regional leads</h3>
+      <ul>
+        <li>Assign one card per room and match it to the room’s experience.</li>
+        <li>Name a facilitator, a Builder and a backup for every room.</li>
+        <li>Optionally propose one swap card for WS2 review.</li>
+        <li>Confirm the capture link and the fallback with the site owner.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-top:1rem">
+    <h3>Card allocation rule <span class="chip prop">Proposal</span></h3>
+    <ul>
+      <li>Every room gets one card, assigned before the summit and named in the pre-work.</li>
+      <li>Match cards to experience: entry rooms take C2 or C1; mixed rooms C1, C3, C4 or C5; experienced rooms C6 or C4.</li>
+      <li>Regions with six or more rooms run every card at least once, so each challenge has a version from every region.</li>
+      <li>Regions with fewer rooms pick in this order: C2, C1, C3, C4, C6, C5.</li>
+      <li>Room size: start from 5–8 people <span class="chip asm">Assumption</span> and test 5, 8 and 12 in the mock run. Above 10, split into two rooms on the same card.</li>
+    </ul>
+  </div>
+
+  <div class="panel" style="margin-top:1rem">
+    <h3>Using this kit in the core-team mock run</h3>
+    <ul>
+      <li>Run C1 (richest traps) in one room and a draft swap card in the other, so both the standard and the swap process are tested.</li>
+      <li>Inject at least two failures from the recovery table, including a tool failure that forces the paper test.</li>
+      <li>Add two checks to the observer scorecard: “trap test run and result recorded” and “instructions understandable when read aloud to a non-expert”.</li>
+      <li>Pass criteria as in the knowledge base: all mandatory fields, owner, first test, metric and guardrail explicit, finished inside 60 minutes, no hidden confidentiality or tool issue.</li>
+    </ul>
+  </div>
+
+  <h3 style="margin:2.2rem 0 .6rem">Timeline <span class="chip prop">Proposed dates</span></h3>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>By</th><th>Milestone</th></tr></thead>
+      <tbody>
+        <tr><td>Fri 2 Oct</td><td>WS2 reviews this kit, keeps or swaps cards, starts the tool decision</td></tr>
+        <tr><td>Fri 9 Oct</td><td>Core-team mock run with defect log</td></tr>
+        <tr><td>Fri 16 Oct</td><td>Kit v1 frozen and handed to the agenda/playbook team and site owners</td></tr>
+        <tr><td>Fri 23 Oct</td><td>Facilitator and Builder briefing; dry run with the summit producer</td></tr>
+        <tr><td>Thu 29 Oct</td><td>Pre-work sent to participants</td></tr>
+        <tr><td>Thu 5 Nov</td><td>Summit <span class="chip conf">Confirmed</span></td></tr>
+        <tr><td>Thu 12 Nov</td><td>Packs merged per challenge; pilot owners confirmed</td></tr>
+        <tr><td>Early Dec</td><td>30-day pilot readout</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="margin:2.2rem 0 .6rem">Decisions this kit needs</h3>
+  <div class="tbl wide">
+    <table>
+      <thead><tr><th>Decision</th><th>Why it matters</th><th>Recommendation</th><th>Needed by</th></tr></thead>
+      <tbody>
+        <tr><td>Approved AI tool, and agent-building access for participants</td><td>Decides whether Levels 2 and 3 are possible in the tool and what Builders prepare</td><td>Confirm one approved tool; name one Builder with access per room; paper test as fallback</td><td>Mock run</td></tr>
+        <tr><td>Use of the fictional KESTREL data in that tool</td><td>Rooms need safe data to test on</td><td>Approve the six packs as-is</td><td>Mock run</td></tr>
+        <tr><td>Organizer cards or region-prepared cases</td><td>Open decisions 2 and 3 in the knowledge base</td><td>Organizer cards by default; one regional swap card per region after WS2 review</td><td>Kit freeze</td></tr>
+        <tr><td>Build &amp; challenge in place of Select</td><td>Changes the 10 September flow</td><td>Adopt if the mock run finishes inside 60 minutes</td><td>Mock run</td></tr>
+        <tr><td>Capture tool and offline fallback</td><td>Packs must be comparable and never lost</td><td>An MS Form mirroring the Pilot Pack fields, as already planned, plus paper and photo</td><td>Kit freeze</td></tr>
+        <tr><td>Room size and card allocation</td><td>Oversized rooms stall</td><td>Test 5, 8 and 12 in the mock run; split rooms above 10</td><td>Mock run</td></tr>
+        <tr><td>Facilitators and Builders per room</td><td>Every room needs both</td><td>Regional leads name them from registration data</td><td>Briefing</td></tr>
+        <tr><td>Voting model and pilot decision authority</td><td>Without them, outputs die after the summit</td><td>Regional vote plus WS2 panel rubric; name the decision forum</td><td>Kit freeze</td></tr>
+        <tr><td>Post-summit owner and 30-day pilot</td><td>Follow-through</td><td>One owner per challenge; readout in local PM communities or SPARK</td><td>Summit</td></tr>
+        <tr><td>Alignment of C4 with the Decision Making session</td><td>Avoid duplicate content</td><td>Share C4 with that team; reuse their framework if they have one</td><td>Kit freeze</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- ============ FILES ============ -->
+<section id="files">
+  <div class="sec-head">
+    <div class="eyebrow">Files and slides</div>
+    <h2>Everything for the breakouts</h2>
+    <p>Word and Excel files open in Office and can go straight to the summit SharePoint hub. The room slides open in the browser and can be screen-shared in Teams.</p>
+  </div>
+  <div class="dl-all">
+    <a class="btn primary" href="slides.html">Open the room slides</a>
+    <a class="btn" href="files/WS2_Breakout_Files.zip" download>Download all files (.zip, 91 KB)</a>
+  </div>
+  <div class="grid-3" style="margin-top:1.4rem">
+    <div class="panel"><h3>Mock run <span class="chip open">Core team only</span></h3><ul class="dls">
+      <li class="dl"><div><b>Mock run plan</b><span class="muted small">Two rooms, planned failures, persona cards, pass criteria, debrief questions.</span><span class="mono small muted">WS2_Mock_Run_Plan.docx · DOCX · 17 KB</span></div><a class="btn" href="files/WS2_Mock_Run_Plan.docx" download>Download</a></li>
+      <li class="dl"><div><b>Mock run scorecard</b><span class="muted small">Observer workbook with scorecards, timing, failures, issues and summary.</span><span class="mono small muted">WS2_Mock_Run_Scorecard.xlsx · XLSX · 17 KB</span></div><a class="btn" href="files/WS2_Mock_Run_Scorecard.xlsx" download>Download</a></li>
+    </ul></div>
+    <div class="panel"><h3>Room handouts</h3><ul class="dls">
+      <li class="dl"><div><b>Challenge cards</b><span class="muted small">Six cards with fictional sample data, plus the swap-card template.</span><span class="mono small muted">WS2_Challenge_Cards.docx · DOCX · 24 KB</span></div><a class="btn" href="files/WS2_Challenge_Cards.docx" download>Download</a></li>
+      <li class="dl"><div><b>Pilot Pack template</b><span class="muted small">Blank Pilot Pack, agent template, three tests, paper test.</span><span class="mono small muted">WS2_Pilot_Pack_Template.docx · DOCX · 14 KB</span></div><a class="btn" href="files/WS2_Pilot_Pack_Template.docx" download>Download</a></li>
+    </ul></div>
+    <div class="panel"><h3>Facilitators and senders</h3><ul class="dls">
+      <li class="dl"><div><b>Facilitator guide</b><span class="muted small">Script, roles, hidden traps, recovery moves. Facilitators only.</span><span class="mono small muted">WS2_Facilitator_Guide.docx · DOCX · 18 KB</span></div><a class="btn" href="files/WS2_Facilitator_Guide.docx" download>Download</a></li>
+      <li class="dl"><div><b>Pre-work messages</b><span class="muted small">Drafts for participants, facilitators and regional leads.</span><span class="mono small muted">WS2_Prework_Messages.docx · DOCX · 12 KB</span></div><a class="btn" href="files/WS2_Prework_Messages.docx" download>Download</a></li>
+    </ul></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <span>Pain to Pilot · WS2 breakout kit · draft v0.1 · 28 Sep 2026</span>
+  <span>Built from the PM Summit 2026 knowledge base. KESTREL and everything in it is fictional.</span>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var store = {
+    get: function(k){ try { return localStorage.getItem(k); } catch(e){ return null; } },
+    set: function(k,v){ try { localStorage.setItem(k,v); } catch(e){} },
+    del: function(k){ try { localStorage.removeItem(k); } catch(e){} }
+  };
+  var $ = function(id){ return document.getElementById(id); };
+
+  /* ---------- copy helpers ---------- */
+  function flashLabel(btn, text, ms){
+    if (!btn.dataset.label) btn.dataset.label = btn.textContent;
+    btn.textContent = text;
+    clearTimeout(btn._t);
+    btn._t = setTimeout(function(){ btn.textContent = btn.dataset.label; }, ms || 1600);
+  }
+  function selectNode(node){
+    try { var r = document.createRange(); r.selectNodeContents(node); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); } catch(e){}
+  }
+  document.addEventListener("click", function(ev){
+    var btn = ev.target.closest("[data-copy]");
+    if (!btn) return;
+    var target = $(btn.getAttribute("data-copy"));
+    if (!target) return;
+    var text = target.textContent;
+    var p;
+    try { p = navigator.clipboard.writeText(text); } catch(e){ p = Promise.reject(e); }
+    p.then(function(){ flashLabel(btn, "Copied"); })
+     .catch(function(){ selectNode(target); flashLabel(btn, "Selected: press Ctrl+C", 2600); });
+  });
+
+  /* ---------- facilitator notes ---------- */
+  var facBtn = $("facToggle");
+  function setFac(on){
+    document.documentElement.classList.toggle("hide-fac", !on);
+    facBtn.setAttribute("aria-pressed", on ? "true" : "false");
+    facBtn.textContent = on ? "Facilitator notes: on" : "Facilitator notes: off";
+    store.set("p2p-fac", on ? "1" : "0");
+  }
+  setFac(store.get("p2p-fac") !== "0");
+  facBtn.addEventListener("click", function(){ setFac(document.documentElement.classList.contains("hide-fac")); });
+
+  /* ---------- room timer ---------- */
+  var STAGES = [
+    {name:"Orient", a:0, b:5, say:"“We leave in 60 minutes with a Pilot Pack we can test, not a finished system. Let’s name roles and read the card.”", out:"Roles named. Card read aloud. Tool open, or paper mode chosen."},
+    {name:"Frame the pain", a:5, b:15, say:"“Twenty seconds each: when did this pain last hit you, and what did it cost you?”", out:"One-sentence problem and a baseline in Pilot Pack sections 1–2."},
+    {name:"Design the agent", a:15, b:27, say:"“Brief the assistant like a smart new colleague who knows nothing about our project.”", out:"Instructions drafted, PM decision named, three tests written."},
+    {name:"Build & challenge", a:27, b:42, say:"“Builders: run the three tests. Challengers: find the reason this pilot would fail, then write the guardrail.”", out:"Test results recorded, top three risks listed."},
+    {name:"Fix & decide", a:42, b:50, say:"“What broke, and what worries us most? One new rule per failed test.”", out:"Final instructions, one guardrail, one metric, level decided."},
+    {name:"Package & commit", a:50, b:60, say:"“Who runs the first test in the next two weeks, and by when?”", out:"Owner, first test and report-out done. Pilot Pack submitted."}
+  ];
+  var TOTAL = 60 * 60000;
+  var elapsed = 0, running = false, t0 = 0, iv = null, lastStage = 0, sound = true, ac = null, lock = null;
+  var segs = $("tGantt").children;
+
+  function pad(n){ return (n < 10 ? "0" : "") + n; }
+  function fmt(ms){ var s = Math.max(0, Math.ceil(ms/1000)); return pad(Math.floor(s/60)) + ":" + pad(s%60); }
+  function now(){ return Math.min(TOTAL, running ? elapsed + (Date.now() - t0) : elapsed); }
+  function stageAt(ms){
+    var m = ms / 60000;
+    for (var i = 0; i < STAGES.length; i++){ if (m < STAGES[i].b) return i; }
+    return STAGES.length - 1;
+  }
+  function beep(){
+    if (!sound || !ac) return;
+    try {
+      var o = ac.createOscillator(), g = ac.createGain(), t = ac.currentTime;
+      o.frequency.value = 880; o.type = "sine";
+      g.gain.setValueAtTime(0.0001, t);
+      g.gain.exponentialRampToValueAtTime(0.18, t + 0.02);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + 0.7);
+      o.connect(g); g.connect(ac.destination); o.start(t); o.stop(t + 0.75);
+    } catch(e){}
+  }
+  function render(){
+    var e = now(), i = stageAt(e), s = STAGES[i], done = e >= TOTAL;
+    $("tStage").textContent = done ? "Time" : s.name;
+    $("tRange").textContent = pad(s.a) + ":00–" + pad(s.b) + ":00";
+    var left = s.b * 60000 - e;
+    var clock = $("tClock");
+    clock.textContent = done ? "00:00" : fmt(left);
+    clock.classList.toggle("low", !done && left <= 60000);
+    $("tSay").textContent = done ? "“Time. Submit the Pilot Pack now and keep a local copy.”" : s.say;
+    $("tOut").textContent = s.out;
+    $("tNow").style.left = (e / TOTAL * 100) + "%";
+    $("tElapsed").textContent = "Minute " + Math.floor(e / 60000) + " of 60";
+    for (var k = 0; k < segs.length; k++){
+      segs[k].classList.toggle("now", k === i && !done);
+      segs[k].classList.toggle("done", k < i || done);
+    }
+    if (i !== lastStage || (done && lastStage !== -1)){
+      if (running){ beep(); var tm = $("timer"); tm.classList.remove("flash"); void tm.offsetWidth; tm.classList.add("flash"); }
+      lastStage = done ? -1 : i;
+    }
+    if (done && running) pause();
+  }
+  function start(){
+    if (now() >= TOTAL) elapsed = 0;
+    if (!ac){ try { ac = new (window.AudioContext || window.webkitAudioContext)(); } catch(e){ ac = null; } }
+    if (ac && ac.state === "suspended"){ try { ac.resume(); } catch(e){} }
+    running = true; t0 = Date.now();
+    $("tStart").textContent = "Pause";
+    clearInterval(iv); iv = setInterval(render, 250);
+    try { if (navigator.wakeLock) navigator.wakeLock.request("screen").then(function(l){ lock = l; }).catch(function(){}); } catch(e){}
+    render();
+  }
+  function pause(){
+    elapsed = now(); running = false;
+    clearInterval(iv); iv = null;
+    $("tStart").textContent = elapsed > 0 && elapsed < TOTAL ? "Resume" : "Start";
+    try { if (lock) { lock.release(); lock = null; } } catch(e){}
+  }
+  $("tStart").addEventListener("click", function(){ running ? pause() : start(); render(); });
+  $("tNext").addEventListener("click", function(){
+    var i = stageAt(now());
+    elapsed = Math.min(TOTAL, STAGES[i].b * 60000);
+    if (running) t0 = Date.now();
+    render();
+  });
+  $("tReset").addEventListener("click", function(){
+    pause(); elapsed = 0; lastStage = 0; $("tStart").textContent = "Start"; render();
+  });
+  $("tSound").addEventListener("click", function(){
+    sound = !sound;
+    this.setAttribute("aria-pressed", sound ? "true" : "false");
+    this.textContent = sound ? "Chime on" : "Chime off";
+  });
+  render();
+
+  /* ---------- Pilot Pack ---------- */
+  var PACK = [
+    {h:"Room", f:[
+      {id:"pk-region", l:"Region / site", t:"text"},
+      {id:"pk-room", l:"Room", t:"text"},
+      {id:"pk-challenge", l:"Challenge", t:"select", o:["","C1 Status Report Treadmill","C2 Meetings Without Memory","C3 The Silent Risk","C4 Decision Brief in 30 Minutes","C5 Lessons Nobody Learns","C6 Change Request Ripple","Regional swap card","Example: project handover (not a room card)"]},
+      {id:"pk-level", l:"Level reached", t:"select", o:["","Level 1 · Designed","Level 2 · Tested","Level 3 · Working agent"]}
+    ]},
+    {h:"1 · Problem and users", f:[
+      {id:"pk-opp", l:"Selected opportunity, in one sentence", t:"area", r:2, req:1, full:1},
+      {id:"pk-users", l:"Users", t:"text", req:1},
+      {id:"pk-pain", l:"Current activity and pain", t:"area", r:3}
+    ]},
+    {h:"2 · Baseline", f:[
+      {id:"pk-base", l:"Current measure or observable evidence", t:"area", r:2, req:1},
+      {id:"pk-source", l:"Trusted data / source of truth", t:"area", r:2, req:1}
+    ]},
+    {h:"3 · AI-assisted flow", f:[
+      {id:"pk-flow", l:"Steps: who does what (PM, assistant, system)", t:"area", r:4, full:1}
+    ]},
+    {h:"4 · Human control", f:[
+      {id:"pk-decision", l:"Decision retained by the PM", t:"area", r:2, req:1},
+      {id:"pk-accept", l:"Acceptance criteria for the output", t:"area", r:2}
+    ]},
+    {h:"5 · Agent instructions", f:[
+      {id:"pk-instr", l:"Final instructions, from the tool or from paper", t:"area", r:9, mono:1, full:1}
+    ]},
+    {h:"6 · Tests", f:[
+      {id:"pk-t1", l:"T1 Normal: result and what changed", t:"area", r:2, full:1},
+      {id:"pk-t2", l:"T2 Trap: result and what changed", t:"area", r:2, full:1},
+      {id:"pk-t3", l:"T3 Boundary: result and what changed", t:"area", r:2, full:1}
+    ]},
+    {h:"7 · Value", f:[
+      {id:"pk-benefit", l:"Expected benefit", t:"text"},
+      {id:"pk-metric", l:"Metric", t:"text", req:1},
+      {id:"pk-measure", l:"How it will be measured", t:"text", full:1}
+    ]},
+    {h:"8 · Risks and guardrails", f:[
+      {id:"pk-rconf", l:"Confidentiality / data risk", t:"text"},
+      {id:"pk-rqual", l:"Quality / hallucination risk", t:"text"},
+      {id:"pk-rstake", l:"Stakeholder or fairness risk", t:"text"},
+      {id:"pk-guard", l:"The guardrail that matters most", t:"text", req:1}
+    ]},
+    {h:"9 · First test", f:[
+      {id:"pk-scope", l:"Scope: who, how many, how long", t:"text", req:1},
+      {id:"pk-owner", l:"Owner or owner role", t:"text", req:1},
+      {id:"pk-inputs", l:"Inputs needed", t:"text"},
+      {id:"pk-evidence", l:"First evidence of success", t:"text"},
+      {id:"pk-date", l:"Start by", t:"text"}
+    ]},
+    {h:"10 · Report-out", f:[
+      {id:"pk-report", l:"Recommendation in one sentence (90-second script above)", t:"area", r:2, req:1, full:1}
+    ]}
+  ];
+
+  var EXAMPLE = {
+    "pk-region":"Example region", "pk-room":"Demo room",
+    "pk-challenge":"Example: project handover (not a room card)", "pk-level":"Level 2 · Tested",
+    "pk-opp":"Give a PM who inherits a running project a one-page, source-cited handover brief on day one, instead of two weeks of reading.",
+    "pk-users":"PMs taking over a running project; their line manager",
+    "pk-pain":"The new PM reads months of mails, decks and logs. Commitments and open decisions get missed, and the previous PM is hard to reach after moving on.",
+    "pk-base":"Room estimate: 5–10 working days to feel in control. 2 of 6 people in the room missed a commitment in their last handover. (Example figures.)",
+    "pk-source":"Plan export (wins for dates), RAID log, decision log, last three status reports",
+    "pk-flow":"1. PM exports plan, RAID log, decision log and the last three status reports (approved data only).\n2. Assistant drafts the brief: next milestones, open decisions, top risks, commitments, gaps.\n3. PM checks every commitment with the previous PM in a 30-minute call.\n4. PM shares the checked brief with the line manager.",
+    "pk-decision":"Which commitments stand, and how risks are rated. The assistant never contacts stakeholders.",
+    "pk-accept":"Every item cites a source document. Nothing appears under Commitments without a source. Conflicts appear under NEEDS PM CHECK.",
+    "pk-instr":"ROLE\nYou are an assistant to a project manager who is taking over a running product development project.\n\nTASK\nFrom the documents I paste (plan export, RAID log, decision log, last three status reports), write a one-page handover brief.\nSteps:\n1. List the next five milestones with baseline and forecast dates, taken from the plan export only.\n2. List open decisions and who is waiting for each.\n3. List the top five open risks and issues with their owners.\n4. List every commitment made to customers or management, with the document it appears in.\n5. Compare what the status reports claim with the plan and the RAID log.\n\nRULES\n- Use only the documents provided. Do not invent dates, names or numbers.\n- Cite the source document for every item.\n- If a status report claims something the plan or RAID log does not support, list it under NEEDS PM CHECK.\n- Do not rate risks or judge people. Keep risk ratings as they are in the RAID log.\n- Leave out personal and HR information.\n\nOUTPUT FORMAT\nMilestones | Open decisions | Top risks | Commitments | NEEDS PM CHECK. One page maximum.",
+    "pk-t1":"Pass. Correct structure; every item cited.",
+    "pk-t2":"Failed on the first run: a milestone called done in a status report but open in the plan was not flagged. Added the rule to compare status claims with the plan. Passed on rerun.",
+    "pk-t3":"Pass. A sick-leave note inside a status report was left out.",
+    "pk-benefit":"Faster, safer handovers with fewer missed commitments",
+    "pk-metric":"Working days until the new PM signs off the handover checklist",
+    "pk-measure":"Self-reported by each new PM in the pilot and compared with the room baseline",
+    "pk-rconf":"Documents hold customer and cost data: approved tool and approved data only",
+    "pk-rqual":"Invented or misdated commitments: source citations plus the verification call",
+    "pk-rstake":"The previous PM may feel audited: frame the call as a joint review",
+    "pk-guard":"Nothing in the brief is used until the previous PM has confirmed the commitments list",
+    "pk-scope":"Next two project handovers in one PM team, over 4 weeks",
+    "pk-owner":"PMO lead of the pilot team (role; regional lead confirms the name)",
+    "pk-inputs":"Exports of plan, RAID and decision logs; access to the approved tool",
+    "pk-evidence":"New PM reports at least 2 days saved and at least one item caught that would have been missed",
+    "pk-date":"Within 2 weeks of the summit",
+    "pk-report":"A source-cited handover brief lets an inheriting PM take control in days, not weeks. Metric: days to handover sign-off. Guardrail: commitments confirmed with the previous PM. Next: pilot on the next two handovers."
+  };
+
+  var formEl = $("packForm");
+  var ALL = [], REQ = [];
+  PACK.forEach(function(sec){
+    var fs = document.createElement("fieldset");
+    var lg = document.createElement("legend"); lg.textContent = sec.h; fs.appendChild(lg);
+    var grid = document.createElement("div"); grid.className = "fgrid"; fs.appendChild(grid);
+    sec.f.forEach(function(f){
+      ALL.push(f); if (f.req) REQ.push(f.id);
+      var wrap = document.createElement("div"); wrap.className = "field" + (f.full || f.t === "area" && f.r >= 4 ? " full" : "");
+      var lab = document.createElement("label"); lab.setAttribute("for", f.id);
+      lab.appendChild(document.createTextNode(f.l));
+      if (f.req){ var em = document.createElement("em"); em.textContent = "Required"; lab.appendChild(em); }
+      wrap.appendChild(lab);
+      var ctl;
+      if (f.t === "select"){
+        ctl = document.createElement("select");
+        f.o.forEach(function(v){ var op = document.createElement("option"); op.value = v; op.textContent = v || "Choose…"; ctl.appendChild(op); });
+      } else if (f.t === "area"){
+        ctl = document.createElement("textarea"); ctl.rows = f.r || 3; if (f.mono) ctl.className = "mono";
+      } else {
+        ctl = document.createElement("input"); ctl.type = "text";
+      }
+      ctl.id = f.id; ctl.name = f.id;
+      wrap.appendChild(ctl); grid.appendChild(wrap);
+    });
+    formEl.appendChild(fs);
+  });
+
+  function readForm(){ var d = {}; ALL.forEach(function(f){ d[f.id] = $(f.id).value; }); return d; }
+  function fillForm(d){ ALL.forEach(function(f){ $(f.id).value = (d && d[f.id]) || ""; }); }
+  function filled(id){ var el = $(id); return !!(el && el.value.trim()); }
+  function updateStatus(){
+    var n = REQ.filter(filled).length;
+    $("packMeter").textContent = n + " / " + REQ.length;
+    Array.prototype.forEach.call(document.querySelectorAll("#readyList li"), function(li){
+      var ok = li.getAttribute("data-need").split(" ").every(filled);
+      li.classList.toggle("ok", ok);
+    });
+  }
+  var isExample = false;
+  function setExample(on){ isExample = on; $("exampleBanner").hidden = !on; store.set("p2p-pack-ex", on ? "1" : "0"); }
+  function save(){ store.set("p2p-pack", JSON.stringify(readForm())); }
+
+  var saved = null;
+  try { saved = JSON.parse(store.get("p2p-pack") || "null"); } catch(e){ saved = null; }
+  if (saved){ fillForm(saved); setExample(store.get("p2p-pack-ex") === "1"); }
+  else { fillForm(EXAMPLE); setExample(true); }
+  updateStatus();
+
+  formEl.addEventListener("input", function(){ if (isExample) setExample(false); save(); updateStatus(); });
+  formEl.addEventListener("change", function(){ if (isExample) setExample(false); save(); updateStatus(); });
+
+  function packText(){
+    var d = readForm();
+    var out = ["PILOT PACK · " + (d["pk-room"] || "[room]") + " · " + (d["pk-region"] || "[region/site]"), ""];
+    PACK.forEach(function(sec){
+      out.push(sec.h.toUpperCase());
+      sec.f.forEach(function(f){
+        var v = (d[f.id] || "").trim();
+        if (f.t === "area" && v.indexOf("\n") !== -1) out.push(f.l + ":", v);
+        else out.push(f.l + ": " + (v || "[ ]"));
+      });
+      out.push("");
+    });
+    return out.join("\n");
+  }
+  $("packCopy").addEventListener("click", function(){
+    var btn = this, text = packText(), fb = $("packFallback");
+    var p;
+    try { p = navigator.clipboard.writeText(text); } catch(e){ p = Promise.reject(e); }
+    p.then(function(){ fb.hidden = true; flashLabel(btn, "Copied"); })
+     .catch(function(){ fb.value = text; fb.hidden = false; fb.focus(); fb.select(); flashLabel(btn, "Selected below: press Ctrl+C", 2600); });
+  });
+  $("packExample").addEventListener("click", function(){ fillForm(EXAMPLE); setExample(true); save(); updateStatus(); });
+  $("packClear").addEventListener("click", function(){ $("clearConfirm").hidden = false; $("clearYes").focus(); });
+  $("clearNo").addEventListener("click", function(){ $("clearConfirm").hidden = true; });
+  $("clearYes").addEventListener("click", function(){
+    fillForm(null); setExample(false); save(); updateStatus();
+    $("clearConfirm").hidden = true; $("packFallback").hidden = true;
+  });
+})();
+</script>
+
+</body>
+</html>

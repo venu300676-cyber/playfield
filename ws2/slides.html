@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Pain to Pilot Room Slides</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Public+Sans:wght@400;600;700&display=swap">
+<style>
+:root{--chrome:#0A1110;--chrome-ink:#E1EBE8;--chrome-muted:#9CAFAB;--accent:#45C2AF;--line:#2B3B38;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--chrome);color:var(--chrome-ink);font-family:"Public Sans",Arial,sans-serif;display:flex;flex-direction:column}
+[hidden]{display:none!important}
+.bar{display:flex;align-items:center;gap:.5rem;padding:.55rem 16px calc(.55rem + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);flex-wrap:wrap}
+.bar .count{font-variant-numeric:tabular-nums;color:var(--chrome-muted);font-size:.9rem;min-width:4.5rem}
+.bar .grow{flex:1}
+.bar a,.bar button{font:600 .85rem/1.2 "Public Sans",Arial,sans-serif;padding:.5rem .8rem;border:1px solid var(--line);background:#131D1B;color:var(--chrome-ink);border-radius:4px;cursor:pointer;text-decoration:none}
+.bar button:hover,.bar a:hover{border-color:var(--accent)}
+.bar button[aria-pressed="true"]{border-color:var(--accent);color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.stage{flex:1;min-height:0;position:relative;overflow:hidden}
+.frame{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0}
+.notes-panel{padding:.8rem 16px;border-top:1px solid var(--line);font-size:.95rem;line-height:1.5;max-height:30vh;overflow:auto;color:var(--chrome-ink)}
+.notes-panel b{color:var(--accent)}
+.slide{width:1920px;height:1080px;position:relative;overflow:hidden}
+body:not(.overview) .frame .slide:not(.on){display:none!important}
+.slide h1,.slide h2,.slide h3,.slide p,.slide ul,.slide ol{margin:0}
+.slide ul,.slide ol{padding-left:1.3em}
+.slide li{margin:.25em 0}
+.slide table{border-collapse:collapse;width:100%}
+.slide th,.slide td{padding:.35em .6em;border-bottom:1px solid #C8D5D1;text-align:left;vertical-align:top}
+.slide th{font-weight:700}
+.slide .notes{display:none}
+.slide .icon{display:inline-flex;align-items:center;justify-content:center;border-radius:50%;color:#FFFFFF;font:700 24px "Public Sans",Arial,sans-serif;flex:none}
+.slide .arrow{font-size:44px;line-height:1;font-weight:700}
+/* overview: every slide scaled down in a grid */
+body.overview .stage{overflow:auto}
+body.overview .frame{position:static;width:auto;height:auto;transform:none!important;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:16px;padding:16px}
+body.overview .frame .thumb{position:relative;aspect-ratio:16/9;overflow:hidden;border:1px solid var(--line);border-radius:4px;cursor:pointer}
+body.overview .frame .slide{position:absolute;left:0;top:0;transform-origin:0 0}
+</style>
+</head>
+<body>
+<div class="stage" id="stage"><div class="frame" id="frame">
+<div class="thumb"><section class="slide" id="cover" style="background:#12201E; color:#E1EBE8; font-family:'Public Sans', Arial, sans-serif; padding:128px; display:flex; flex-direction:column; justify-content:space-between">
+<p style="font-size:28px; font-weight:600; letter-spacing:4px; text-transform:uppercase; color:#45C2AF">PM Summit 2026 · Workstream 2 · PM Role in an AI World</p>
+<div style="display:flex; flex-direction:column; gap:40px">
+<h1 style="font-family:'Archivo Narrow', Arial, sans-serif; font-size:180px; font-weight:700; line-height:1; color:#F2F5F4">Pain to Pilot</h1>
+<p style="font-size:44px; line-height:1.3; color:#BFD8D5; width:1240px">One PM pain point. One AI assistant. One tested Pilot Pack per room.</p>
+</div>
+<div style="display:flex; flex-direction:row; gap:24px; align-items:center">
+<p style="font-size:28px; font-weight:600; color:#12201E; background:#45C2AF; padding:10px 24px; border-radius:40px">Breakout · 60 minutes</p>
+<p style="font-size:28px; color:#9CAFAB">Draft v0.1 for WS2 review</p>
+</div>
+<aside class="notes">Have this slide on screen while people join. Opening line: in the next 60 minutes this room turns one PM pain point into an AI assistant we can actually test, and leaves with a Pilot Pack. Start the room timer when you move to the next slide.</aside>
+</section></div>
+<div class="thumb"><section class="slide" id="mission" style="background:#F2F5F4; color:#12201E; font-family:'Public Sans', Arial, sans-serif; padding:128px; display:flex; flex-direction:column; gap:48px">
+<div style="display:flex; flex-direction:column; gap:16px">
+<h2 style="font-family:'Archivo Narrow', Arial, sans-serif; font-size:72px; font-weight:700; line-height:1.1; color:#12201E">Your room leaves with a Pilot Pack</h2>
+<p style="font-size:32px; color:#4A5C59">Specific enough to test in the next two weeks. A production system can come later.</p>
+</div>
+<div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:24px">
+<div style="display:flex; flex-direction:column; gap:8px; background:#FBFCFB; padding:32px; border:1px solid #C8D5D1; border-radius:12px">
+<h3 style="font-size:32px; font-weight:700; line-height:1.2; color:#12201E">Problem</h3>
+<p style="font-size:24px; line-height:1.4; color:#4A5C59">One user, one moment, one output</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:8px; background:#FBFCFB; padding:32px; border:1px solid #C8D5D1; border-radius:12px">
+<h3 style="font-size:32px; font-weight:700; line-height:1.2; color:#12201E">Baseline</h3>
+<p style="font-size:24px; line-height:1.4; color:#4A5C59">What the pain costs today, as a number</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:8px; background:#FBFCFB; padding:32px; border:1px solid #C8D5D1; border-radius:12px">
+<h3 style="font-size:32px; font-weight:700; line-height:1.2; color:#12201E">Instructions</h3>
+<p style="font-size:24px; line-height:1.4; color:#4A5C59">The agent’s role, steps, rules and output format</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:8px; background:#FBFCFB; padding:32px; border:1px solid #C8D5D1; border-radius:12px">
+<h3 style="font-size:32px; font-weight:700; line-height:1.2; color:#12201E">PM decision</h3>
+<p style="font-size:24px; line-height:1.4; color:#4A5C59">What the AI prepares but never decides</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:8px; background:#D3EAE5; padding:32px; border:1px solid #9FCBC2; border-radius:12px">
+<h3 style="font-size:32px; font-weight:700; line-height:1.2; color:#12201E">Metric</h3>
+<p style="font-size:24px; line-height:1.4; color:#2F4744">How we will know it works</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:8px; background:#D3EAE5; padding:32px; border:1px solid #9FCBC2; border-radius:12px">
+<h3 style="font-size:32px; font-weight:700; line-height:1.2; color:#12201E">Guardrail</h3>
+<p style="font-size:24px; line-height:1.4; color:#2F4744">The one rule that keeps it safe</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:8px; background:#D3EAE5; padding:32px; border:1px solid #9FCBC2; border-radius:12px">
+<h3 style="font-size:32px; font-weight:700; line-height:1.2; color:#12201E">Owner</h3>
+<p style="font-size:24px; line-height:1.4; color:#2F4744">A name, or a role plus who confirms it</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:8px; background:#D3EAE5; padding:32px; border:1px solid #9FCBC2; border-radius:12px">
+<h3 style="font-size:32px; font-weight:700; line-height:1.2; color:#12201E">First test</h3>
+<p style="font-size:24px; line-height:1.4; color:#2F4744">Who, how many, how long</p>
+</div>
+</div>
+<p style="font-size:24px; color:#4A5C59">Shaded: the four fields no room may skip, even when time runs out.</p>
+<aside class="notes">Point at the shaded row: metric, guardrail, owner and first test are never cut. Everything else can be trimmed if the room runs late. Show the Pilot Pack template (paper or the capture form) so the scribe knows where each item goes.</aside>
+</section></div>
+<div class="thumb"><section class="slide" id="sixty" style="background:#F2F5F4; color:#12201E; font-family:'Public Sans', Arial, sans-serif; padding:128px; display:flex; flex-direction:column; gap:40px">
+<h2 style="font-family:'Archivo Narrow', Arial, sans-serif; font-size:72px; font-weight:700; line-height:1.1; color:#12201E">The 60 minutes</h2>
+<div style="display:flex; flex-direction:row; gap:4px">
+<div style="flex:5 1 0px; display:flex; flex-direction:column; gap:12px">
+<div style="height:48px; background:#C8D5D1; border-radius:6px"></div>
+<p style="font-size:24px; color:#4A5C59">00</p>
+</div>
+<div style="flex:10 1 0px; display:flex; flex-direction:column; gap:12px">
+<div style="height:48px; background:#C8D5D1; border-radius:6px"></div>
+<p style="font-size:24px; color:#4A5C59">05</p>
+</div>
+<div style="flex:12 1 0px; display:flex; flex-direction:column; gap:12px">
+<div style="height:48px; background:#C8D5D1; border-radius:6px"></div>
+<p style="font-size:24px; color:#4A5C59">15</p>
+</div>
+<div style="flex:15 1 0px; display:flex; flex-direction:column; gap:12px">
+<div style="height:48px; background:#0B6E63; border-radius:6px"></div>
+<p style="font-size:24px; color:#4A5C59">27</p>
+</div>
+<div style="flex:8 1 0px; display:flex; flex-direction:column; gap:12px">
+<div style="height:48px; background:#C8D5D1; border-radius:6px"></div>
+<p style="font-size:24px; color:#4A5C59">42</p>
+</div>
+<div style="flex:10 1 0px; display:flex; flex-direction:column; gap:12px">
+<div style="height:48px; background:#C8D5D1; border-radius:6px"></div>
+<div style="display:flex; flex-direction:row; justify-content:space-between">
+<p style="font-size:24px; color:#4A5C59">50</p>
+<p style="font-size:24px; color:#4A5C59">60</p>
+</div>
+</div>
+</div>
+<table style="font-size:28px; color:#12201E; font-family:'Public Sans', Arial, sans-serif">
+<tr style="background:#E5ECEA"><th style="width:16%">Minutes</th><th style="width:30%">Stage</th><th style="width:54%">Leave the stage with</th></tr>
+<tr><td>00–05</td><td>Orient</td><td>Roles named; card read; tool or paper chosen</td></tr>
+<tr><td>05–15</td><td>Frame the pain</td><td>One-sentence problem and a baseline number</td></tr>
+<tr><td>15–27</td><td>Design the agent</td><td>Instructions drafted; PM decision; three tests</td></tr>
+<tr style="background:#D3EAE5"><td>27–42</td><td>Build and challenge, in two sub-teams</td><td>Test results and the top three risks</td></tr>
+<tr><td>42–50</td><td>Fix and decide</td><td>Final instructions, one guardrail, one metric</td></tr>
+<tr><td>50–60</td><td>Package and commit</td><td>Owner and first test named; pack submitted</td></tr>
+</table>
+<aside class="notes">Keep this slide or the kit's room timer visible for the whole breakout. The timekeeper calls each checkpoint out loud at 15, 27, 42, 50 and 60. At 27 the room splits: Builders run the three tests in the AI tool, Challengers pressure-test value, data, quality, tool approval, accountability, adoption and the metric.</aside>
+</section></div>
+<div class="thumb"><section class="slide" id="roles" style="background:#F2F5F4; color:#12201E; font-family:'Public Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
+<h2 style="font-family:'Archivo Narrow', Arial, sans-serif; font-size:72px; font-weight:700; line-height:1.1; color:#12201E">Six roles, named in the first five minutes</h2>
+<div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:32px">
+<div style="display:flex; flex-direction:column; gap:12px; background:#FBFCFB; padding:36px; border:1px solid #C8D5D1; border-radius:12px">
+<div style="display:flex; flex-direction:row; gap:16px; align-items:center"><span class="icon" style="background:#0B6E63;width:44px;height:44px">F</span><h3 style="font-size:36px; font-weight:700; color:#12201E">Facilitator</h3></div>
+<p style="font-size:28px; line-height:1.4; color:#4A5C59">Runs the process, protects time and voices. Never writes the answer.</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:12px; background:#FBFCFB; padding:36px; border:1px solid #C8D5D1; border-radius:12px">
+<div style="display:flex; flex-direction:row; gap:16px; align-items:center"><span class="icon" style="background:#0B6E63;width:44px;height:44px">S</span><h3 style="font-size:36px; font-weight:700; color:#12201E">Scribe</h3></div>
+<p style="font-size:28px; line-height:1.4; color:#4A5C59">The team lead. Owns the Pilot Pack and gives the report-out.</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:12px; background:#FBFCFB; padding:36px; border:1px solid #C8D5D1; border-radius:12px">
+<div style="display:flex; flex-direction:row; gap:16px; align-items:center"><span class="icon" style="background:#0B6E63;width:44px;height:44px">T</span><h3 style="font-size:36px; font-weight:700; color:#12201E">Timekeeper</h3></div>
+<p style="font-size:28px; line-height:1.4; color:#4A5C59">Calls each checkpoint and defends the last ten minutes.</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:12px; background:#FBFCFB; padding:36px; border:1px solid #C8D5D1; border-radius:12px">
+<div style="display:flex; flex-direction:row; gap:16px; align-items:center"><span class="icon" style="background:#0B6E63;width:44px;height:44px">B</span><h3 style="font-size:36px; font-weight:700; color:#12201E">Builder</h3></div>
+<p style="font-size:28px; line-height:1.4; color:#4A5C59">Hands on the approved AI tool. Narrates what they type.</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:12px; background:#FBFCFB; padding:36px; border:1px solid #C8D5D1; border-radius:12px">
+<div style="display:flex; flex-direction:row; gap:16px; align-items:center"><span class="icon" style="background:#0B6E63;width:44px;height:44px">C</span><h3 style="font-size:36px; font-weight:700; color:#12201E">Challenger</h3></div>
+<p style="font-size:28px; line-height:1.4; color:#4A5C59">Tests value, data, quality, tool approval and accountability.</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:12px; background:#FBFCFB; padding:36px; border:1px solid #C8D5D1; border-radius:12px">
+<div style="display:flex; flex-direction:row; gap:16px; align-items:center"><span class="icon" style="background:#0B6E63;width:44px;height:44px">E</span><h3 style="font-size:36px; font-weight:700; color:#12201E">Everyone</h3></div>
+<p style="font-size:28px; line-height:1.4; color:#4A5C59">Brings a real example and plays the agent in the paper test.</p>
+</div>
+</div>
+<p style="position:absolute; left:128px; bottom:64px; width:1664px; font-size:24px; color:#4A5C59">Rooms of five or fewer: combine Facilitator with Timekeeper, and Scribe with Challenger.</p>
+<aside class="notes">Name the roles before anything else. The Builder should be the person identified before the summit who has access to the approved tool. If someone with a lot of AI experience starts to dominate, make them the Builder and ask them to narrate. Give quieter participants the Challenger role.</aside>
+</section></div>
+<div class="thumb"><section class="slide" id="levels" style="background:#F2F5F4; color:#12201E; font-family:'Public Sans', Arial, sans-serif; padding:128px; display:flex; flex-direction:column; gap:48px">
+<h2 style="font-family:'Archivo Narrow', Arial, sans-serif; font-size:72px; font-weight:700; line-height:1.1; color:#12201E">Every room reaches Level 1</h2>
+<div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:32px">
+<div style="display:flex; flex-direction:column; gap:20px; background:#12201E; padding:48px; border-radius:12px">
+<p style="font-family:'Archivo Narrow', Arial, sans-serif; font-size:120px; font-weight:700; line-height:1; color:#45C2AF">1</p>
+<h3 style="font-size:44px; font-weight:700; color:#F2F5F4">Designed</h3>
+<div style="display:flex; flex-direction:row"><p style="font-size:24px; font-weight:600; color:#12201E; background:#45C2AF; padding:6px 18px; border-radius:30px">Required for every room</p></div>
+<p style="font-size:28px; line-height:1.4; color:#BFD8D5">Pilot Pack complete. Instructions written. Owner, first test, metric and guardrail named. Works on paper.</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:20px; background:#FBFCFB; padding:48px; border:1px solid #C8D5D1; border-radius:12px">
+<p style="font-family:'Archivo Narrow', Arial, sans-serif; font-size:120px; font-weight:700; line-height:1; color:#0B6E63">2</p>
+<h3 style="font-size:44px; font-weight:700; color:#12201E">Tested</h3>
+<div style="display:flex; flex-direction:row"><p style="font-size:24px; font-weight:600; color:#0B6E63; background:#D3EAE5; padding:6px 18px; border-radius:30px">Target for most rooms</p></div>
+<p style="font-size:28px; line-height:1.4; color:#4A5C59">Instructions run on the sample data, in the approved tool or the paper test. Three tests recorded, one fix made.</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:20px; background:#FBFCFB; padding:48px; border:1px solid #C8D5D1; border-radius:12px">
+<p style="font-family:'Archivo Narrow', Arial, sans-serif; font-size:120px; font-weight:700; line-height:1; color:#0B6E63">3</p>
+<h3 style="font-size:44px; font-weight:700; color:#12201E">Working agent</h3>
+<div style="display:flex; flex-direction:row"><p style="font-size:24px; font-weight:600; color:#6E4308; background:#F6E6C9; padding:6px 18px; border-radius:30px">Needs agent-building access</p></div>
+<p style="font-size:28px; line-height:1.4; color:#4A5C59">Saved as a reusable agent or prompt in the approved tool, so the owner can run it the next working day.</p>
+</div>
+</div>
+<aside class="notes">Level 1 alone meets the workstream's definition of done: one AI use case, an owner and a first test. Level 2 works without any AI tool through the paper test. Level 3 depends on whether the approved tool lets participants build agents, which WS2 still has to confirm.</aside>
+</section></div>
+<div class="thumb"><section class="slide" id="challenges" style="background:#F2F5F4; color:#12201E; font-family:'Public Sans', Arial, sans-serif; padding:128px; display:flex; flex-direction:column; gap:48px">
+<h2 style="font-family:'Archivo Narrow', Arial, sans-serif; font-size:72px; font-weight:700; line-height:1.1; color:#12201E">Six challenges, one per room</h2>
+<div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:24px">
+<div style="display:flex; flex-direction:column; gap:12px; background:#FBFCFB; padding:32px; border:1px solid #C8D5D1; border-radius:12px">
+<p style="font-family:'Archivo Narrow', Arial, sans-serif; font-size:56px; font-weight:700; line-height:1; color:#0B6E63">C1</p>
+<h3 style="font-family:'Archivo Narrow', Arial, sans-serif; font-size:40px; font-weight:700; line-height:1.15; color:#12201E">Status Report Treadmill</h3>
+<p style="font-size:24px; line-height:1.4; color:#4A5C59">Scattered updates into a trustworthy weekly status</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:12px; background:#FBFCFB; padding:32px; border:1px solid #C8D5D1; border-radius:12px">
+<p style="font-family:'Archivo Narrow', Arial, sans-serif; font-size:56px; font-weight:700; line-height:1; color:#0B6E63">C2</p>
+<h3 style="font-family:'Archivo Narrow', Arial, sans-serif; font-size:40px; font-weight:700; line-height:1.15; color:#12201E">Meetings Without Memory</h3>
+<p style="font-size:24px; line-height:1.4; color:#4A5C59">Every decision and action captured, owned and followed up</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:12px; background:#FBFCFB; padding:32px; border:1px solid #C8D5D1; border-radius:12px">
+<p style="font-family:'Archivo Narrow', Arial, sans-serif; font-size:56px; font-weight:700; line-height:1; color:#0B6E63">C3</p>
+<h3 style="font-family:'Archivo Narrow', Arial, sans-serif; font-size:40px; font-weight:700; line-height:1.15; color:#12201E">The Silent Risk</h3>
+<p style="font-size:24px; line-height:1.4; color:#4A5C59">Emerging risks spotted in everyday project conversation</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:12px; background:#FBFCFB; padding:32px; border:1px solid #C8D5D1; border-radius:12px">
+<p style="font-family:'Archivo Narrow', Arial, sans-serif; font-size:56px; font-weight:700; line-height:1; color:#0B6E63">C4</p>
+<h3 style="font-family:'Archivo Narrow', Arial, sans-serif; font-size:40px; font-weight:700; line-height:1.15; color:#12201E">Decision Brief in 30 Minutes</h3>
+<p style="font-size:24px; line-height:1.4; color:#4A5C59">Conflicting inputs into a balanced brief for management</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:12px; background:#FBFCFB; padding:32px; border:1px solid #C8D5D1; border-radius:12px">
+<p style="font-family:'Archivo Narrow', Arial, sans-serif; font-size:56px; font-weight:700; line-height:1; color:#0B6E63">C5</p>
+<h3 style="font-family:'Archivo Narrow', Arial, sans-serif; font-size:40px; font-weight:700; line-height:1.15; color:#12201E">Lessons Nobody Learns</h3>
+<p style="font-size:24px; line-height:1.4; color:#4A5C59">Past lessons in front of the PM while they can still act</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:12px; background:#FBFCFB; padding:32px; border:1px solid #C8D5D1; border-radius:12px">
+<p style="font-family:'Archivo Narrow', Arial, sans-serif; font-size:56px; font-weight:700; line-height:1; color:#0B6E63">C6</p>
+<h3 style="font-family:'Archivo Narrow', Arial, sans-serif; font-size:40px; font-weight:700; line-height:1.15; color:#12201E">Change Request Ripple</h3>
+<p style="font-size:24px; line-height:1.4; color:#4A5C59">Cross-functional impact of a change request in hours</p>
+</div>
+</div>
+<aside class="notes">Each room works one card, assigned before the summit. The printed card and its sample data pack are on the table. All sample data comes from Project KESTREL, an invented project: every name, date and figure is fictional, so nothing confidential goes into any AI tool.</aside>
+</section></div>
+<div class="thumb"><section class="slide" id="build" style="background:#F2F5F4; color:#12201E; font-family:'Public Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
+<h2 style="font-family:'Archivo Narrow', Arial, sans-serif; font-size:72px; font-weight:700; line-height:1.1; color:#12201E">Five rules and three tests for every agent</h2>
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:64px">
+<div style="display:flex; flex-direction:column; gap:24px">
+<h3 style="font-size:36px; font-weight:700; color:#0B6E63">The rules in the scaffold</h3>
+<ul style="font-size:30px; line-height:1.4; color:#12201E">
+<li>Use only the information in the inputs.</li>
+<li>Name the source for every item.</li>
+<li>List gaps and conflicts under NEEDS PM CHECK.</li>
+<li>Prepare the PM’s decision; never make it.</li>
+<li>Leave out what must never appear.</li>
+</ul>
+</div>
+<div style="display:flex; flex-direction:column; gap:24px">
+<h3 style="font-size:36px; font-weight:700; color:#0B6E63">The tests</h3>
+<table style="font-size:26px; color:#12201E; font-family:'Public Sans', Arial, sans-serif">
+<tr style="background:#E5ECEA"><th style="width:26%">Test</th><th style="width:37%">Feed it</th><th style="width:37%">Pass when</th></tr>
+<tr><td>T1 Normal</td><td>The full sample data</td><td>Every item names its source</td></tr>
+<tr><td>T2 Trap</td><td>A contradiction or gap in the data</td><td>Listed under NEEDS PM CHECK</td></tr>
+<tr><td>T3 Boundary</td><td>Something that must not appear</td><td>Left out, or flagged</td></tr>
+</table>
+</div>
+</div>
+<p style="position:absolute; left:128px; bottom:64px; width:1664px; font-size:24px; color:#4A5C59">Paste only the fictional sample data, or data already approved for the tool. Every data pack hides at least two traps.</p>
+<aside class="notes">The scaffold with these rules is in the kit (Build the agent) and on the printed handout. Rooms fill in the brackets and may tighten the rules, but should not drop them. A failed test followed by a fix makes a better report-out than three easy passes.</aside>
+</section></div>
+<div class="thumb"><section class="slide" id="paper" style="background:#E5ECEA; color:#12201E; font-family:'Public Sans', Arial, sans-serif; padding:128px; display:grid; grid-template-columns:2fr 3fr; gap:96px; align-items:center">
+<div style="display:flex; flex-direction:column; gap:32px">
+<h2 style="font-family:'Archivo Narrow', Arial, sans-serif; font-size:120px; font-weight:700; line-height:1; color:#12201E">No tool? Be the agent.</h2>
+<p style="font-size:32px; line-height:1.4; color:#4A5C59">8 to 10 minutes. Counts as Level 2. No login, no network.</p>
+</div>
+<ol style="font-size:32px; line-height:1.45; color:#12201E">
+<li>Pick a “human agent” who did not write the instructions.</li>
+<li>Give them only the instructions and the printed sample data.</li>
+<li>They follow the instructions literally. Where the instructions are silent, they say “my instructions don’t tell me”.</li>
+<li>Everyone notes each gap. Each gap becomes a new rule.</li>
+<li>Run the trap. Does the agent catch the contradiction?</li>
+</ol>
+<aside class="notes">Use this when the tool login fails, the network drops, or the room has no access. It also works well with AI beginners: they see immediately why precise instructions matter. Experts cannot rush past it either.</aside>
+</section></div>
+<div class="thumb"><section class="slide" id="lastten" style="background:#0B6E63; color:#F2F5F4; font-family:'Public Sans', Arial, sans-serif; padding:128px; display:flex; flex-direction:column; justify-content:center; gap:40px">
+<p style="font-size:32px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:#CDEBE5">Running late at minute 50?</p>
+<h2 style="font-family:'Archivo Narrow', Arial, sans-serif; font-size:120px; font-weight:700; line-height:1.05; color:#F2F5F4">Cut solution detail.</h2>
+<p style="font-size:44px; line-height:1.35; color:#F2F5F4; width:1400px">Never cut the owner, the first test, the metric or the guardrail.</p>
+<aside class="notes">Show this at the minute-50 checkpoint. If the Pilot Pack sections for owner, first test, metric and guardrail are empty, stop everything else and fill them now. If nobody can own the pilot, write the owner role and who confirms a name within five working days.</aside>
+</section></div>
+<div class="thumb"><section class="slide" id="script" style="background:#F2F5F4; color:#12201E; font-family:'Public Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
+<h2 style="font-family:'Archivo Narrow', Arial, sans-serif; font-size:72px; font-weight:700; line-height:1.1; color:#12201E">The 90-second report-out</h2>
+<div style="display:flex; flex-direction:column; gap:20px">
+<p style="font-size:44px; line-height:1.35; color:#12201E"><b><span style="color:#0B6E63">[Room]</span></b> tackled <b><span style="color:#0B6E63">[challenge]</span></b> for <b><span style="color:#0B6E63">[users]</span></b>.</p>
+<p style="font-size:44px; line-height:1.35; color:#12201E">Today it costs <b><span style="color:#0B6E63">[baseline]</span></b>.</p>
+<p style="font-size:44px; line-height:1.35; color:#12201E">Our agent <b><span style="color:#0B6E63">[does what]</span></b>, and the PM still decides <b><span style="color:#0B6E63">[what]</span></b>.</p>
+<p style="font-size:44px; line-height:1.35; color:#12201E">We reached <b><span style="color:#0B6E63">[level]</span></b>. Our most useful test showed <b><span style="color:#0B6E63">[finding]</span></b>.</p>
+<p style="font-size:44px; line-height:1.35; color:#12201E">We will know it works when <b><span style="color:#0B6E63">[metric moves]</span></b>.</p>
+<p style="font-size:44px; line-height:1.35; color:#12201E"><b><span style="color:#0B6E63">[Owner]</span></b> runs the first test by <b><span style="color:#0B6E63">[date]</span></b>, guarded by <b><span style="color:#0B6E63">[guardrail]</span></b>.</p>
+</div>
+<p style="position:absolute; left:128px; bottom:64px; width:1664px; font-size:24px; color:#4A5C59">Only 45 seconds? Say lines 1, 3 and 6.</p>
+<aside class="notes">The scribe rehearses this once in the last ten minutes. Each bracket maps to a field in the Pilot Pack, so the pack is the script. Keep to 90 seconds; the host may cut to 45.</aside>
+</section></div>
+<div class="thumb"><section class="slide" id="reportout" style="background:#F2F5F4; color:#12201E; font-family:'Public Sans', Arial, sans-serif; padding:128px; display:flex; flex-direction:column; gap:40px">
+<div style="display:flex; flex-direction:column; gap:12px">
+<p style="font-size:28px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:#0B6E63">Report-out · one slide per room</p>
+<h2 style="font-family:'Archivo Narrow', Arial, sans-serif; font-size:72px; font-weight:700; line-height:1.1; color:#12201E">Room [ ] · Challenge [C_] · Level [ ]</h2>
+</div>
+<div style="flex:1; display:grid; grid-template-columns:repeat(3, 1fr); grid-template-rows:1fr 1fr; gap:24px">
+<div style="display:flex; flex-direction:column; gap:12px; background:#FBFCFB; padding:32px; border:1px solid #C8D5D1; border-radius:12px">
+<p style="font-size:24px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#0B6E63">The pain, and who feels it</p>
+<p style="font-size:28px; line-height:1.4; color:#4A5C59">[ ]</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:12px; background:#FBFCFB; padding:32px; border:1px solid #C8D5D1; border-radius:12px">
+<p style="font-size:24px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#0B6E63">What it costs today</p>
+<p style="font-size:28px; line-height:1.4; color:#4A5C59">[ ]</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:12px; background:#FBFCFB; padding:32px; border:1px solid #C8D5D1; border-radius:12px">
+<p style="font-size:24px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#0B6E63">What the agent does</p>
+<p style="font-size:28px; line-height:1.4; color:#4A5C59">[ ]</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:12px; background:#FBFCFB; padding:32px; border:1px solid #C8D5D1; border-radius:12px">
+<p style="font-size:24px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#0B6E63">What the PM still decides</p>
+<p style="font-size:28px; line-height:1.4; color:#4A5C59">[ ]</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:12px; background:#D3EAE5; padding:32px; border:1px solid #9FCBC2; border-radius:12px">
+<p style="font-size:24px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#0B5A51">Metric and guardrail</p>
+<p style="font-size:28px; line-height:1.4; color:#2F4744">[ ]</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:12px; background:#D3EAE5; padding:32px; border:1px solid #9FCBC2; border-radius:12px">
+<p style="font-size:24px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#0B5A51">Owner, first test, start date</p>
+<p style="font-size:28px; line-height:1.4; color:#2F4744">[ ]</p>
+</div>
+</div>
+<aside class="notes">Duplicate this slide once per room before the summit, or let each scribe fill a copy during the last ten minutes. Replace each [ ] with a short phrase from the Pilot Pack, not full sentences. The shaded boxes are the fields no room may skip.</aside>
+</section></div>
+<div class="thumb"><section class="slide" id="next" style="background:#12201E; color:#E1EBE8; font-family:'Public Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:56px">
+<h2 style="font-family:'Archivo Narrow', Arial, sans-serif; font-size:72px; font-weight:700; line-height:1.1; color:#F2F5F4">After today: from rooms to pilots</h2>
+<div style="display:flex; flex-direction:row; gap:16px">
+<div style="flex:1 1 0px; display:flex; flex-direction:column; gap:12px; background:#1B2826; padding:28px; border:1px solid #2B3B38; border-radius:12px">
+<p style="font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#45C2AF">Today</p>
+<h3 style="font-family:'Archivo Narrow', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.15; color:#F2F5F4">Rooms</h3>
+<p style="font-size:24px; line-height:1.4; color:#BFD8D5">Each room submits one Pilot Pack.</p>
+</div>
+<div style="display:flex; flex-direction:column; justify-content:center"><span class="arrow" style="color:#45C2AF">&#8594;</span></div>
+<div style="flex:1 1 0px; display:flex; flex-direction:column; gap:12px; background:#1B2826; padding:28px; border:1px solid #2B3B38; border-radius:12px">
+<p style="font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#45C2AF">Today</p>
+<h3 style="font-family:'Archivo Narrow', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.15; color:#F2F5F4">Regional vote</h3>
+<p style="font-size:24px; line-height:1.4; color:#BFD8D5">Pick the pilot you would use next month.</p>
+</div>
+<div style="display:flex; flex-direction:column; justify-content:center"><span class="arrow" style="color:#45C2AF">&#8594;</span></div>
+<div style="flex:1 1 0px; display:flex; flex-direction:column; gap:12px; background:#1B2826; padding:28px; border:1px solid #2B3B38; border-radius:12px">
+<p style="font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#45C2AF">Week 1</p>
+<h3 style="font-family:'Archivo Narrow', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.15; color:#F2F5F4">Merge by challenge</h3>
+<p style="font-size:24px; line-height:1.4; color:#BFD8D5">Regional packs for each challenge become one agent.</p>
+</div>
+<div style="display:flex; flex-direction:column; justify-content:center"><span class="arrow" style="color:#45C2AF">&#8594;</span></div>
+<div style="flex:1 1 0px; display:flex; flex-direction:column; gap:12px; background:#1B2826; padding:28px; border:1px solid #2B3B38; border-radius:12px">
+<p style="font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#45C2AF">Weeks 2–5</p>
+<h3 style="font-family:'Archivo Narrow', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.15; color:#F2F5F4">30-day pilot</h3>
+<p style="font-size:24px; line-height:1.4; color:#BFD8D5">An owner and three to five PMs test it against the baseline.</p>
+</div>
+<div style="display:flex; flex-direction:column; justify-content:center"><span class="arrow" style="color:#45C2AF">&#8594;</span></div>
+<div style="flex:1 1 0px; display:flex; flex-direction:column; gap:12px; background:#1B2826; padding:28px; border:1px solid #2B3B38; border-radius:12px">
+<p style="font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#45C2AF">Day 30</p>
+<h3 style="font-family:'Archivo Narrow', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.15; color:#F2F5F4">Adopt, iterate or stop</h3>
+<p style="font-size:24px; line-height:1.4; color:#BFD8D5">Results shared in local PM communities and SPARK.</p>
+</div>
+</div>
+<p style="position:absolute; left:128px; bottom:64px; width:1664px; font-size:24px; color:#9CAFAB">Proposed follow-up. Pilot owners and the decision forum are confirmed by WS2.</p>
+<aside class="notes">Close the breakout with this slide. Because every region works the same six challenges, week 1 produces up to six merged agents, each shaped by several regions. The post-summit owner and decision forum are still open decisions for WS2, so present this as the proposed path.</aside>
+</section></div>
+</div></div>
+<div class="notes-panel" id="notes" hidden></div>
+<div class="bar">
+  <button type="button" id="prev" aria-label="Previous slide">&#8592; Prev</button>
+  <button type="button" id="next" aria-label="Next slide">Next &#8594;</button>
+  <span class="count" id="count">1 / 1</span>
+  <span class="grow"></span>
+  <button type="button" id="notesBtn" aria-pressed="false">Speaker notes</button>
+  <button type="button" id="gridBtn" aria-pressed="false">All slides</button>
+  <button type="button" id="fsBtn">Full screen</button>
+  <a href="index.html">Back to the kit</a>
+</div>
+<script>
+(function(){
+  "use strict";
+  var thumbs = Array.prototype.slice.call(document.querySelectorAll(".thumb"));
+  var slides = thumbs.map(function(t){ return t.querySelector(".slide"); });
+  var frame = document.getElementById("frame"), stage = document.getElementById("stage");
+  var i = 0, overview = false, notesOn = false;
+  var m = /^#(\d+)$/.exec(location.hash); if (m) i = Math.min(slides.length - 1, Math.max(0, +m[1] - 1));
+  function fit(){
+    if (overview){
+      thumbs.forEach(function(t, k){ var s = t.clientWidth / 1920; slides[k].style.transform = "scale(" + s + ")"; });
+      return;
+    }
+    var s = Math.min(stage.clientWidth / 1920, stage.clientHeight / 1080);
+    var x = (stage.clientWidth - 1920 * s) / 2, y = (stage.clientHeight - 1080 * s) / 2;
+    frame.style.transform = "translate(" + x + "px," + y + "px) scale(" + s + ")";
+  }
+  function show(n){
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach(function(s, k){ s.classList.toggle("on", k === i); s.style.transform = ""; });
+    document.getElementById("count").textContent = (i + 1) + " / " + slides.length;
+    var note = slides[i].querySelector(".notes");
+    document.getElementById("notes").innerHTML = "";
+    var b = document.createElement("b"); b.textContent = "Notes  ";
+    document.getElementById("notes").appendChild(b);
+    document.getElementById("notes").appendChild(document.createTextNode(note ? note.textContent : "No notes for this slide."));
+    try { history.replaceState(null, "", "#" + (i + 1)); } catch(e){}
+    fit();
+  }
+  function setOverview(on){
+    overview = on;
+    document.body.classList.toggle("overview", on);
+    document.getElementById("gridBtn").setAttribute("aria-pressed", on ? "true" : "false");
+    if (on){ frame.style.transform = ""; slides.forEach(function(s){ s.classList.remove("on"); }); fit(); }
+    else show(i);
+  }
+  thumbs.forEach(function(t, k){ t.addEventListener("click", function(){ if (overview){ i = k; setOverview(false); } }); });
+  document.getElementById("prev").addEventListener("click", function(){ if (!overview) show(i - 1); });
+  document.getElementById("next").addEventListener("click", function(){ if (!overview) show(i + 1); });
+  document.getElementById("gridBtn").addEventListener("click", function(){ setOverview(!overview); });
+  document.getElementById("notesBtn").addEventListener("click", function(){
+    notesOn = !notesOn; this.setAttribute("aria-pressed", notesOn ? "true" : "false");
+    document.getElementById("notes").hidden = !notesOn; fit();
+  });
+  document.getElementById("fsBtn").addEventListener("click", function(){
+    var el = document.documentElement;
+    try { if (!document.fullscreenElement) { if (el.requestFullscreen) el.requestFullscreen().catch(function(){}); } else document.exitFullscreen(); } catch(e){}
+  });
+  document.addEventListener("keydown", function(e){
+    if (overview) { if (e.key === "Escape") setOverview(false); return; }
+    if (e.key === "ArrowRight" || e.key === "PageDown" || e.key === " ") { e.preventDefault(); show(i + 1); }
+    else if (e.key === "ArrowLeft" || e.key === "PageUp") { e.preventDefault(); show(i - 1); }
+    else if (e.key === "Home") show(0);
+    else if (e.key === "End") show(slides.length - 1);
+  });
+  var tx = null;
+  stage.addEventListener("touchstart", function(e){ tx = e.touches[0].clientX; }, {passive:true});
+  stage.addEventListener("touchend", function(e){ if (tx === null || overview) return; var dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 40) show(i + (dx < 0 ? 1 : -1)); tx = null; });
+  window.addEventListener("resize", fit);
+  window.addEventListener("hashchange", function(){ var h = /^#(\d+)$/.exec(location.hash); if (h && +h[1] - 1 !== i && !overview) show(+h[1] - 1); });
+  show(i);
+})();
+</script>
+</body>
+</html>
