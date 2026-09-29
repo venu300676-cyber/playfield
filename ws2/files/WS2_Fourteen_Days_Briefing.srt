@@ -1,0 +1,191 @@
+1
+00:00:04,000 --> 00:00:07,755
+On the fifth of November, at the Program Management Summit,
+
+2
+00:00:07,775 --> 00:00:16,037
+every breakout room in the session “Project Manager Role in an AI World” will take on a real project problem with an AI agent.
+
+3
+00:00:16,437 --> 00:00:21,808
+This briefing explains the situation, what to prepare, and what your room will deliver.
+
+4
+00:00:22,908 --> 00:00:26,772
+Meet KESTREL: a new sensor-hub chip and its evaluation kit,
+
+5
+00:00:26,792 --> 00:00:31,601
+fourteen days from tape-out, with a lead customer waiting for samples.
+
+6
+00:00:32,001 --> 00:00:35,444
+Behind it stands a team across design, verification,
+
+7
+00:00:35,464 --> 00:00:38,773
+test, software, quality, operations and marketing.
+
+8
+00:00:38,793 --> 00:00:43,588
+Every one of them needs something from the project manager this week.
+
+9
+00:00:44,188 --> 00:00:47,912
+On Monday, you inherit KESTREL as its new project manager.
+
+10
+00:00:47,932 --> 00:00:51,876
+By Thursday morning, you are holding six problems at once.
+
+11
+00:00:52,276 --> 00:00:56,921
+Sofia forwards a customer change request that nobody can answer yet.
+
+12
+00:00:57,171 --> 00:01:02,320
+Chen mentions a supplier delay, in a risk log no one has touched in five weeks.
+
+13
+00:01:02,570 --> 00:01:08,160
+Priya flags a late load board, in a meeting where nobody writes down what was decided.
+
+14
+00:01:08,410 --> 00:01:10,283
+Marco’s numbers say one thing.
+
+15
+00:01:10,303 --> 00:01:13,217
+Last week’s status report still says green.
+
+16
+00:01:13,467 --> 00:01:18,346
+Aiko’s design is not ready, and steering needs a decision by two o’clock.
+
+17
+00:01:18,596 --> 00:01:22,462
+And the lessons Jonas left behind arrive three days too late.
+
+18
+00:01:23,062 --> 00:01:24,632
+None of this is unusual.
+
+19
+00:01:24,652 --> 00:01:27,634
+It is the week most project managers know.
+
+20
+00:01:27,884 --> 00:01:33,423
+And none of it is the part of the job that matters most: leading a team to good decisions.
+
+21
+00:01:34,623 --> 00:01:39,551
+Before the summit, we ask for about twenty minutes of preparation, in four steps.
+
+22
+00:01:39,901 --> 00:01:40,133
+One.
+
+23
+00:01:40,153 --> 00:01:44,421
+Read “Fourteen Days”, the KESTREL story attached to your invitation.
+
+24
+00:01:44,441 --> 00:01:46,532
+It takes about twelve minutes.
+
+25
+00:01:46,832 --> 00:01:47,088
+Two.
+
+26
+00:01:47,108 --> 00:01:50,677
+Open your room’s case file at the back of the story.
+
+27
+00:01:50,697 --> 00:01:54,196
+Your invitation tells you which one, from C1 to C6.
+
+28
+00:01:54,216 --> 00:01:56,970
+Read it as if the problem were yours.
+
+29
+00:01:57,270 --> 00:01:57,626
+Three.
+
+30
+00:01:57,646 --> 00:01:59,192
+Find what doesn’t add up.
+
+31
+00:01:59,212 --> 00:02:04,203
+Every case file hides at least two things a careful project manager would catch.
+
+32
+00:02:04,223 --> 00:02:07,868
+Note them, and keep them to yourself until the session.
+
+33
+00:02:08,168 --> 00:02:08,448
+Four.
+
+34
+00:02:08,468 --> 00:02:12,829
+Bring one real moment from your own work when this problem cost you time,
+
+35
+00:02:12,849 --> 00:02:15,029
+and a rough estimate of how much.
+
+36
+00:02:15,529 --> 00:02:17,694
+You don’t need any AI experience.
+
+37
+00:02:17,714 --> 00:02:22,416
+Rooms mix beginners and experts on purpose, and everyone has a role.
+
+38
+00:02:22,566 --> 00:02:25,057
+Please don’t bring confidential documents.
+
+39
+00:02:25,077 --> 00:02:27,668
+Everything you need is in the case file.
+
+40
+00:02:28,868 --> 00:02:32,001
+On the day, each room takes one of the six moments.
+
+41
+00:02:32,101 --> 00:02:36,042
+In sixty minutes, you design an agent for it, test it on the case file,
+
+42
+00:02:36,062 --> 00:02:38,772
+and check whether it catches what you caught.
+
+43
+00:02:39,123 --> 00:02:45,746
+Your room leaves with a Pilot Pack: the agent’s instructions, the decision the project manager keeps,
+
+44
+00:02:45,766 --> 00:02:52,280
+one metric, one guardrail, an owner, and a first test to run on a real project after the summit.
+
+45
+00:02:53,380 --> 00:02:55,079
+The agent takes the routine.
+
+46
+00:02:55,099 --> 00:02:57,140
+Every decision stays with you.
+
+47
+00:02:57,840 --> 00:03:00,511
+Read “Fourteen Days” before the fifth of November.
+
+48
+00:03:00,531 --> 00:03:02,131
+We’ll see you in the room.
