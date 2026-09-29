@@ -1,0 +1,40 @@
+WEEK 38 · PRE-WORK BRIEFING · NARRATION SCRIPT
+PM Summit 2026 · PM Role in an AI World · 2:41 · draft v0.1
+
+Use this script to re-record the voice-over with a human narrator. Timings are where each line starts in the current video.
+
+
+OPENING
+[0:03.20]  On the fifth of November, every breakout room in the PM Summit session “PM Role in an AI World” will work on a real project problem with AI.
+[0:13.33]  This briefing explains the situation, what to prepare, and what your room will deliver.
+
+PART 1 · THE SITUATION
+[0:19.56]  Meet KESTREL: a new sensor-hub chip and its evaluation kit, two weeks from tape-out, with a lead customer waiting for samples.
+[0:28.12]  The project is fictional. The pressure is not.
+[0:31.58]  On Monday, you inherit KESTREL as its new project manager. By Thursday morning, you are holding six problems at once.
+[0:39.37]  A customer change request that nobody can answer yet.
+[0:42.93]  A risk log that no one has touched in five weeks.
+[0:46.02]  A meeting where nobody wrote down what was decided.
+[0:49.24]  A status report that may no longer be green.
+[0:52.26]  A steering decision due at two o’clock, with five conflicting opinions.
+[0:56.76]  And lessons learned that arrived three days too late.
+[1:00.19]  None of this is unusual. It is the week most of us know.
+[1:04.06]  And none of it is the part of the job that matters most: leading a team to good decisions.
+
+PART 2 · YOUR PRE-WORK
+[1:10.53]  Before the summit, we ask for about twenty minutes of preparation, in four steps.
+[1:15.72]  One. Read “Week 38”, the KESTREL story attached to your invitation. It takes about twelve minutes.
+[1:22.61]  Two. Open your room’s case file at the back of the story. Your invitation tells you which one, from C1 to C6. Read it as if the problem were yours.
+[1:32.87]  Three. Find what doesn’t add up. Every case file hides at least two things a careful project manager would catch. Note them, and keep them to yourself until the session.
+[1:43.60]  Four. Bring one real moment from your own work when this problem cost you time, and a rough estimate of how much.
+[1:50.92]  You don’t need any AI experience. Rooms mix beginners and experts on purpose, and everyone has a role.
+[1:57.89]  Please don’t bring confidential documents. All the data we use is fictional.
+
+PART 3 · ON THE DAY
+[2:03.57]  On the day, each room takes one of the six moments.
+[2:06.70]  In sixty minutes, you design an AI assistant for it, test it on the case file, and check whether it catches what you caught.
+[2:14.45]  Your room leaves with a Pilot Pack: the assistant’s instructions, the decision the PM keeps, one metric, one guardrail, an owner, and a first test to run on a real project after the summit.
+
+CLOSE
+[2:27.72]  The assistant takes the routine. Every decision stays yours.
+[2:32.26]  Read “Week 38” before the fifth of November. We’ll see you in the room.
