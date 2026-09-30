@@ -1,5 +1,5 @@
 FOURTEEN DAYS · PRE-WORK BRIEFING · NARRATION SCRIPT
-PM Summit 2026 · PM Role in an AI World · draft v0.3
+PM Summit 2026 · PM Role in an AI World · draft v0.4
 
 Use this script to re-record the voice-over with a human narrator. Say "PM" as "project manager", except in the event name "PM Summit 2026". Timings are where each line starts in the current video.
 
@@ -34,7 +34,8 @@ PART 3 · ON THE DAY
 [2:34.04]  On the day, each room takes one of the six jobs.
 [2:37.19]  In sixty minutes, you map where the hours go, design an agent that takes the repetitive part, and measure the time it gives back.
 [2:45.47]  Your room leaves with a Pilot Pack: the agent’s instructions, the decisions the project manager keeps, the hours it gives back, one guardrail, an owner, and a first test on a real project after the summit.
+[2:59.96]  At the end, every room meets in the Summit Debrief: hours back, business impact, the biggest surprise and one guardrail. Then one question decides it: which pilot would you implement on Monday morning?
 
 CLOSE
-[2:59.96]  The agent takes the routine. You take back the time for the work only you can do.
-[3:05.70]  Read “Fourteen Days” before the fifth of November. We’ll see you in the room.
+[3:13.86]  The agent takes the routine. You take back the time for the work only you can do.
+[3:19.60]  Read “Fourteen Days” before the fifth of November. We’ll see you in the room.
