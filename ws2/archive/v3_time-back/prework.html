@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Fourteen Days</title>
+<style>html{color-scheme:light dark}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap">
+<style>
+/* Layout: a novella in one reading column. Each chapter opens on a huge clock time, the way a project log would; the case files at the back read as evidence: mails, chats, tables, a transcript. */
+:root{
+  --paper:#F3F6F5; --surface:#FFFFFF; --ink:#13201E; --ink-2:#4B5C59; --line:#CAD6D2;
+  --accent:#0B6E63; --accent-soft:#D3EAE5;
+  --mark:#955A09; --mark-soft:#F6E6C9;
+  --night:#0F1A19; --night-ink:#E4ECEA; --night-2:#9FB3AF; --night-accent:#52C8B5;
+  --f-display:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --f-story:"Newsreader","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --gutter:clamp(16px,4vw,40px);
+  --col:38rem;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0D1413; --surface:#131D1B; --ink:#E1EBE8; --ink-2:#9CAFAB; --line:#2B3B38;
+    --accent:#45C2AF; --accent-soft:#163A35;
+    --mark:#E5B052; --mark-soft:#372B15;
+    --night:#070D0C; --night-ink:#E4ECEA; --night-2:#9FB3AF; --night-accent:#52C8B5;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0D1413; --surface:#131D1B; --ink:#E1EBE8; --ink-2:#9CAFAB; --line:#2B3B38;
+  --accent:#45C2AF; --accent-soft:#163A35;
+  --mark:#E5B052; --mark-soft:#372B15;
+  --night:#070D0C; --night-ink:#E4ECEA; --night-2:#9FB3AF; --night-accent:#52C8B5;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:3.5rem}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-display);font-size:1rem;line-height:1.55;padding-inline:var(--gutter);padding-block:0 4rem}
+a{color:var(--accent);text-underline-offset:.18em}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:62rem;margin-inline:auto}
+.col{max-width:var(--col);margin-inline:auto}
+.mono{font-family:var(--f-mono)}
+.cover h1,.chead h2,.chead .time,.casefiles-head h2,.cf-head h3,.prework h2,#casth{word-spacing:.1em}
+.label{font-family:var(--f-mono);font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+
+/* top bar */
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--paper);border-bottom:1px solid var(--line);margin-inline:calc(-1*var(--gutter));padding-inline:var(--gutter)}
+.topbar-in{max-width:62rem;margin-inline:auto;display:flex;align-items:center;gap:1rem;padding-block:.55rem}
+.topbar b{font-family:var(--f-display);font-weight:800;font-stretch:72%;font-size:1.1rem;letter-spacing:.01em;white-space:nowrap}
+.topbar nav{display:flex;gap:.2rem;overflow-x:auto;min-width:0;flex:0 1 auto;margin-left:auto}
+.topbar nav a{font-size:.84rem;font-weight:600;color:var(--ink-2);text-decoration:none;padding:.25rem .5rem;border-radius:4px;white-space:nowrap}
+.topbar nav a:hover{background:var(--accent-soft);color:var(--ink)}
+
+/* cover */
+.cover{background:var(--night);color:var(--night-ink);margin-inline:calc(-1*var(--gutter));padding-inline:var(--gutter);padding-block:3.5rem 3rem}
+.cover-in{max-width:62rem;margin-inline:auto;display:grid;gap:1.4rem}
+.cover .kicker{font-family:var(--f-mono);font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--night-accent)}
+.cover h1{margin:0;font-family:var(--f-display);font-weight:800;font-stretch:62%;font-size:clamp(4.2rem,16vw,10rem);line-height:.86;letter-spacing:-.01em;color:var(--night-ink)}
+.cover .dek{font-family:var(--f-story);font-size:clamp(1.2rem,2.6vw,1.55rem);line-height:1.4;max-width:34rem;margin:0;color:var(--night-ink)}
+.cover .meta{display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;font-family:var(--f-mono);font-size:.8rem;color:var(--night-2)}
+.countdown{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--f-mono);font-size:.74rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mark);background:var(--mark-soft);border-radius:3px;padding:.28rem .55rem;white-space:nowrap}
+.cover .countdown{background:#3A2C12;color:#F0C067}
+.cover .note-line{font-family:var(--f-story);font-style:italic;color:var(--night-2);margin:0;max-width:36rem}
+
+/* pre-work strip */
+.strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-bottom:1px solid var(--line);margin-bottom:1rem}
+.strip div{padding:1.1rem 1.2rem 1.2rem 0;min-width:0}
+.strip div + div{padding-left:1.2rem;border-left:1px solid var(--line)}
+.strip .n{font-family:var(--f-mono);font-size:.74rem;color:var(--mark);font-weight:600}
+.strip p{margin:.25rem 0 0;font-size:.95rem}
+@media (max-width:720px){.strip{grid-template-columns:1fr}.strip div + div{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
+
+/* story */
+.story{font-family:var(--f-story);font-size:1.19rem;line-height:1.72}
+.story p{margin:0 0 1.05em}
+.story em{font-style:italic}
+.chapter{padding-block:3.2rem 1rem;border-top:1px solid var(--line)}
+.chapter:first-of-type{border-top:0}
+.chead{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.4rem 1.4rem;align-items:end;margin-bottom:1.6rem;font-family:var(--f-display)}
+.chead .time{font-weight:800;font-stretch:62%;font-size:clamp(4.2rem,14vw,7.5rem);line-height:.82;letter-spacing:-.01em;font-variant-numeric:tabular-nums;color:var(--ink)}
+.chead .side{display:grid;gap:.4rem;padding-bottom:.35rem;min-width:0}
+.chead h2{margin:0;font-weight:750;font-stretch:80%;font-size:clamp(1.5rem,3.4vw,2.1rem);line-height:1.05;text-wrap:balance}
+.chead .room{font-family:var(--f-mono);font-size:.76rem;color:var(--accent)}
+.chead .room a{color:inherit}
+@media (max-width:560px){.chead{grid-template-columns:1fr}.chead .side{padding-bottom:0}}
+.cf-link{display:inline-flex;gap:.5rem;align-items:baseline;font-family:var(--f-mono);font-size:.8rem;margin-top:.4rem}
+
+.sticky{font-family:var(--f-story);font-style:italic;font-size:1.12rem;background:var(--mark-soft);color:var(--ink);padding:1rem 1.2rem;border-radius:2px;transform:rotate(-1.2deg);max-width:26rem;margin:1.4rem 0 1.6rem;box-shadow:0 1px 0 var(--line)}
+@media (prefers-reduced-motion: reduce){.sticky{transform:none}}
+.subject{font-family:var(--f-mono);font-size:.86rem;line-height:1.5;border:1px solid var(--line);background:var(--surface);border-radius:4px;padding:.7rem .9rem;margin:1.2rem 0 1.4rem}
+.subject span{color:var(--ink-2)}
+
+/* road to samples */
+.road{margin:2rem 0 2.2rem;font-family:var(--f-display)}
+.road .track{position:relative;height:8.5rem;margin-inline:.4rem}
+.road .line{position:absolute;left:0;right:0;top:50%;height:2px;background:var(--line)}
+.road .done{position:absolute;left:0;top:50%;height:2px;width:0;background:var(--accent)}
+.stop{position:absolute;top:50%;transform:translateX(-50%)}
+.stop .dot{position:absolute;left:50%;top:-6px;width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--ink-2);transform:translateX(-50%)}
+.stop.here .dot{background:var(--accent);border-color:var(--accent)}
+.stop.key .dot{background:var(--ink);border-color:var(--ink)}
+.stop .lbl{position:absolute;left:50%;transform:translateX(-50%);width:8.5rem;text-align:center;font-size:.8rem;line-height:1.25}
+.stop .lbl b{display:block;font-family:var(--f-mono);font-size:.7rem;font-weight:600;color:var(--ink-2);letter-spacing:.04em}
+.stop.up .lbl{bottom:14px}
+.stop.down .lbl{top:14px}
+.stop.first .lbl{left:0;transform:none;text-align:left}
+.stop.last .lbl{left:auto;right:0;transform:none;text-align:right}
+.stop.here .lbl b{color:var(--accent)}
+.road-list{display:none;list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
+.road-list li{padding:.35rem 0 .35rem 1rem;font-size:.92rem;position:relative}
+.road-list li::before{content:"";position:absolute;left:-7px;top:.72rem;width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--ink-2)}
+.road-list li.here::before{background:var(--accent);border-color:var(--accent)}
+.road-list b{font-family:var(--f-mono);font-size:.74rem;color:var(--ink-2);margin-right:.5rem}
+.road-cap{font-family:var(--f-mono);font-size:.72rem;color:var(--ink-2);margin-top:.3rem}
+@media (max-width:600px){.road .track{display:none}.road-list{display:block}}
+
+/* cast */
+.cast{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,14.5rem),1fr));gap:0;border-top:1px solid var(--ink);margin-top:.8rem}
+.person{display:grid;grid-template-columns:2.2rem minmax(0,1fr);gap:.2rem .8rem;padding:.9rem .6rem .9rem 0;border-bottom:1px solid var(--line);align-items:start}
+.person .init{grid-row:span 2;width:2.2rem;height:2.2rem;border-radius:50%;display:grid;place-items:center;font-family:var(--f-mono);font-size:.78rem;font-weight:600;background:var(--accent-soft);color:var(--accent)}
+.person.you .init{background:var(--accent);color:var(--surface)}
+.person b{font-weight:700}
+.person b span{font-weight:400;color:var(--ink-2);font-size:.86rem}
+.person p{margin:0;font-family:var(--f-story);font-size:.98rem;line-height:1.45;color:var(--ink-2)}
+
+/* epilogue list */
+.todo{list-style:none;margin:1.4rem 0 1.8rem;padding:0;display:grid;gap:0;font-family:var(--f-display);font-size:1rem;border-top:1px solid var(--ink)}
+.todo li{display:grid;grid-template-columns:1.2rem minmax(0,1fr) auto;gap:.8rem;align-items:baseline;padding:.65rem 0;border-bottom:1px solid var(--line)}
+.todo li::before{content:"";width:.9rem;height:.9rem;border:1.5px solid var(--ink-2);border-radius:2px;transform:translateY(.12rem)}
+.todo .c{font-family:var(--f-mono);font-size:.72rem;color:var(--accent);white-space:nowrap}
+
+/* pre-work */
+.prework{background:var(--surface);border:1px solid var(--ink);border-radius:6px;padding:1.6rem clamp(1rem,3vw,2rem);display:grid;gap:1rem;margin-top:1rem}
+.prework h2{margin:0;font-family:var(--f-display);font-weight:800;font-stretch:70%;font-size:clamp(2rem,5vw,2.8rem);line-height:1}
+.prework ol{margin:0;padding:0;list-style:none;display:grid;gap:.9rem;counter-reset:s}
+.prework li{display:grid;grid-template-columns:2.2rem minmax(0,1fr);gap:.8rem;counter-increment:s}
+.prework li::before{content:counter(s);font-family:var(--f-display);font-weight:800;font-stretch:70%;font-size:1.9rem;line-height:1;color:var(--accent)}
+.prework li b{display:block;font-size:1.02rem}
+.prework li span{font-family:var(--f-story);font-size:1.02rem;line-height:1.5;color:var(--ink-2)}
+.prework .fine{font-size:.9rem;color:var(--ink-2);margin:0;border-top:1px solid var(--line);padding-top:.9rem}
+
+/* case files */
+.casefiles-head{padding-block:3.5rem 1rem;display:grid;gap:.7rem}
+.casefiles-head h2{margin:0;font-family:var(--f-display);font-weight:800;font-stretch:66%;font-size:clamp(2.6rem,8vw,4.4rem);line-height:.9}
+.casefiles-head p{margin:0;max-width:40rem;font-family:var(--f-story);font-size:1.1rem;line-height:1.55}
+.index{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,18rem),1fr));gap:0;border-top:1px solid var(--ink);margin-top:.6rem}
+.index a{display:grid;grid-template-columns:3rem minmax(0,1fr);gap:.1rem .8rem;padding:.75rem 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink)}
+.index .code{grid-row:span 2;font-family:var(--f-display);font-weight:800;font-stretch:65%;font-size:2rem;line-height:1;color:var(--accent)}
+.index b{font-size:.98rem}
+.index span{font-size:.82rem;color:var(--ink-2)}
+
+.casefile{padding-block:3rem 1rem;border-top:2px solid var(--ink);margin-top:2rem;display:grid;gap:1.1rem}
+.cf-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.2rem 1.1rem;align-items:end}
+.cf-head .code{grid-row:span 2;font-family:var(--f-display);font-weight:800;font-stretch:62%;font-size:clamp(3.6rem,10vw,5rem);line-height:.82;color:var(--accent)}
+.cf-head h3{margin:0;font-family:var(--f-display);font-weight:750;font-stretch:80%;font-size:clamp(1.4rem,3vw,1.8rem);line-height:1.1}
+.cf-head .sub{font-family:var(--f-mono);font-size:.76rem;color:var(--ink-2)}
+.cf-intro{margin:0;font-family:var(--f-story);font-size:1.05rem;line-height:1.55;max-width:44rem}
+.hunt{font-size:.9rem;background:var(--mark-soft);border-radius:4px;padding:.6rem .85rem;max-width:44rem}
+
+.ev{background:var(--surface);border:1px solid var(--line);border-radius:6px;min-width:0}
+.ev-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.2rem 1rem;padding:.55rem .9rem;border-bottom:1px solid var(--line);font-family:var(--f-mono);font-size:.76rem;color:var(--ink-2)}
+.ev-head b{color:var(--ink);font-weight:600}
+.ev-body{padding:.75rem .9rem .85rem;font-size:.97rem;line-height:1.55}
+.ev-body p{margin:0 0 .5rem}
+.ev-body p:last-child{margin:0}
+.ev-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));gap:.7rem}
+.chat{list-style:none;margin:0;padding:0}
+.chat li{display:grid;grid-template-columns:7.2rem minmax(0,1fr);gap:.8rem;padding:.55rem .9rem;border-bottom:1px solid var(--line);font-size:.96rem;line-height:1.5}
+.chat li:last-child{border-bottom:0}
+.chat .who{font-family:var(--f-mono);font-size:.76rem;color:var(--ink-2);padding-top:.15rem}
+.chat .who b{display:block;color:var(--ink);font-weight:600}
+@media (max-width:520px){.chat li{grid-template-columns:1fr;gap:.1rem}}
+.missing{border:1.5px dashed var(--line);border-radius:6px;padding:.8rem .9rem;font-family:var(--f-mono);font-size:.84rem;color:var(--ink-2)}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.9rem;font-variant-numeric:tabular-nums}
+th,td{padding:.5rem .7rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+tr:last-child td{border-bottom:0}
+th{font-family:var(--f-mono);font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);background:var(--paper)}
+td.id{font-family:var(--f-mono);font-size:.8rem;white-space:nowrap}
+.tbl.wide table{min-width:36rem}
+.flow{list-style:none;margin:0;padding:.3rem .9rem .6rem;font-size:.96rem}
+.flow li{padding:.35rem 0;border-bottom:1px solid var(--line)}
+.flow li:last-child{border-bottom:0}
+.flow .arr{color:var(--accent);font-family:var(--f-mono);padding-inline:.3rem}
+
+footer.end{margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--line);display:grid;gap:.4rem;font-size:.86rem;color:var(--ink-2)}
+footer.end p{margin:0}
+footer.end .tag{font-family:var(--f-story);font-style:italic;font-size:1.1rem;color:var(--ink)}
+
+@page{size:A4;margin:16mm 15mm 18mm}
+@media print{
+  :root{--paper:#FFFFFF}
+  .topbar{display:none}
+  body{padding-inline:0;padding-block:0}
+  .cover,.topbar{margin-inline:0}
+  .cover{padding-inline:12mm}
+  .story{font-size:11.5pt}
+  .chapter{padding-block:1.6rem .4rem}
+  .chead,.cf-head{break-after:avoid}
+  .sticky,.subject,.road,.person,.todo li,.ev,.missing,.prework,tr,.chat li,.flow li{break-inside:avoid}
+  #casefiles{break-before:page}
+  .casefile{break-before:page;margin-top:0;border-top:0;padding-top:0}
+  .pb{break-before:page}
+  a{color:inherit;text-decoration:none}
+}
+</style>
+
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-in">
+    <b>Fourteen Days · Week 45</b>
+    <nav aria-label="Sections">
+      <a href="#story">Story</a>
+      <a href="#cast">Cast</a>
+      <a href="#prework">Your pre-work</a>
+      <a href="#casefiles">Case files</a>
+    </nav>
+  </div>
+</div>
+
+<header class="cover">
+  <div class="cover-in">
+    <div class="kicker">The KESTREL files · Week 45 · a story in six moments</div>
+    <h1>Fourteen<br>Days</h1>
+    <p class="dek">You inherit a chip project on Monday morning. By Thursday you are holding six problems at once, and every one of them is work you became a PM to get past.</p>
+    <div class="meta"><span class="countdown">Week 45 · Tape-out in 14 days</span><span>12-minute read, then 5 minutes with your case file</span><span>Pre-work · PM Summit 2026 · PM Role in an AI World</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="strip" aria-label="Your pre-work in three steps">
+    <div><div class="n">01 · 12 MIN</div><p>Read the story. It is one week in the life of a PM, and probably one you have lived.</p></div>
+    <div><div class="n">02 · 5 MIN</div><p>Open the case file with your room’s letter (C1 to C6, in your invitation) and read it like a PM on Thursday morning.</p></div>
+    <div><div class="n">03 · 3 MIN</div><p>Map your own week: how long this task takes you, and which steps are repetitive. Then think what you’d do with those hours back.</p></div>
+  </div>
+
+<figure class="col" style="margin:1.6rem auto 0;display:grid;gap:.5rem"><video controls preload="metadata" playsinline poster="WS2_Fourteen_Days_Briefing_poster.jpg" style="width:100%;border-radius:6px;background:#0F1A19;display:block" src="WS2_Fourteen_Days_Briefing.mp4"></video><figcaption class="label">Pre-work briefing · 2:41 · captions on screen</figcaption></figure>
+  <article class="story col" id="story">
+
+    <!-- PROLOGUE -->
+    <section class="chapter" aria-labelledby="ch0">
+      <div class="chead">
+        <div class="time">08:12</div>
+        <div class="side">
+          <div class="label">Prologue · Monday · CW45</div>
+          <h2 id="ch0">The handover</h2>
+          <span class="countdown">Tape-out in 14 days</span>
+        </div>
+      </div>
+      <p>The coffee machine on floor 3 is broken again, so you start your first day as KESTREL’s project manager with a paper cup of something brown from the ground floor and a calendar that someone else has already filled.</p>
+      <p>Jonas left on Friday. He didn’t leave the company; he moved to a program two buildings over that needed him more urgently than KESTREL did, which tells you something about KESTREL, or about the other program. You aren’t sure which yet. His handover was a 25-minute Teams call, most of it spent on a camera that wouldn’t start, and a folder called <span class="mono" style="font-size:.9em">KESTREL_handover_FINAL_v3</span>. On the monitor he no longer uses there is a yellow note:</p>
+      <div class="sticky">“Everything’s in the folder. The lessons file is in there too. Nobody reads it. Good luck with Customer Alpha. J.”</div>
+      <p>Here is what you know. KESTREL is a new sensor-hub chip and the evaluation kit that goes with it. Its lead customer, Customer Alpha, has a design-in window that closes at the end of the year. Win it, and KESTREL becomes the reference part for a whole product family. Tape-out is in calendar week 47, fourteen days from now.</p>
+
+      <div class="road" aria-label="The road to customer samples, calendar weeks 45 to 50">
+        <div class="track">
+          <div class="line"></div><div class="done" style="width:0"></div>
+          <div class="stop here first down" style="left:0%"><span class="dot"></span><span class="lbl"><b>CW45</b>You are here</span></div>
+          <div class="stop key up" style="left:16.667%"><span class="dot"></span><span class="lbl"><b>CW47</b>Tape-out</span></div>
+          <div class="stop down" style="left:41.667%"><span class="dot"></span><span class="lbl"><b>CW50</b>Load board for testing</span></div>
+          <div class="stop key up" style="left:66.667%"><span class="dot"></span><span class="lbl"><b>CW53</b>First samples</span></div>
+          <div class="stop down" style="left:83.333%"><span class="dot"></span><span class="lbl"><b>CW02</b>Qualification starts · Alpha’s tech day</span></div>
+          <div class="stop key last up" style="left:100%"><span class="dot"></span><span class="lbl"><b>CW04</b>Samples to Customer Alpha</span></div>
+        </div>
+        <ul class="road-list">
+          <li class="here"><b>CW45</b>You are here</li>
+          <li><b>CW47</b>Tape-out</li>
+          <li><b>CW50</b>Load board for testing</li>
+          <li><b>CW53</b>First samples</li>
+          <li><b>CW02</b>Qualification starts · Alpha’s tech day</li>
+          <li><b>CW04</b>Samples to Customer Alpha</li>
+        </ul>
+        <div class="road-cap">The road to customer samples, in calendar weeks, across the year-end</div>
+      </div>
+
+      <p>Here is what you don’t know yet. By Thursday morning you will be holding six problems at once, and none of them will be exotic. Every PM you know has had this week.</p>
+      <p>You open your inbox. Forty-seven unread.</p>
+    </section>
+
+    <!-- CHAPTER 1 : C6 -->
+    <section class="chapter" aria-labelledby="ch1">
+      <div class="chead">
+        <div class="time">11:04</div>
+        <div class="side">
+          <div class="label">Chapter 1 · Monday</div>
+          <h2 id="ch1">Can we do this?</h2>
+          <span class="room">Room card C6 · <a href="#c6">Change Request Ripple</a></span>
+        </div>
+      </div>
+      <p>Sofia’s message arrives with a subject line in capitals.</p>
+      <div class="subject"><span>From:</span> Sofia (Product Marketing)<br><span>Subject:</span> FW: CR-014 · URGENT · Can we do this??</div>
+      <p>Customer Alpha has a tech day in the second week of January. They want samples in week 1 instead of week 4, and they want the evaluation kit to show an “ultra-low-power standby” mode on stage. “They need an answer this week,” Sofia writes. “Big opportunity. Can you confirm?”</p>
+      <p>You open the plan. Tape-out, then five weeks in the fab, then first samples in week 53. Testing them needs a load board that, you now discover, the vendor has just moved from week 48 to week 50. Qualification starts in week 2. The software team that owns the evaluation kit is at half capacity until week 51. And somewhere in a design document you haven’t read yet is a line saying the chip’s ROM content is frozen at tape-out.</p>
+      <p>Can we do this? You genuinely don’t know. The honest answer lives in seven heads: Design, Verification, Test, Software, Quality, Operations and Marketing. You start typing the first of seven emails, each asking roughly the same question in a slightly different way, and you already know how this goes. The answers will come on Thursday, in seven formats. Two of them will say “depends”. One will never arrive.</p>
+      <p>Customer Alpha is waiting. So is your 11:30.</p>
+      <a class="cf-link" href="#c6">Case file C6 · CR-014 and the plan →</a>
+    </section>
+
+    <!-- CHAPTER 2 : C3 -->
+    <section class="chapter" aria-labelledby="ch2">
+      <div class="chead">
+        <div class="time">16:30</div>
+        <div class="side">
+          <div class="label">Chapter 2 · Monday</div>
+          <h2 id="ch2">The log nobody touched</h2>
+          <span class="room">Room card C3 · <a href="#c3">The Silent Risk</a></span>
+        </div>
+      </div>
+      <p>Between meetings you finally open the RAID log. <em>Last updated: CW40.</em> Five weeks ago. Three risks, one issue, one dependency, and a status column that reads more like a memory than a measurement.</p>
+      <p>R2, load board vendor capacity, was closed in week 37. You scroll back through your chats. Priya, last week: the vendor’s test line is “overbooked again”. D1, Customer Alpha’s use-case spec, was due in week 43. Sofia, two weeks ago: “soon, they’re reorganizing.” Chen, this morning, in passing: the supplier has moved your substrate order to their next allocation cycle, but it “should still be fine”. Daniel, with good news for once: the qualification lab has confirmed your week-2 slot. Lukas has reported the broken coffee machine as a productivity risk.</p>
+      <p>At 22:10 your phone lights up. Aiko’s design team is working its third weekend in a row. There is a sentence about a colleague and some constraints back in July that you read twice and decide not to forward to anyone.</p>
+      <p>Nobody hid anything from you today. Everything was said, somewhere. It just never became a risk that anyone owns. You wonder how many of the surprises waiting in week 53 are already sitting in your chat history.</p>
+      <a class="cf-link" href="#c3">Case file C3 · RAID log and two weeks of messages →</a>
+    </section>
+
+    <!-- CHAPTER 3 : C2 -->
+    <section class="chapter" aria-labelledby="ch3">
+      <div class="chead">
+        <div class="time">10:00</div>
+        <div class="side">
+          <div class="label">Chapter 3 · Tuesday</div>
+          <h2 id="ch3">Did we decide that?</h2>
+          <span class="room">Room card C2 · <a href="#c2">Meetings Without Memory</a></span>
+        </div>
+      </div>
+      <p>The weekly sync. Seven people, one of them on a train. You chair and take notes at the same time, which means you do both badly.</p>
+      <p>Aiko: three timing paths are still failing on the power-management block. She thinks they’ll close by Wednesday; if not, “we need to talk about options.” Sofia wants to propose to steering that you keep week 47 “no matter what”. Daniel isn’t comfortable with that without a quality view. You hear yourself say “let’s not decide that here,” and ask Aiko for a status on Wednesday evening so you can prepare options for Thursday’s steering meeting.</p>
+      <p>Priya: the load board is late, week 50 now. “Someone needs to check with the vendor.” Everyone agrees it’s important. Nobody says who. Lukas checks that the SDK only goes to Customer Alpha after the quality review, and Daniel confirms and promises the review “by end of next week”. Chen mentions, quietly, that he is out for two weeks from the 3rd for a family reason, and that his cover isn’t confirmed. And almost as an afterthought you decide something real: from now on, every evaluation kit shipment gets an export-control check before it leaves the building.</p>
+      <p>Forty-eight minutes. At 10:49 you are already in the next call. The transcript sits in the meeting chat, two thousand words long. By Friday somebody will ask, “Did we decide that?” and you will not be sure.</p>
+      <a class="cf-link" href="#c2">Case file C2 · the sync transcript →</a>
+    </section>
+
+    <!-- CHAPTER 4 : C1 -->
+    <section class="chapter" aria-labelledby="ch4">
+      <div class="chead">
+        <div class="time">15:45</div>
+        <div class="side">
+          <div class="label">Chapter 4 · Wednesday</div>
+          <h2 id="ch4">Still green?</h2>
+          <span class="room">Room card C1 · <a href="#c1">Status Report Treadmill</a></span>
+        </div>
+      </div>
+      <p>Management wants the weekly status by Friday noon. Last week’s report said GREEN, in Jonas’s confident formatting.</p>
+      <p>The inputs arrive the way they always do. Aiko’s came by email on Monday, written before anyone knew how Wednesday would go. Marco, in chat: 92% coverage against a target of 95. Priya, by email: test program development “on track”, and in the next sentence, the load board now expected in week 50. Lukas, in chat: SDK beta done, party emoji, and “FYI” a clause from Customer Alpha’s contract about a demo and a penalty that legal is still reviewing. Daniel needs samples by week 53 to start qualification in week 2. Chen: “No issues.” Sofia: nothing. You send a reminder. Then another.</p>
+      <p>The milestone tracker still shows <em>First samples + test ready</em> in week 53, unchanged. You look at it for a long time.</p>
+      <p>Is KESTREL still green? You could copy last week’s report, change the date and move on. People do. Or you could reconcile six inputs in three formats, one missing voice and a tracker that may no longer tell the truth, and then write it all three times: once for the team, once for management and once, very carefully, for the customer. That is your Wednesday evening. It was Jonas’s too, every week, for a year.</p>
+      <a class="cf-link" href="#c1">Case file C1 · this week’s status inputs →</a>
+    </section>
+
+    <!-- CHAPTER 5 : C4 -->
+    <section class="chapter" aria-labelledby="ch5">
+      <div class="chead">
+        <div class="time">21:37</div>
+        <div class="side">
+          <div class="label">Chapter 5 · Wednesday</div>
+          <h2 id="ch5">Five opinions, one page</h2>
+          <span class="room">Room card C4 · <a href="#c4">Decision Brief in 30 Minutes</a></span>
+        </div>
+      </div>
+      <div class="subject"><span>From:</span> Aiko (Design lead) · 21:37<br><span>Subject:</span> PMU · not closed</div>
+      <p>A clean fix needs three more weeks. Or you tape out on time and repair it later with a metal-layer respin, about six weeks after first samples. Aiko recommends the delay.</p>
+      <p>By 22:30 you have five opinions and a steering meeting at 14:00 tomorrow. Sofia: the customer’s design-in window closes at the end of the first quarter; “if we are late, they will walk away.” Daniel: qualifying silicon with a known issue means qualifying it all over again after any fix. Chen: a respin mask set costs about €180k; a three-week slip costs nothing directly, but it loses the wafer start slot, and the next slot is two weeks later. Lukas: a firmware workaround might hide the problem in low-power mode. Two weeks of work, not validated. Your remaining budget reserve is €150k.</p>
+      <p>Steering doesn’t want five opinions. They want the options, the impacts, a clear ask and your recommendation, on one page. Everyone has told you what they think. Nobody has told you what it adds up to. That part is your job.</p>
+      <p>It is 22:41.</p>
+      <a class="cf-link" href="#c4">Case file C4 · the decision inputs →</a>
+    </section>
+
+    <!-- CHAPTER 6 : C5 -->
+    <section class="chapter" aria-labelledby="ch6">
+      <div class="chead">
+        <div class="time">06:50</div>
+        <div class="side">
+          <div class="label">Chapter 6 · Thursday</div>
+          <h2 id="ch6">The file nobody reads</h2>
+          <span class="room">Room card C5 · <a href="#c5">Lessons Nobody Learns</a></span>
+        </div>
+      </div>
+      <p>You wake before the alarm. Because you can’t face the brief yet, you open Jonas’s folder and, for the first time, the lessons file.</p>
+      <p>Four past projects: HERON, OSPREY, PLOVER, WREN. Ten lessons, written by tired people at the end of something.</p>
+      <p><em>ATE hardware ordered after tape-out arrived five weeks late.</em> You think of your load board. <em>Customer samples shipped before qualification caused two escalations.</em> You think of CR-014. <em>SDK released without quality review led to customer-found bugs.</em> You think of Tuesday. <em>Export-control classification done late blocked shipments for three weeks.</em> You think of the decision you made almost by accident.</p>
+      <p>There is a lesson about a tool the company retired last year, and another about a test engineer called John that is less a lesson than a grudge. Two lessons disagree completely about shipping early samples.</p>
+      <p>Somebody learned all of this the hard way, more than once. What if this file had found you on Monday morning, at the moment you needed it, instead of sitting in a folder?</p>
+      <a class="cf-link" href="#c5">Case file C5 · the lessons file →</a>
+    </section>
+
+    <!-- EPILOGUE -->
+    <section class="chapter" aria-labelledby="ch7">
+      <div class="chead">
+        <div class="time">07:30</div>
+        <div class="side">
+          <div class="label">Epilogue · Thursday</div>
+          <h2 id="ch7">Before the first coffee</h2>
+          <span class="countdown">Tape-out in 11 days</span>
+        </div>
+      </div>
+      <p>This is your Thursday, and it hasn’t started yet:</p>
+      <ul class="todo">
+        <li>A one-page decision brief for steering at 14:00<span class="c">C4</span></li>
+        <li>A status report that may or may not be green, due tomorrow<span class="c">C1</span></li>
+        <li>An answer to Customer Alpha about CR-014<span class="c">C6</span></li>
+        <li>Minutes from Tuesday that nobody has sent<span class="c">C2</span></li>
+        <li>A risk log five weeks out of date<span class="c">C3</span></li>
+        <li>Ten lessons you found three days too late<span class="c">C5</span></li>
+      </ul>
+      <p>Add it up. Collecting, reconciling and rewriting the status: three hours. Writing up Tuesday’s meeting: an hour, if it ever happens. Digging through chat for risks, formatting a brief at 22:41, searching old folders for lessons, chasing seven functions for one answer. Most of a week, spent on work that a well-instructed agent could do.</p>
+      <p>Now picture Thursday with those hours back. An hour with Aiko’s team before steering, working out the real options instead of formatting them. A call with Customer Alpha on Monday afternoon instead of Thursday. Time to think about what KESTREL needs in January, not only what it needs by Friday. That is the job you were hired for: decisions, stakeholders, direction.</p>
+      <p>On 5 November your breakout room takes one of these six jobs. In sixty minutes you will map where the hours go, design an agent that takes the repetitive part, test it on the KESTREL case file, and measure the time it gives back. Every decision stays yours.</p>
+      <p>By the end, your room will have a pilot that someone runs on a real project the week after the summit.</p>
+    </section>
+  </article>
+
+  <section id="cast" class="col" style="padding-top:2.5rem" aria-labelledby="casth">
+    <div class="label">Who’s who on KESTREL</div>
+    <h2 id="casth" style="margin:.3rem 0 0;font-weight:800;font-stretch:70%;font-size:clamp(2rem,5vw,2.6rem);line-height:1">The people in your week</h2>
+    <div class="cast">
+      <div class="person you"><span class="init">YOU</span><b>You <span>· Project manager</span></b><p>New to KESTREL since Monday. Inherited a folder and a sticky note.</p></div>
+      <div class="person"><span class="init">JO</span><b>Jonas <span>· Previous PM</span></b><p>Moved to another program on Friday. Reachable, in theory.</p></div>
+      <div class="person"><span class="init">AI</span><b>Aiko <span>· Design lead</span></b><p>Precise, calm, tired. Her team is on its third weekend.</p></div>
+      <div class="person"><span class="init">MA</span><b>Marco <span>· Verification</span></b><p>Speaks in percentages. Currently 92 against a target of 95.</p></div>
+      <div class="person"><span class="init">PR</span><b>Priya <span>· Test engineering</span></b><p>Optimist. Everything is “on track” until the next sentence.</p></div>
+      <div class="person"><span class="init">LU</span><b>Lukas <span>· Software and tools</span></b><p>Ships fast, types faster, uses emoji in contract discussions.</p></div>
+      <div class="person"><span class="init">DA</span><b>Daniel <span>· Quality</span></b><p>“Not comfortable” is his strongest word, and he means it.</p></div>
+      <div class="person"><span class="init">CH</span><b>Chen <span>· Operations</span></b><p>Says “all fine” about most things. Away from the 3rd.</p></div>
+      <div class="person"><span class="init">SO</span><b>Sofia <span>· Product marketing</span></b><p>Owns Customer Alpha’s patience. Silent on status reports.</p></div>
+    </div>
+  </section>
+
+  <section id="prework" class="col" style="padding-top:3rem" aria-labelledby="pwh">
+    <div class="prework">
+      <div class="label">Before 5 November · about 20 minutes</div>
+      <h2 id="pwh">Your pre-work</h2>
+      <ol>
+        <li><div><b>Read the story.</b><span>You just did, or you’re about to. Twelve minutes.</span></div></li>
+        <li><div><b>Open your room’s case file.</b><span>Your invitation gives your room a letter, C1 to C6. Read that file as if it were Thursday morning and the work were yours to hand off.</span></div></li>
+        <li><div><b>Map your own week.</b><span>How long does this task take you in a normal week? List the steps, time each one, and mark which are repetitive and which need your judgment.</span></div></li>
+        <li><div><b>Bring one idea for the time you get back.</b><span>What would you do with those hours: a decision you’d prepare better, a stakeholder you’d see sooner, time to think ahead? Please don’t bring confidential documents.</span></div></li>
+      </ol>
+      <p class="fine">No AI experience needed. Rooms mix beginners and experienced users on purpose, and everyone gets a role.</p>
+    </div>
+  </section>
+
+  <section id="casefiles" aria-labelledby="cfh">
+    <div class="casefiles-head">
+      <div class="label">Evidence · read only your room’s file</div>
+      <h2 id="cfh">The case files</h2>
+      <p>These are the mails, chats, logs and notes behind each chapter, exactly as they reached your desk. CW means calendar week.</p>
+      <div class="index">
+        <a href="#c1"><span class="code">C1</span><b>Still green?</b><span>Status Report Treadmill · Chapter 4</span></a>
+        <a href="#c2"><span class="code">C2</span><b>Did we decide that?</b><span>Meetings Without Memory · Chapter 3</span></a>
+        <a href="#c3"><span class="code">C3</span><b>The log nobody touched</b><span>The Silent Risk · Chapter 2</span></a>
+        <a href="#c4"><span class="code">C4</span><b>Five opinions, one page</b><span>Decision Brief in 30 Minutes · Chapter 5</span></a>
+        <a href="#c5"><span class="code">C5</span><b>The file nobody reads</b><span>Lessons Nobody Learns · Chapter 6</span></a>
+        <a href="#c6"><span class="code">C6</span><b>Can we do this?</b><span>Change Request Ripple · Chapter 1</span></a>
+      </div>
+    </div>
+
+    <!-- C1 -->
+    <article class="casefile" id="c1">
+      <div class="cf-head"><span class="code">C1</span><h3>Still green?</h3><span class="sub">Status Report Treadmill · the inputs for Friday’s status, CW45</span></div>
+      <p class="cf-intro">Everything that reached you for this week’s status report, plus the tracker export and last week’s summary.</p>
+      <p class="hunt">Read it as the project manager on Thursday morning: which parts of this work would you hand to an agent, and which would you keep?</p>
+      <div class="ev-grid">
+        <div class="ev"><div class="ev-head"><span><b>Email</b> · Aiko, Design lead</span><span>Mon</span></div><div class="ev-body"><p>Hi, design status: timing closure on the PMU block still open, 3 paths failing, team working the weekend. Everything else frozen. Should be OK for tape-out CW47 if we close by Wednesday.</p></div></div>
+        <div class="ev"><div class="ev-head"><span><b>Email</b> · Priya, Test Engineering</span><span>Tue</span></div><div class="ev-body"><p>Test program development on track. Waiting for the load board from the vendor, now expected CW50 (vendor delay).</p></div></div>
+        <div class="ev"><div class="ev-head"><span><b>Email</b> · Daniel, Quality</span><span>Tue</span></div><div class="ev-body"><p>Qualification plan approved. Need samples by CW53 latest to start qualification CW02.</p></div></div>
+      </div>
+      <div class="ev"><div class="ev-head"><span><b>Chat</b> · status channel</span><span>Mon–Wed</span></div>
+        <ul class="chat">
+          <li><span class="who"><b>Marco</b>Verification</span><span>Regression at 92% coverage, target is 95 before tape-out. 2 new bugs this week, both low.</span></li>
+          <li><span class="who"><b>Lukas</b>Software/Tools</span><span>Eval kit SDK beta done 🎉. Also FYI Customer Alpha's contract says we owe them a demo of low-power mode at their January tech day, legal is still reviewing the penalty clause.</span></li>
+          <li><span class="who"><b>Chen</b>Operations</span><span>Substrate order confirmed. No issues.</span></li>
+        </ul>
+      </div>
+      <div class="missing">No update received from Sofia, Product Marketing.</div>
+      <div class="tbl"><table>
+        <thead><tr><th>Milestone</th><th>Baseline</th><th>Forecast</th><th>Owner</th></tr></thead>
+        <tbody>
+          <tr><td>Design freeze</td><td>CW41</td><td>CW41 (done)</td><td>Aiko</td></tr>
+          <tr><td>Tape-out</td><td>CW47</td><td>CW47</td><td>Aiko</td></tr>
+          <tr><td>Load board ready</td><td>CW48</td><td>CW50</td><td>Priya</td></tr>
+          <tr><td>First samples + test ready</td><td>CW53</td><td>CW53</td><td>Priya</td></tr>
+          <tr><td>Qualification start</td><td>CW02</td><td>CW02</td><td>Daniel</td></tr>
+          <tr><td>Customer sampling</td><td>CW04</td><td>CW04</td><td>Sofia</td></tr>
+        </tbody>
+      </table></div>
+      <div class="ev"><div class="ev-head"><span><b>Last week’s status</b> · CW44, by Jonas</span></div><div class="ev-body"><p>Overall: GREEN. Schedule: GREEN. Top risk: PMU timing closure.</p></div></div>
+    </article>
+
+    <!-- C2 -->
+    <article class="casefile" id="c2">
+      <div class="cf-head"><span class="code">C2</span><h3>Did we decide that?</h3><span class="sub">Meetings Without Memory · weekly sync, Tuesday CW45</span></div>
+      <p class="cf-intro">The auto-transcribed excerpt of Tuesday’s sync, as it sits in the meeting chat.</p>
+      <p class="hunt">Read it as the project manager on Thursday morning: which parts of this work would you hand to an agent, and which would you keep?</p>
+      <div class="ev"><div class="ev-head"><span><b>Transcript</b> · KESTREL weekly sync</span><span>Tue 10:00–10:48</span></div>
+        <ul class="chat">
+          <li><span class="who"><b>PM</b></span><span>OK, let's start. Aiko, timing closure?</span></li>
+          <li><span class="who"><b>Aiko</b></span><span>Three paths still failing on the PMU. We think we can close by Wednesday. If not, we need to talk about options.</span></li>
+          <li><span class="who"><b>PM</b></span><span>What's the fallback if Wednesday doesn't work?</span></li>
+          <li><span class="who"><b>Aiko</b></span><span>Honestly, either we slip tape-out or we tape out and fix it in a metal respin.</span></li>
+          <li><span class="who"><b>Sofia</b></span><span>Slipping is really hard for Customer Alpha. Let's propose to steering that we keep CW47 no matter what.</span></li>
+          <li><span class="who"><b>Daniel</b></span><span>I'm not comfortable with that without a quality view.</span></li>
+          <li><span class="who"><b>PM</b></span><span>OK, let's not decide that here. Aiko, send me the status Wednesday evening and I'll prepare options for steering on Thursday.</span></li>
+          <li><span class="who"><b>Aiko</b></span><span>Will do.</span></li>
+          <li><span class="who"><b>Priya</b></span><span>The load board is late, CW50 now. Someone needs to check with the vendor whether they can expedite.</span></li>
+          <li><span class="who"><b>PM</b></span><span>Yes, that's important.</span></li>
+          <li><span class="who"><b>Lukas</b></span><span>Quick one: SDK beta is out. We agreed last week to release it to Customer Alpha only after the quality review, right?</span></li>
+          <li><span class="who"><b>Daniel</b></span><span>Right, that's still the plan. I can do the review by end of next week.</span></li>
+          <li><span class="who"><b>PM</b></span><span>Good. Chen, anything?</span></li>
+          <li><span class="who"><b>Chen</b></span><span>All fine. By the way, I'm out from the 3rd for two weeks, family matter, my mother is in hospital.</span></li>
+          <li><span class="who"><b>PM</b></span><span>Sorry to hear that. Who covers operations?</span></li>
+          <li><span class="who"><b>Chen</b></span><span>I'll ask Ravi, not confirmed yet.</span></li>
+          <li><span class="who"><b>PM</b></span><span>One more thing. From now on, every eval kit shipment needs an export-control check before it leaves. That's decided. Operations, please implement.</span></li>
+          <li><span class="who"><b>Chen</b></span><span>OK.</span></li>
+          <li><span class="who"><b>PM</b></span><span>Thanks all, same time next week.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- C3 -->
+    <article class="casefile" id="c3">
+      <div class="cf-head"><span class="code">C3</span><h3>The log nobody touched</h3><span class="sub">The Silent Risk · RAID log and two weeks of messages</span></div>
+      <p class="cf-intro">The RAID log as Jonas left it, and everything said in mail and chat over the last two weeks.</p>
+      <p class="hunt">Read it as the project manager on Thursday morning: which parts of this work would you hand to an agent, and which would you keep?</p>
+      <div class="tbl wide"><table>
+        <thead><tr><th>ID</th><th>Type</th><th>Description</th><th>Prob</th><th>Impact</th><th>Owner</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td class="id">R1</td><td>Risk</td><td>PMU timing closure may not be achieved before tape-out</td><td>M</td><td>H</td><td>Aiko</td><td>Open</td></tr>
+          <tr><td class="id">R2</td><td>Risk</td><td>Load board vendor capacity</td><td>L</td><td>M</td><td>Priya</td><td>Closed CW37</td></tr>
+          <tr><td class="id">R3</td><td>Risk</td><td>Qualification lab slot availability CW02</td><td>M</td><td>M</td><td>Daniel</td><td>Open</td></tr>
+          <tr><td class="id">I1</td><td>Issue</td><td>SDK documentation behind schedule</td><td>-</td><td>L</td><td>Lukas</td><td>Open</td></tr>
+          <tr><td class="id">D1</td><td>Dependency</td><td>Customer Alpha to provide use-case spec by CW43</td><td>-</td><td>M</td><td>Sofia</td><td>Open</td></tr>
+        </tbody>
+      </table></div>
+      <p class="mono" style="margin:0;font-size:.76rem;color:var(--ink-2)">RAID log · last updated CW40</p>
+      <div class="ev"><div class="ev-head"><span><b>Mail and chat</b> · CW43 to CW45</span></div>
+        <ul class="chat">
+          <li><span class="who"><b>Priya</b>CW44</span><span>Vendor says the load board is now CW50, their test line is overbooked again.</span></li>
+          <li><span class="who"><b>Chen</b>CW45</span><span>FYI the supplier moved our substrate order to their next allocation cycle. They say it "should still be fine".</span></li>
+          <li><span class="who"><b>Sofia</b>CW43</span><span>Customer Alpha's spec will come "soon", they're reorganizing.</span></li>
+          <li><span class="who"><b>Marco</b>CW45</span><span>Two new low-severity bugs, nothing blocking.</span></li>
+          <li><span class="who"><b>Lukas</b>CW44</span><span>Lol, the coffee machine on floor 3 is broken again, productivity risk!</span></li>
+          <li><span class="who"><b>Daniel</b>CW45</span><span>Lab confirmed our CW02 slot.</span></li>
+          <li><span class="who"><b>Aiko</b>CW45</span><span>Team is doing another weekend. Third in a row. Honestly, if Tom had done the constraints right in July we wouldn't be here.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- C4 -->
+    <article class="casefile" id="c4">
+      <div class="cf-head"><span class="code">C4</span><h3>Five opinions, one page</h3><span class="sub">Decision Brief in 30 Minutes · tape-out timing, steering Thursday CW45</span></div>
+      <p class="cf-intro">What you have at 22:41 on Wednesday to build tomorrow’s one-page brief.</p>
+      <p class="hunt">Read it as the project manager on Thursday morning: which parts of this work would you hand to an agent, and which would you keep?</p>
+      <div class="ev"><div class="ev-head"><span><b>Decision needed</b> · tape-out timing</span><span>Steering Thu 14:00</span></div><div class="ev-body"><p>PMU block timing closure is still failing on 3 paths (as of Tuesday CW45). Tape-out is planned for CW47.</p></div></div>
+      <div class="ev-grid">
+        <div class="ev"><div class="ev-head"><span><b>Aiko</b> · Design</span></div><div class="ev-body"><p>A clean fix needs 3 more weeks. Alternative: tape out on time and fix it later in a metal-layer respin ("metal fix"), which takes about 6 weeks after first samples. Recommends delaying tape-out by 3 weeks.</p></div></div>
+        <div class="ev"><div class="ev-head"><span><b>Sofia</b> · Marketing</span></div><div class="ev-body"><p>Customer Alpha's design-in window closes at the end of the first quarter. "If we are late, they will walk away." Recommends keeping CW47.</p></div></div>
+        <div class="ev"><div class="ev-head"><span><b>Daniel</b> · Quality</span></div><div class="ev-body"><p>Qualifying silicon with a known timing issue means requalification after any metal fix. Concerned about taping out on time.</p></div></div>
+        <div class="ev"><div class="ev-head"><span><b>Chen</b> · Operations</span></div><div class="ev-body"><p>Metal-fix respin mask cost is approx. EUR 180k. A 3-week slip costs nothing directly but loses our wafer start slot; the next slot is 2 weeks later.</p></div></div>
+        <div class="ev"><div class="ev-head"><span><b>Lukas</b> · Software</span></div><div class="ev-body"><p>A firmware workaround could mask the issue, in low-power mode only. About 2 weeks of effort. Not validated.</p></div></div>
+        <div class="ev"><div class="ev-head"><span><b>Constraints</b></span></div><div class="ev-body"><p>Remaining budget reserve: EUR 150k.</p><p>Customer sampling committed for CW04.</p></div></div>
+      </div>
+    </article>
+
+    <!-- C5 -->
+    <article class="casefile" id="c5">
+      <div class="cf-head"><span class="code">C5</span><h3>The file nobody reads</h3><span class="sub">Lessons Nobody Learns · Jonas’s lessons file and KESTREL’s next phase</span></div>
+      <p class="cf-intro">The lessons-learned extract from Jonas’s folder, and the profile of the phase KESTREL is about to enter.</p>
+      <p class="hunt">Read it as the project manager on Thursday morning: which parts of this work would you hand to an agent, and which would you keep?</p>
+      <div class="tbl wide"><table>
+        <thead><tr><th>ID</th><th>Project</th><th>Lesson and action</th></tr></thead>
+        <tbody>
+          <tr><td class="id">L01</td><td>HERON (2023)</td><td>ATE hardware ordered after tape-out arrived 5 weeks late; first-sample testing slipped. Action: order test hardware at design freeze.</td></tr>
+          <tr><td class="id">L02</td><td>HERON (2023)</td><td>Qualification lab booked 4 weeks ahead was not enough over the year-end holidays. Action: book 10+ weeks ahead around year-end.</td></tr>
+          <tr><td class="id">L03</td><td>HERON (2023)</td><td>Customer samples shipped before qualification start caused 2 customer escalations. Action: agree sample status (engineering vs qualified) in writing.</td></tr>
+          <tr><td class="id">L04</td><td>OSPREY (2022)</td><td>Weekly status via the PMtrack tool was ignored by management. Action: use PMtrack dashboards.</td></tr>
+          <tr><td class="id">L05</td><td>OSPREY (2022)</td><td>Late spec changes from the lead customer caused 2 respins. Action: freeze the customer spec with sign-off before design freeze.</td></tr>
+          <tr><td class="id">L06</td><td>OSPREY (2022)</td><td>Test engineer John was unresponsive and caused delays.</td></tr>
+          <tr><td class="id">L07</td><td>PLOVER (2024)</td><td>SDK released without quality review led to customer-found bugs. Action: gate SDK releases on quality review.</td></tr>
+          <tr><td class="id">L08</td><td>PLOVER (2024)</td><td>Export-control classification of eval kits done late blocked shipments for 3 weeks. Action: classify eval kits at the kit design review.</td></tr>
+          <tr><td class="id">L09</td><td>WREN (2024)</td><td>Single-source load board vendor; capacity crunch in Q3. Action: qualify a second vendor or reserve capacity early.</td></tr>
+          <tr><td class="id">L10</td><td>WREN (2024)</td><td>Early engineering samples built customer trust and won the design-in. Action: ship early engineering samples with clear errata.</td></tr>
+        </tbody>
+      </table></div>
+      <div class="ev"><div class="ev-head"><span><b>New project profile</b> · KESTREL</span></div><div class="ev-body"><p>Entering phase “tape-out to customer sampling” (CW47 to CW04).</p><p>Known pressure points: test hardware timing, qualification slot, lead-customer expectations, SDK release, eval kit shipments.</p><p>Note: the PMtrack tool was retired in 2025.</p></div></div>
+    </article>
+
+    <!-- C6 -->
+    <article class="casefile" id="c6">
+      <div class="cf-head"><span class="code">C6</span><h3>Can we do this?</h3><span class="sub">Change Request Ripple · CR-014 from Customer Alpha</span></div>
+      <p class="cf-intro">Sofia’s forwarded change request, the part of the plan it touches, and the people you would have to ask.</p>
+      <p class="hunt">Read it as the project manager on Thursday morning: which parts of this work would you hand to an agent, and which would you keep?</p>
+      <div class="ev"><div class="ev-head"><span><b>Change request CR-014</b> · from Customer Alpha via Sofia (Marketing)</span><span>Mon CW45</span></div><div class="ev-body">
+        <p><b>Request 1:</b> Pull in customer samples from CW04 to CW01 (their tech day is in CW02).</p>
+        <p><b>Request 2:</b> Add an "ultra-low-power standby" mode to the evaluation kit, demonstrable at the tech day.</p>
+      </div></div>
+      <div class="ev"><div class="ev-head"><span><b>Plan excerpt</b> · dependencies</span></div>
+        <ul class="flow">
+          <li>Tape-out CW47 <span class="arr">→</span> wafer fab (5 weeks) <span class="arr">→</span> first samples CW53</li>
+          <li>First samples + load board (now CW50) <span class="arr">→</span> test program on ATE <span class="arr">→</span> samples tested</li>
+          <li>Qualification start CW02 (6 weeks)</li>
+          <li>Customer sampling CW04 (engineering samples)</li>
+          <li>Eval kit software: SDK beta done CW44 <span class="arr">→</span> quality review CW46 <span class="arr">→</span> SDK 1.0 CW52</li>
+          <li>Chip ROM content is frozen at tape-out (CW47).</li>
+        </ul>
+      </div>
+      <div class="tbl"><table>
+        <thead><tr><th>Function</th><th>Contact</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td>Design</td><td>Aiko</td><td></td></tr>
+          <tr><td>Verification</td><td>Marco</td><td></td></tr>
+          <tr><td>Test</td><td>Priya</td><td></td></tr>
+          <tr><td>Software</td><td>Lukas</td><td>Team at 50% on another project until CW51</td></tr>
+          <tr><td>Quality</td><td>Daniel</td><td></td></tr>
+          <tr><td>Operations</td><td>Chen</td><td></td></tr>
+          <tr><td>Marketing</td><td>Sofia</td><td></td></tr>
+        </tbody>
+      </table></div>
+    </article>
+  </section>
+
+  <footer class="end col">
+    <p class="tag">Fourteen days to tape-out. Six problems by Thursday. One hour to take a moment back.</p>
+    <p>Week 45 · a KESTREL story · pre-work for the PM Summit 2026 breakouts, Workstream 2 · PM Role in an AI World · draft v0.1.</p>
+  </footer>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Room Readouts C1–C6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap"><style>body{margin:0}
+/* Print-first readouts: one room per A4 page, NXP-style blue, amber and lime accents on white. */
+:root{--paper:#F5F7FA;--card:#FFFFFF;--ink:#0B1826;--ink-2:#4A5D70;--line:#D3DCE5;--blue:#1C6FA6;--blue-2:#6CB4E4;--amber:#B67F00;--amber-bg:#FFF4D6;--lime:#8A9400;--lime-bg:#F5F7D6;--night:#07111C;
+  --f-display:"Archivo","Arial Narrow",system-ui,sans-serif;--f-body:"Archivo",system-ui,sans-serif;--f-story:"Newsreader",Georgia,serif;--f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#07111C;--card:#0E1C2B;--ink:#EEF3F7;--ink-2:#9DB2C6;--line:#1F3650;--blue:#6CB4E4;--amber:#F9B500;--amber-bg:#2E2204;--lime:#C9D200;--lime-bg:#23260A;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#07111C;--card:#0E1C2B;--ink:#EEF3F7;--ink-2:#9DB2C6;--line:#1F3650;--blue:#6CB4E4;--amber:#F9B500;--amber-bg:#2E2204;--lime:#C9D200;--lime-bg:#23260A;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:1rem;line-height:1.5;padding-inline:clamp(16px,4vw,40px);padding-block:0 3rem}
+.wrap{max-width:56rem;margin-inline:auto}
+.label{font-family:var(--f-mono);font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.cover{background:var(--night);color:#EEF3F7;margin-inline:calc(-1*clamp(16px,4vw,40px));padding:3rem clamp(16px,4vw,40px) 2.4rem}
+.cover > *{max-width:56rem;margin-inline:auto}
+.cover h1{font-family:var(--f-display);font-weight:800;font-stretch:62%;font-size:clamp(3.4rem,11vw,6.5rem);line-height:.9;margin:.4rem auto .8rem;word-spacing:.08em}
+.cover .dek{font-family:var(--f-story);font-size:1.2rem;line-height:1.45;margin-bottom:1.4rem;color:#EEF3F7}
+.toc{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,16rem),1fr));gap:.4rem 1.2rem}
+.toc a{color:#EEF3F7;text-decoration:none;display:flex;gap:.7rem;align-items:baseline;padding:.4rem 0;border-bottom:1px solid #1F3650}
+.toc b{font-family:var(--f-display);font-stretch:65%;font-weight:800;font-size:1.5rem;color:#F9B500;min-width:2rem}
+.room{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1.6rem clamp(1rem,3vw,2rem);margin-top:2rem;display:grid;gap:1rem}
+.rh{display:grid;grid-template-columns:auto minmax(0,1fr);gap:1rem;align-items:end}
+.rh .code{font-family:var(--f-display);font-weight:800;font-stretch:62%;font-size:4.2rem;line-height:.8;color:var(--blue)}
+.rh h2{margin:.2rem 0 0;font-family:var(--f-display);font-weight:750;font-stretch:80%;font-size:clamp(1.6rem,4vw,2.2rem);line-height:1.05}
+.read{background:var(--amber-bg);border-radius:8px;padding:1rem 1.2rem}
+.read p{margin:.35rem 0 0;font-family:var(--f-story);font-size:1.12rem;line-height:1.5}
+.mission{margin:0;font-size:1.08rem}
+.mission b{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-right:.6rem}
+.split{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));gap:.8rem}
+.col{border-radius:8px;padding:.9rem 1.1rem}
+.takes{background:var(--lime-bg)}
+.keeps{border:2px solid var(--blue)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));gap:.8rem 1.6rem}
+ul{margin:.35rem 0 0;padding-left:1.1rem}
+li{margin:.18rem 0;font-size:.95rem}
+p{margin:.35rem 0 0;font-size:.95rem}
+.small{font-size:.85rem;color:var(--ink-2)}
+.hour{border-collapse:collapse;width:100%;font-size:.85rem;font-variant-numeric:tabular-nums}
+.hour td{padding:.35rem .5rem;border-top:1px solid var(--line);vertical-align:top}
+.hour .t{font-family:var(--f-mono);color:var(--ink-2);white-space:nowrap;width:4.5rem}
+.hour .s{font-weight:700;white-space:nowrap;width:9.5rem}
+.rf{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem 1rem;font-family:var(--f-mono);font-size:.68rem;color:var(--ink-2);border-top:1px solid var(--line);padding-top:.6rem}
+@page{size:A4;margin:12mm 12mm 12mm}
+@media print{:root{--paper:#FFFFFF}html{font-size:13.5px}body{padding:0;font-size:10pt}.room{gap:.75rem!important}.rh .code{font-size:3.6rem}.cover{margin:0;break-after:page}.room{break-before:page;margin-top:0;border:0;padding:0}li{font-size:9.5pt}.read p{font-size:11pt}}
+</style>
+</head>
+<body>
+
+<header class="cover">
+  <div class="label" style="color:var(--blue-2)">PM Summit 2026 · PM Role in an AI World · breakout</div>
+  <h1>Room readouts</h1>
+  <p class="dek">One page per room, C1 to C6. The facilitator reads the top box aloud at minute 0 and the page stays on the table for the hour. Every room follows the same idea: map where the hours go, give the repetitive part to an agent, keep the judgment with the project manager, and prove the hours it gives back for decisions, stakeholders and strategy.</p>
+  <nav class="toc"><a href="#c1"><b>C1</b>Status Report Treadmill</a><a href="#c2"><b>C2</b>Meetings Without Memory</a><a href="#c3"><b>C3</b>The Silent Risk</a><a href="#c4"><b>C4</b>Decision Brief in 30 Minutes</a><a href="#c5"><b>C5</b>Lessons Nobody Learns</a><a href="#c6"><b>C6</b>Change Request Ripple</a></nav>
+</header><main class="wrap">
+<section class="room" id="c1">
+  <header class="rh"><span class="code">C1</span><div><div class="label">Room readout · Chapter 4 · Wednesday 15:45 · “Still green?”</div><h2>Status Report Treadmill</h2></div></header>
+  <div class="read"><div class="label">Read aloud at minute 0</div><p>It’s Wednesday afternoon on KESTREL. The weekly status is due on Friday. Six inputs arrived in three formats, one never arrived, and last week’s report said green. Every week a project manager spends hours collecting, reconciling and rewriting this. Our room builds the agent that does the collecting and reconciling, so the project manager can spend that time deciding what the status really is, and talking to the people behind it.</p></div>
+  <p class="mission"><b>Mission</b> Give the PM back the hours spent collecting, reconciling and rewriting the weekly status.</p>
+  <p class="mission"><b>Hours back for</b> Friday conversations with the people behind the numbers, and a clear message to management.</p>
+  <div class="split">
+    <div class="col takes"><div class="label">The agent takes · repetitive work</div><ul><li>Gathers every team update into one view</li><li>Compares each update with the milestone tracker</li><li>Lists missing inputs and drafts the reminder</li><li>Drafts the team, management and customer versions</li><li>Shows what changed since last week</li></ul></div>
+    <div class="col keeps"><div class="label">The project manager keeps · judgment</div><ul><li>The overall status rating</li><li>The message to management</li><li>What the customer is told</li><li>The follow-up conversations</li></ul></div>
+  </div>
+  <div class="grid2">
+    <div><div class="label">Your inputs</div><p>Case file C1: six updates by mail and chat, one missing update, the milestone tracker export, last week’s status.</p>
+      <div class="label" style="margin-top:.8rem">Candidate chunks to offload</div><ul><li>The Friday draft for management</li><li>One set of inputs, three audience versions</li></ul></div>
+    <div><div class="label">Your agent must</div><ul><li>Names the source of every line</li><li>Lists conflicts and missing inputs under NEEDS PM CHECK</li><li>Takes dates only from the tracker</li><li>Leaves the status rating to the PM</li><li>Keeps internal-only content out of the customer version</li></ul></div>
+  </div>
+  <div class="grid2">
+    <div><div class="label">Your three tests</div><ul><li>T1 · Does the job: all inputs in. A draft the PM can send after a short review, every line sourced.</li><li>T2 · Time test: the PM’s review of the draft against the room’s hours per week on status.</li><li>T3 · Trust check: a conflict or missing input you noticed. Flagged for the PM, not smoothed over.</li></ul></div>
+    <div><div class="label">Measure the time you give back</div><p>Hours per PM per week on status (room baseline) and corrections after sending.</p><p class="small">Write it in the Pilot Pack as hours returned per PM per week, and name the higher-value work that time goes to.</p></div>
+  </div>
+  <table class="hour"><tbody><tr><td class="t">00–05</td><td class="s">Orient</td><td>Read this page aloud. Name the roles.</td></tr><tr><td class="t">05–15</td><td class="s">Map the hours</td><td>Time each step. Pick the biggest repetitive chunk. Agree the baseline in hours.</td></tr><tr><td class="t">15–27</td><td class="s">Design</td><td>Split the work: what the agent takes, what the PM keeps. Write the instructions.</td></tr><tr><td class="t">27–42</td><td class="s">Build and challenge</td><td>Builders run T1–T3 and time the PM’s review. Challengers test value, data and guardrails.</td></tr><tr><td class="t">42–50</td><td class="s">Fix and decide</td><td>One new rule per failed test. Pick the metric and guardrail.</td></tr><tr><td class="t">50–60</td><td class="s">Commit</td><td>Owner, first test, hours returned. Fill the Pilot Pack.</td></tr></tbody></table>
+  <footer class="rf"><span>PM Summit 2026 · PM Role in an AI World · Pain to Pilot</span><span>Deliver: one Pilot Pack · owner · first test · hours back · guardrail</span></footer>
+</section>
+<section class="room" id="c2">
+  <header class="rh"><span class="code">C2</span><div><div class="label">Room readout · Chapter 3 · Tuesday 10:00 · “Did we decide that?”</div><h2>Meetings Without Memory</h2></div></header>
+  <div class="read"><div class="label">Read aloud at minute 0</div><p>Tuesday’s KESTREL sync lasted 48 minutes. Decisions were made, actions were half-assigned, and nobody wrote any of it down. By Friday someone will ask, “Did we decide that?” Our room builds the agent that turns the transcript into decisions and actions within the hour, so the project manager can chair the meeting instead of typing it.</p></div>
+  <p class="mission"><b>Mission</b> Give the PM back the time spent writing up meetings and chasing actions.</p>
+  <p class="mission"><b>Hours back for</b> Chairing the meeting properly, and following up on the decisions that matter.</p>
+  <div class="split">
+    <div class="col takes"><div class="label">The agent takes · repetitive work</div><ul><li>Separates decisions, proposals and discussion</li><li>Extracts actions with draft owners and dates</li><li>Drafts the minutes and the follow-up mail</li><li>Drafts reminders for actions due this week</li><li>Updates the action list</li></ul></div>
+    <div class="col keeps"><div class="label">The project manager keeps · judgment</div><ul><li>What counts as a decision</li><li>Who owns an action, with their agreement</li><li>What stays out of the minutes</li><li>Sending the minutes</li></ul></div>
+  </div>
+  <div class="grid2">
+    <div><div class="label">Your inputs</div><p>Case file C2: the auto-transcribed excerpt of Tuesday’s weekly sync.</p>
+      <div class="label" style="margin-top:.8rem">Candidate chunks to offload</div><ul><li>Minutes out within one hour</li><li>An action list that follows itself up</li></ul></div>
+    <div><div class="label">Your agent must</div><ul><li>Quotes the transcript line behind each item</li><li>Flags actions without an owner or a date</li><li>Turns relative dates into dates only when the meeting date is known</li><li>Leaves personal remarks out</li><li>Marks proposals as proposals, not decisions</li></ul></div>
+  </div>
+  <div class="grid2">
+    <div><div class="label">Your three tests</div><ul><li>T1 · Does the job: minutes, decisions and actions the PM can send after a quick check, each quoted.</li><li>T2 · Time test: the PM’s check against today’s time to write minutes and chase actions.</li><li>T3 · Trust check: something that sounds decided but isn’t, or a personal remark. Flagged or left out.</li></ul></div>
+    <div><div class="label">Measure the time you give back</div><p>Time from meeting end to minutes sent, and the share of actions with an owner and a date.</p><p class="small">Write it in the Pilot Pack as hours returned per PM per week, and name the higher-value work that time goes to.</p></div>
+  </div>
+  <table class="hour"><tbody><tr><td class="t">00–05</td><td class="s">Orient</td><td>Read this page aloud. Name the roles.</td></tr><tr><td class="t">05–15</td><td class="s">Map the hours</td><td>Time each step. Pick the biggest repetitive chunk. Agree the baseline in hours.</td></tr><tr><td class="t">15–27</td><td class="s">Design</td><td>Split the work: what the agent takes, what the PM keeps. Write the instructions.</td></tr><tr><td class="t">27–42</td><td class="s">Build and challenge</td><td>Builders run T1–T3 and time the PM’s review. Challengers test value, data and guardrails.</td></tr><tr><td class="t">42–50</td><td class="s">Fix and decide</td><td>One new rule per failed test. Pick the metric and guardrail.</td></tr><tr><td class="t">50–60</td><td class="s">Commit</td><td>Owner, first test, hours returned. Fill the Pilot Pack.</td></tr></tbody></table>
+  <footer class="rf"><span>PM Summit 2026 · PM Role in an AI World · Pain to Pilot</span><span>Deliver: one Pilot Pack · owner · first test · hours back · guardrail</span></footer>
+</section>
+<section class="room" id="c3">
+  <header class="rh"><span class="code">C3</span><div><div class="label">Room readout · Chapter 2 · Monday 16:30 · “The log nobody touched”</div><h2>The Silent Risk</h2></div></header>
+  <div class="read"><div class="label">Read aloud at minute 0</div><p>The KESTREL risk log was last updated five weeks ago. Meanwhile the warnings have been sitting in chat: a vendor, a supplier, a customer specification that never came. Our room builds the agent that reads the week’s messages and proposes risk-log updates with evidence, so the project manager spends review time on responses instead of digging through chat.</p></div>
+  <p class="mission"><b>Mission</b> Give the PM back the hours spent digging through chat and maintaining the risk log.</p>
+  <p class="mission"><b>Hours back for</b> Risk responses, and real conversations with risk owners.</p>
+  <div class="split">
+    <div class="col takes"><div class="label">The agent takes · repetitive work</div><ul><li>Scans the week’s mails and chats</li><li>Proposes new risks and changes to existing ones</li><li>Quotes the evidence for every proposal</li><li>Flags overdue dependencies and stale entries</li><li>Drafts the risk review agenda</li></ul></div>
+    <div class="col keeps"><div class="label">The project manager keeps · judgment</div><ul><li>Rating each risk</li><li>Owners, and opening or closing entries</li><li>The response plan</li><li>How people are talked about</li></ul></div>
+  </div>
+  <div class="grid2">
+    <div><div class="label">Your inputs</div><p>Case file C3: the RAID log as left five weeks ago, and two weeks of mail and chat snippets.</p>
+      <div class="label" style="margin-top:.8rem">Candidate chunks to offload</div><ul><li>A Monday-morning risk sweep</li><li>Updates to existing entries only</li></ul></div>
+    <div><div class="label">Your agent must</div><ul><li>Quotes the message behind every suggestion</li><li>Suggests, never closes or rates</li><li>Ignores noise</li><li>Keeps names and blame out of risk text</li><li>Marks entries that have gone stale</li></ul></div>
+  </div>
+  <div class="grid2">
+    <div><div class="label">Your three tests</div><ul><li>T1 · Does the job: sourced risk-log updates, ready for the PM to approve.</li><li>T2 · Time test: the PM’s review against today’s time to prepare a risk review.</li><li>T3 · Trust check: a warning hidden in a relaxed message, or a blaming remark. Surfaced, name left out.</li></ul></div>
+    <div><div class="label">Measure the time you give back</div><p>Days since the last log update, and issues that were never logged as risks.</p><p class="small">Write it in the Pilot Pack as hours returned per PM per week, and name the higher-value work that time goes to.</p></div>
+  </div>
+  <table class="hour"><tbody><tr><td class="t">00–05</td><td class="s">Orient</td><td>Read this page aloud. Name the roles.</td></tr><tr><td class="t">05–15</td><td class="s">Map the hours</td><td>Time each step. Pick the biggest repetitive chunk. Agree the baseline in hours.</td></tr><tr><td class="t">15–27</td><td class="s">Design</td><td>Split the work: what the agent takes, what the PM keeps. Write the instructions.</td></tr><tr><td class="t">27–42</td><td class="s">Build and challenge</td><td>Builders run T1–T3 and time the PM’s review. Challengers test value, data and guardrails.</td></tr><tr><td class="t">42–50</td><td class="s">Fix and decide</td><td>One new rule per failed test. Pick the metric and guardrail.</td></tr><tr><td class="t">50–60</td><td class="s">Commit</td><td>Owner, first test, hours returned. Fill the Pilot Pack.</td></tr></tbody></table>
+  <footer class="rf"><span>PM Summit 2026 · PM Role in an AI World · Pain to Pilot</span><span>Deliver: one Pilot Pack · owner · first test · hours back · guardrail</span></footer>
+</section>
+<section class="room" id="c4">
+  <header class="rh"><span class="code">C4</span><div><div class="label">Room readout · Chapter 5 · Wednesday 21:37 · “Five opinions, one page”</div><h2>Decision Brief in 30 Minutes</h2></div></header>
+  <div class="read"><div class="label">Read aloud at minute 0</div><p>It’s 21:37 on Wednesday. Steering meets at two tomorrow about KESTREL’s tape-out. Five people sent five opinions, some in weeks and some in euros. Our room builds the agent that turns those inputs into a balanced one-page brief, so the project manager spends the evening on the recommendation, not the formatting.</p></div>
+  <p class="mission"><b>Mission</b> Give the PM back the evening spent assembling a decision brief.</p>
+  <p class="mission"><b>Hours back for</b> Working out the recommendation with the team, and talking to steering members before the meeting.</p>
+  <div class="split">
+    <div class="col takes"><div class="label">The agent takes · repetitive work</div><ul><li>Lays out the options side by side</li><li>Puts schedule, cost, quality and customer impact in one format</li><li>Traces every number to its input</li><li>Flags unsupported claims and missing impacts</li><li>Drafts the ask to steering</li></ul></div>
+    <div class="col keeps"><div class="label">The project manager keeps · judgment</div><ul><li>The recommendation</li><li>Weighing the trade-offs</li><li>The conversation with steering</li></ul></div>
+  </div>
+  <div class="grid2">
+    <div><div class="label">Your inputs</div><p>Case file C4: the decision needed, five function inputs, the budget and customer constraints.</p>
+      <div class="label" style="margin-top:.8rem">Candidate chunks to offload</div><ul><li>The one-page steering brief</li><li>An options table plus the ask</li></ul></div>
+    <div><div class="label">Your agent must</div><ul><li>Presents each option neutrally</li><li>Marks claims without a source</li><li>Shows where every number comes from</li><li>Leaves the recommendation marked PM DECISION</li><li>Fits on one page</li></ul></div>
+  </div>
+  <div class="grid2">
+    <div><div class="label">Your three tests</div><ul><li>T1 · Does the job: a balanced one-page brief the PM only has to complete with a recommendation.</li><li>T2 · Time test: the PM’s finishing time against today’s hours to prepare a brief.</li><li>T3 · Trust check: an impact bigger than any single input says, or a request for its recommendation. Surfaced; it declines.</li></ul></div>
+    <div><div class="label">Measure the time you give back</div><p>Hours to prepare a brief, and decisions taken at the first meeting.</p><p class="small">Write it in the Pilot Pack as hours returned per PM per week, and name the higher-value work that time goes to.</p></div>
+  </div>
+  <table class="hour"><tbody><tr><td class="t">00–05</td><td class="s">Orient</td><td>Read this page aloud. Name the roles.</td></tr><tr><td class="t">05–15</td><td class="s">Map the hours</td><td>Time each step. Pick the biggest repetitive chunk. Agree the baseline in hours.</td></tr><tr><td class="t">15–27</td><td class="s">Design</td><td>Split the work: what the agent takes, what the PM keeps. Write the instructions.</td></tr><tr><td class="t">27–42</td><td class="s">Build and challenge</td><td>Builders run T1–T3 and time the PM’s review. Challengers test value, data and guardrails.</td></tr><tr><td class="t">42–50</td><td class="s">Fix and decide</td><td>One new rule per failed test. Pick the metric and guardrail.</td></tr><tr><td class="t">50–60</td><td class="s">Commit</td><td>Owner, first test, hours returned. Fill the Pilot Pack.</td></tr></tbody></table>
+  <footer class="rf"><span>PM Summit 2026 · PM Role in an AI World · Pain to Pilot</span><span>Deliver: one Pilot Pack · owner · first test · hours back · guardrail</span></footer>
+</section>
+<section class="room" id="c5">
+  <header class="rh"><span class="code">C5</span><div><div class="label">Room readout · Chapter 6 · Thursday 06:50 · “The file nobody reads”</div><h2>Lessons Nobody Learns</h2></div></header>
+  <div class="read"><div class="label">Read aloud at minute 0</div><p>At 06:50 on Thursday, KESTREL’s project manager finally opens the lessons file. Half of the week’s problems were already in it, written by people who had lived them before. Our room builds the agent that brings the right lessons to a project manager at the start of each phase, so the time goes into acting on lessons instead of searching for them.</p></div>
+  <p class="mission"><b>Mission</b> Give the PM back the time spent searching for past lessons.</p>
+  <p class="mission"><b>Hours back for</b> Acting on the lessons: changes to the plan and early talks with the right people.</p>
+  <div class="split">
+    <div class="col takes"><div class="label">The agent takes · repetitive work</div><ul><li>Matches the project profile to past lessons</li><li>Explains why each lesson applies</li><li>Turns lessons into checklist items for the next milestone</li><li>Flags outdated and conflicting lessons</li></ul></div>
+    <div class="col keeps"><div class="label">The project manager keeps · judgment</div><ul><li>Which lessons apply</li><li>The call where lessons conflict</li><li>Changes to the plan</li></ul></div>
+  </div>
+  <div class="grid2">
+    <div><div class="label">Your inputs</div><p>Case file C5: ten lessons from four past projects and KESTREL’s next-phase profile.</p>
+      <div class="label" style="margin-top:.8rem">Candidate chunks to offload</div><ul><li>The phase-start lessons check</li><li>Lessons turned into a milestone checklist</li></ul></div>
+    <div><div class="label">Your agent must</div><ul><li>Explains every match</li><li>Leaves out or anonymizes blame</li><li>Flags lessons that refer to things that no longer exist</li><li>Shows contradictions instead of choosing</li><li>Matches different words for the same thing</li></ul></div>
+  </div>
+  <div class="grid2">
+    <div><div class="label">Your three tests</div><ul><li>T1 · Does the job: a ranked, explained shortlist the PM can act on.</li><li>T2 · Time test: the PM’s review against today’s time to find relevant lessons, which is often never.</li><li>T3 · Trust check: two lessons that disagree, or one that blames a person. Both shown; blame removed.</li></ul></div>
+    <div><div class="label">Measure the time you give back</div><p>Lessons consulted at phase start, and repeated issues per project.</p><p class="small">Write it in the Pilot Pack as hours returned per PM per week, and name the higher-value work that time goes to.</p></div>
+  </div>
+  <table class="hour"><tbody><tr><td class="t">00–05</td><td class="s">Orient</td><td>Read this page aloud. Name the roles.</td></tr><tr><td class="t">05–15</td><td class="s">Map the hours</td><td>Time each step. Pick the biggest repetitive chunk. Agree the baseline in hours.</td></tr><tr><td class="t">15–27</td><td class="s">Design</td><td>Split the work: what the agent takes, what the PM keeps. Write the instructions.</td></tr><tr><td class="t">27–42</td><td class="s">Build and challenge</td><td>Builders run T1–T3 and time the PM’s review. Challengers test value, data and guardrails.</td></tr><tr><td class="t">42–50</td><td class="s">Fix and decide</td><td>One new rule per failed test. Pick the metric and guardrail.</td></tr><tr><td class="t">50–60</td><td class="s">Commit</td><td>Owner, first test, hours returned. Fill the Pilot Pack.</td></tr></tbody></table>
+  <footer class="rf"><span>PM Summit 2026 · PM Role in an AI World · Pain to Pilot</span><span>Deliver: one Pilot Pack · owner · first test · hours back · guardrail</span></footer>
+</section>
+<section class="room" id="c6">
+  <header class="rh"><span class="code">C6</span><div><div class="label">Room readout · Chapter 1 · Monday 11:04 · “Can we do this?”</div><h2>Change Request Ripple</h2></div></header>
+  <div class="read"><div class="label">Read aloud at minute 0</div><p>Monday, 11:04. Customer Alpha wants samples three weeks earlier and a new standby mode on stage at their tech day. Answering means asking seven functions the same question in seven ways. Our room builds the agent that maps the ripple and drafts the right questions for each function, so the project manager spends the week on the decision and the customer, not on chasing replies.</p></div>
+  <p class="mission"><b>Mission</b> Give the PM back the days spent chasing functions for impact answers.</p>
+  <p class="mission"><b>Hours back for</b> The decision with the change board, and the conversation with the customer.</p>
+  <div class="split">
+    <div class="col takes"><div class="label">The agent takes · repetitive work</div><ul><li>Finds the affected functions through plan dependencies</li><li>Drafts the questions each function must answer</li><li>Builds a first dependency and impact view</li><li>Collates the replies for the change board</li><li>Drafts a holding reply to the customer</li></ul></div>
+    <div class="col keeps"><div class="label">The project manager keeps · judgment</div><ul><li>Any commitment to the customer</li><li>The trade-offs</li><li>The recommendation to the change board</li></ul></div>
+  </div>
+  <div class="grid2">
+    <div><div class="label">Your inputs</div><p>Case file C6: change request CR-014, the plan dependencies, the function list.</p>
+      <div class="label" style="margin-top:.8rem">Candidate chunks to offload</div><ul><li>Questions to seven functions in ten minutes</li><li>The one-page change-board view</li></ul></div>
+    <div><div class="label">Your agent must</div><ul><li>Never commits a date</li><li>Marks what it cannot know and who must answer</li><li>Follows the dependencies in the plan</li><li>Lists open questions per function</li><li>Flags clashes with qualification and capacity</li></ul></div>
+  </div>
+  <div class="grid2">
+    <div><div class="label">Your three tests</div><ul><li>T1 · Does the job: affected functions and their questions, ready to send after a short review.</li><li>T2 · Time test: the PM’s review against today’s days of chasing.</li><li>T3 · Trust check: a dependency the request breaks, or a request to commit a date. Flagged; it declines.</li></ul></div>
+    <div><div class="label">Measure the time you give back</div><p>Days from change request to decision, and follow-up rounds needed.</p><p class="small">Write it in the Pilot Pack as hours returned per PM per week, and name the higher-value work that time goes to.</p></div>
+  </div>
+  <table class="hour"><tbody><tr><td class="t">00–05</td><td class="s">Orient</td><td>Read this page aloud. Name the roles.</td></tr><tr><td class="t">05–15</td><td class="s">Map the hours</td><td>Time each step. Pick the biggest repetitive chunk. Agree the baseline in hours.</td></tr><tr><td class="t">15–27</td><td class="s">Design</td><td>Split the work: what the agent takes, what the PM keeps. Write the instructions.</td></tr><tr><td class="t">27–42</td><td class="s">Build and challenge</td><td>Builders run T1–T3 and time the PM’s review. Challengers test value, data and guardrails.</td></tr><tr><td class="t">42–50</td><td class="s">Fix and decide</td><td>One new rule per failed test. Pick the metric and guardrail.</td></tr><tr><td class="t">50–60</td><td class="s">Commit</td><td>Owner, first test, hours returned. Fill the Pilot Pack.</td></tr></tbody></table>
+  <footer class="rf"><span>PM Summit 2026 · PM Role in an AI World · Pain to Pilot</span><span>Deliver: one Pilot Pack · owner · first test · hours back · guardrail</span></footer>
+</section></main>
+</body>
+</html>

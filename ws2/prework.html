@@ -387,7 +387,8 @@ footer.end .tag{font-family:var(--f-story);font-style:italic;font-size:1.1rem;co
       </div>
       <p>You wake before the alarm. Because you can’t face the brief yet, you open Jonas’s folder and, for the first time, the lessons file.</p>
       <p>Four past projects: HERON, OSPREY, PLOVER, WREN. Ten lessons, written by tired people at the end of something.</p>
-      <p><em>ATE hardware ordered after tape-out arrived five weeks late.</em> You think of your load board. <em>Customer samples shipped before qualification caused two escalations.</em> You think of CR-014. <em>SDK released without quality review led to customer-found bugs.</em> You think of Tuesday. <em>Export-control classification done late blocked shipments for three weeks.</em> You think of the decision you made almost by accident.</p>
+      <p><em>ATE hardware ordered after tape-out arrived five weeks late.</em> You think of your load board. <em>Customer samples shipped before qualification caused two escalations.</em> You think of CR-014. <em>Late spec changes from the lead customer caused two respins.</em> You think of the standby mode Customer Alpha wants two weeks before tape-out. <em>SDK released without quality review led to customer-found bugs.</em> You think of Tuesday. <em>Export-control classification done late blocked shipments for three weeks.</em> You think of the decision you made almost by accident.</p>
+      <p>Five of this week’s problems. Every one of them already written down, by someone else, on another project.</p>
       <p>There is a lesson about a tool the company retired last year, and another about a test engineer called John that is less a lesson than a grudge. Two lessons disagree completely about shipping early samples.</p>
       <p>Somebody learned all of this the hard way, more than once. What if this file had found you on Monday morning, at the moment you needed it, instead of sitting in a folder?</p>
       <a class="cf-link" href="#c5">Case file C5 · the lessons file →</a>
@@ -416,6 +417,7 @@ footer.end .tag{font-family:var(--f-story);font-style:italic;font-size:1.1rem;co
       <p>Now picture Thursday with those hours back. An hour with Aiko’s team before steering, working out the real options instead of formatting them. A call with Customer Alpha on Monday afternoon instead of Thursday. Time to think about what KESTREL needs in January, not only what it needs by Friday. That is the job you were hired for: decisions, stakeholders, direction.</p>
       <p>On 5 November your breakout room takes one of these six jobs. In sixty minutes you will map where the hours go, design an agent that takes the repetitive part, test it on the KESTREL case file, and measure the time it gives back. Every decision stays yours.</p>
       <p>By the end, your room will have a pilot that someone runs on a real project the week after the summit.</p>
+      <p>Then all six rooms meet for the Summit Debrief. Each shows the hours its agent gives back, what that time buys the project, its biggest surprise and the one guardrail it will not give up. Then everyone answers one question: which pilot would you implement on Monday morning?</p>
     </section>
   </article>
 
@@ -445,7 +447,7 @@ footer.end .tag{font-family:var(--f-story);font-style:italic;font-size:1.1rem;co
         <li><div><b>Map your own week.</b><span>How long does this task take you in a normal week? List the steps, time each one, and mark which are repetitive and which need your judgment.</span></div></li>
         <li><div><b>Bring one idea for the time you get back.</b><span>What would you do with those hours: a decision you’d prepare better, a stakeholder you’d see sooner, time to think ahead? Please don’t bring confidential documents.</span></div></li>
       </ol>
-      <p class="fine">No AI experience needed. Rooms mix beginners and experienced users on purpose, and everyone gets a role.</p>
+      <p class="fine">No AI experience needed. Rooms mix beginners and experienced users on purpose, and everyone gets a role. The session ends with the Summit Debrief, where everyone votes for the pilot they would implement on Monday morning.</p>
     </div>
   </section>
 
@@ -573,8 +575,8 @@ footer.end .tag{font-family:var(--f-story);font-style:italic;font-size:1.1rem;co
 
     <!-- C5 -->
     <article class="casefile" id="c5">
-      <div class="cf-head"><span class="code">C5</span><h3>The file nobody reads</h3><span class="sub">Lessons Nobody Learns · Jonas’s lessons file and KESTREL’s next phase</span></div>
-      <p class="cf-intro">The lessons-learned extract from Jonas’s folder, and the profile of the phase KESTREL is about to enter.</p>
+      <div class="cf-head"><span class="code">C5</span><h3>The file nobody reads</h3><span class="sub">Lessons Nobody Learns · Jonas’s lessons file, KESTREL’s next phase and this week’s signals</span></div>
+      <p class="cf-intro">The lessons-learned extract from Jonas’s folder, the profile of the phase KESTREL is about to enter, and your own notes on this week’s signals.</p>
       <p class="hunt">Read it as the project manager on Thursday morning: which parts of this work would you hand to an agent, and which would you keep?</p>
       <div class="tbl wide"><table>
         <thead><tr><th>ID</th><th>Project</th><th>Lesson and action</th></tr></thead>
@@ -592,6 +594,17 @@ footer.end .tag{font-family:var(--f-story);font-style:italic;font-size:1.1rem;co
         </tbody>
       </table></div>
       <div class="ev"><div class="ev-head"><span><b>New project profile</b> · KESTREL</span></div><div class="ev-body"><p>Entering phase “tape-out to customer sampling” (CW47 to CW04).</p><p>Known pressure points: test hardware timing, qualification slot, lead-customer expectations, SDK release, eval kit shipments.</p><p>Note: the PMtrack tool was retired in 2025.</p></div></div>
+      <div class="tbl wide"><table>
+        <thead><tr><th>ID</th><th>Area</th><th>This week’s signal · CW45</th></tr></thead>
+        <tbody>
+          <tr><td class="id">S1</td><td>Test</td><td>Load board from the single vendor slipped from CW48 to CW50; their test line is overbooked again.</td></tr>
+          <tr><td class="id">S2</td><td>Customer</td><td>CR-014 asks for customer samples in CW01. Qualification starts in CW02.</td></tr>
+          <tr><td class="id">S3</td><td>Customer</td><td>CR-014 also asks for a new “ultra-low-power standby” mode, two weeks before tape-out.</td></tr>
+          <tr><td class="id">S4</td><td>Software</td><td>SDK beta is done. Release to Customer Alpha is gated on the quality review (decided on Tuesday).</td></tr>
+          <tr><td class="id">S5</td><td>Operations</td><td>First eval kit shipments are coming. An export-control check before each shipment was decided on Tuesday.</td></tr>
+          <tr><td class="id">S6</td><td>Supply</td><td>The supplier moved the substrate order to its next allocation cycle (“should still be fine”).</td></tr>
+        </tbody>
+      </table></div>
     </article>
 
     <!-- C6 -->

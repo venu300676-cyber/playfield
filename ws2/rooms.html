@@ -7,10 +7,10 @@
 <title>Room Readouts C1–C6</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap"><style>body{margin:0}
 /* Print-first readouts: one room per A4 page, NXP-style blue, amber and lime accents on white. */
-:root{--paper:#F5F7FA;--card:#FFFFFF;--ink:#0B1826;--ink-2:#4A5D70;--line:#D3DCE5;--blue:#1C6FA6;--blue-2:#6CB4E4;--amber:#B67F00;--amber-bg:#FFF4D6;--lime:#8A9400;--lime-bg:#F5F7D6;--night:#07111C;
+:root{--paper:#F5F7FA;--card:#FFFFFF;--ink:#0B1826;--ink-2:#4A5D70;--line:#D3DCE5;--blue:#1C6FA6;--blue-2:#6CB4E4;--amber:#B67F00;--amber-bg:#FFF4D6;--lime:#8A9400;--lime-bg:#F5F7D6;--risk-bg:#FBE3DE;--night:#07111C;
   --f-display:"Archivo","Arial Narrow",system-ui,sans-serif;--f-body:"Archivo",system-ui,sans-serif;--f-story:"Newsreader",Georgia,serif;--f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#07111C;--card:#0E1C2B;--ink:#EEF3F7;--ink-2:#9DB2C6;--line:#1F3650;--blue:#6CB4E4;--amber:#F9B500;--amber-bg:#2E2204;--lime:#C9D200;--lime-bg:#23260A;color-scheme:dark}}
-:root[data-theme="dark"]{--paper:#07111C;--card:#0E1C2B;--ink:#EEF3F7;--ink-2:#9DB2C6;--line:#1F3650;--blue:#6CB4E4;--amber:#F9B500;--amber-bg:#2E2204;--lime:#C9D200;--lime-bg:#23260A;color-scheme:dark}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#07111C;--card:#0E1C2B;--ink:#EEF3F7;--ink-2:#9DB2C6;--line:#1F3650;--blue:#6CB4E4;--amber:#F9B500;--amber-bg:#2E2204;--lime:#C9D200;--lime-bg:#23260A;--risk-bg:#3A1C17;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#07111C;--card:#0E1C2B;--ink:#EEF3F7;--ink-2:#9DB2C6;--line:#1F3650;--blue:#6CB4E4;--amber:#F9B500;--amber-bg:#2E2204;--lime:#C9D200;--lime-bg:#23260A;--risk-bg:#3A1C17;color-scheme:dark}
 *,*::before,*::after{box-sizing:border-box}
 body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:1rem;line-height:1.5;padding-inline:clamp(16px,4vw,40px);padding-block:0 3rem}
 .wrap{max-width:56rem;margin-inline:auto}
@@ -39,13 +39,22 @@ ul{margin:.35rem 0 0;padding-left:1.1rem}
 li{margin:.18rem 0;font-size:.95rem}
 p{margin:.35rem 0 0;font-size:.95rem}
 .small{font-size:.85rem;color:var(--ink-2)}
+.stakes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));gap:.8rem}
+.stakes > div{border-radius:8px;padding:.75rem 1rem}
+.stakes .impact{background:var(--lime-bg)}
+.stakes .failure{background:var(--risk-bg)}
+.debrief{background:var(--night);color:#EEF3F7;border-radius:8px;padding:.8rem 1.1rem}
+.debrief .label{color:#F9B500}
+.debrief p{color:#EEF3F7}
+.debrief .q{font-family:var(--f-story);font-size:1.08rem}
+.debrief .q b{color:#F9B500;font-weight:600}
 .hour{border-collapse:collapse;width:100%;font-size:.85rem;font-variant-numeric:tabular-nums}
 .hour td{padding:.35rem .5rem;border-top:1px solid var(--line);vertical-align:top}
 .hour .t{font-family:var(--f-mono);color:var(--ink-2);white-space:nowrap;width:4.5rem}
 .hour .s{font-weight:700;white-space:nowrap;width:9.5rem}
 .rf{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem 1rem;font-family:var(--f-mono);font-size:.68rem;color:var(--ink-2);border-top:1px solid var(--line);padding-top:.6rem}
 @page{size:A4;margin:12mm 12mm 12mm}
-@media print{:root{--paper:#FFFFFF}html{font-size:13.5px}body{padding:0;font-size:10pt}.room{gap:.75rem!important}.rh .code{font-size:3.6rem}.cover{margin:0;break-after:page}.room{break-before:page;margin-top:0;border:0;padding:0}li{font-size:9.5pt}.read p{font-size:11pt}}
+@media print{:root{--paper:#FFFFFF}html{font-size:12.4px}body{padding:0;font-size:9.4pt}.room{gap:.6rem!important}.rh .code{font-size:3.3rem}.cover{margin:0;break-after:page}.room{break-before:page;margin-top:0;border:0;padding:0}li{font-size:8.9pt;margin:.1rem 0}p{font-size:8.9pt}.read p{font-size:10.2pt}.mission{font-size:9.6pt}.hour{font-size:8.3pt}.hour td{padding:.22rem .45rem}.stakes > div,.debrief{padding:.55rem .85rem}.debrief .q{font-size:10pt}}
 </style>
 </head>
 <body>
@@ -53,7 +62,7 @@ p{margin:.35rem 0 0;font-size:.95rem}
 <header class="cover">
   <div class="label" style="color:var(--blue-2)">PM Summit 2026 · PM Role in an AI World · breakout</div>
   <h1>Room readouts</h1>
-  <p class="dek">One page per room, C1 to C6. The facilitator reads the top box aloud at minute 0 and the page stays on the table for the hour. Every room follows the same idea: map where the hours go, give the repetitive part to an agent, keep the judgment with the project manager, and prove the hours it gives back for decisions, stakeholders and strategy.</p>
+  <p class="dek">One page per room, C1 to C6. The facilitator reads the top box aloud at minute 0 and the page stays on the table for the hour. Every room follows the same idea: map where the hours go, give the repetitive part to an agent, keep the judgment with the project manager, and prove the hours it gives back for decisions, stakeholders and strategy. Every room names what failure would look like, and the hour ends in the Summit Debrief with one question: which pilot would you implement on Monday morning?</p>
   <nav class="toc"><a href="#c1"><b>C1</b>Status Report Treadmill</a><a href="#c2"><b>C2</b>Meetings Without Memory</a><a href="#c3"><b>C3</b>The Silent Risk</a><a href="#c4"><b>C4</b>Decision Brief in 30 Minutes</a><a href="#c5"><b>C5</b>Lessons Nobody Learns</a><a href="#c6"><b>C6</b>Change Request Ripple</a></nav>
 </header><main class="wrap">
 <section class="room" id="c1">
@@ -70,12 +79,17 @@ p{margin:.35rem 0 0;font-size:.95rem}
       <div class="label" style="margin-top:.8rem">Candidate chunks to offload</div><ul><li>The Friday draft for management</li><li>One set of inputs, three audience versions</li></ul></div>
     <div><div class="label">Your agent must</div><ul><li>Names the source of every line</li><li>Lists conflicts and missing inputs under NEEDS PM CHECK</li><li>Takes dates only from the tracker</li><li>Leaves the status rating to the PM</li><li>Keeps internal-only content out of the customer version</li></ul></div>
   </div>
+  <div class="stakes">
+    <div class="impact"><div class="label">Hours back → business impact</div><p>Example: 3 hours back a week → earlier escalation and better stakeholder communication.</p></div>
+    <div class="failure"><div class="label">What does failure look like?</div><p>The agent hides conflicting inputs: two sources disagree and the draft quietly picks one, so the PM signs a status that isn’t true.</p></div>
+  </div>
   <div class="grid2">
     <div><div class="label">Your three tests</div><ul><li>T1 · Does the job: all inputs in. A draft the PM can send after a short review, every line sourced.</li><li>T2 · Time test: the PM’s review of the draft against the room’s hours per week on status.</li><li>T3 · Trust check: a conflict or missing input you noticed. Flagged for the PM, not smoothed over.</li></ul></div>
-    <div><div class="label">Measure the time you give back</div><p>Hours per PM per week on status (room baseline) and corrections after sending.</p><p class="small">Write it in the Pilot Pack as hours returned per PM per week, and name the higher-value work that time goes to.</p></div>
+    <div><div class="label">Measure the time you give back</div><p>Hours per PM per week on status (room baseline) and corrections after sending.</p></div>
   </div>
-  <table class="hour"><tbody><tr><td class="t">00–05</td><td class="s">Orient</td><td>Read this page aloud. Name the roles.</td></tr><tr><td class="t">05–15</td><td class="s">Map the hours</td><td>Time each step. Pick the biggest repetitive chunk. Agree the baseline in hours.</td></tr><tr><td class="t">15–27</td><td class="s">Design</td><td>Split the work: what the agent takes, what the PM keeps. Write the instructions.</td></tr><tr><td class="t">27–42</td><td class="s">Build and challenge</td><td>Builders run T1–T3 and time the PM’s review. Challengers test value, data and guardrails.</td></tr><tr><td class="t">42–50</td><td class="s">Fix and decide</td><td>One new rule per failed test. Pick the metric and guardrail.</td></tr><tr><td class="t">50–60</td><td class="s">Commit</td><td>Owner, first test, hours returned. Fill the Pilot Pack.</td></tr></tbody></table>
-  <footer class="rf"><span>PM Summit 2026 · PM Role in an AI World · Pain to Pilot</span><span>Deliver: one Pilot Pack · owner · first test · hours back · guardrail</span></footer>
+  <table class="hour"><tbody><tr><td class="t">00–05</td><td class="s">Orient</td><td>Read this page aloud. Name the roles.</td></tr><tr><td class="t">05–15</td><td class="s">Map the hours</td><td>Time each step. Pick the biggest repetitive chunk. Agree the baseline in hours and what that time buys the project.</td></tr><tr><td class="t">15–27</td><td class="s">Design</td><td>Split the work: what the agent takes, what the PM keeps. Name what failure looks like. Write the instructions.</td></tr><tr><td class="t">27–42</td><td class="s">Build and challenge</td><td>Builders run T1–T3 and time the PM’s review. Challengers hunt the failure and write the guardrail.</td></tr><tr><td class="t">42–50</td><td class="s">Fix and decide</td><td>One new rule per failed test. Pick the metric and the guardrail against the failure.</td></tr><tr><td class="t">50–60</td><td class="s">Commit</td><td>Owner, first test, hours back, business impact. Fill the Pilot Pack and the debrief card.</td></tr></tbody></table>
+  <div class="debrief"><div class="label">Summit Debrief · your 90-second card</div><p>Hours back · business impact · biggest surprise · one guardrail and the failure it prevents · pilot owner</p><p class="q">Then the whole summit answers: <b>which pilot would you implement on Monday morning?</b></p></div>
+  <footer class="rf"><span>PM Summit 2026 · PM Role in an AI World · Pain to Pilot</span><span>Deliver: one Pilot Pack and a 90-second debrief card</span></footer>
 </section>
 <section class="room" id="c2">
   <header class="rh"><span class="code">C2</span><div><div class="label">Room readout · Chapter 3 · Tuesday 10:00 · “Did we decide that?”</div><h2>Meetings Without Memory</h2></div></header>
@@ -91,12 +105,17 @@ p{margin:.35rem 0 0;font-size:.95rem}
       <div class="label" style="margin-top:.8rem">Candidate chunks to offload</div><ul><li>Minutes out within one hour</li><li>An action list that follows itself up</li></ul></div>
     <div><div class="label">Your agent must</div><ul><li>Quotes the transcript line behind each item</li><li>Flags actions without an owner or a date</li><li>Turns relative dates into dates only when the meeting date is known</li><li>Leaves personal remarks out</li><li>Marks proposals as proposals, not decisions</li></ul></div>
   </div>
+  <div class="stakes">
+    <div class="impact"><div class="label">Hours back → business impact</div><p>Minutes out within the hour → decisions stick and actions close on time. Measure your hours in the room.</p></div>
+    <div class="failure"><div class="label">What does failure look like?</div><p>The agent invents actions: an owner nobody agreed to, a date nobody said, or a proposal written up as a decision.</p></div>
+  </div>
   <div class="grid2">
     <div><div class="label">Your three tests</div><ul><li>T1 · Does the job: minutes, decisions and actions the PM can send after a quick check, each quoted.</li><li>T2 · Time test: the PM’s check against today’s time to write minutes and chase actions.</li><li>T3 · Trust check: something that sounds decided but isn’t, or a personal remark. Flagged or left out.</li></ul></div>
-    <div><div class="label">Measure the time you give back</div><p>Time from meeting end to minutes sent, and the share of actions with an owner and a date.</p><p class="small">Write it in the Pilot Pack as hours returned per PM per week, and name the higher-value work that time goes to.</p></div>
+    <div><div class="label">Measure the time you give back</div><p>Time from meeting end to minutes sent, and the share of actions with an owner and a date.</p></div>
   </div>
-  <table class="hour"><tbody><tr><td class="t">00–05</td><td class="s">Orient</td><td>Read this page aloud. Name the roles.</td></tr><tr><td class="t">05–15</td><td class="s">Map the hours</td><td>Time each step. Pick the biggest repetitive chunk. Agree the baseline in hours.</td></tr><tr><td class="t">15–27</td><td class="s">Design</td><td>Split the work: what the agent takes, what the PM keeps. Write the instructions.</td></tr><tr><td class="t">27–42</td><td class="s">Build and challenge</td><td>Builders run T1–T3 and time the PM’s review. Challengers test value, data and guardrails.</td></tr><tr><td class="t">42–50</td><td class="s">Fix and decide</td><td>One new rule per failed test. Pick the metric and guardrail.</td></tr><tr><td class="t">50–60</td><td class="s">Commit</td><td>Owner, first test, hours returned. Fill the Pilot Pack.</td></tr></tbody></table>
-  <footer class="rf"><span>PM Summit 2026 · PM Role in an AI World · Pain to Pilot</span><span>Deliver: one Pilot Pack · owner · first test · hours back · guardrail</span></footer>
+  <table class="hour"><tbody><tr><td class="t">00–05</td><td class="s">Orient</td><td>Read this page aloud. Name the roles.</td></tr><tr><td class="t">05–15</td><td class="s">Map the hours</td><td>Time each step. Pick the biggest repetitive chunk. Agree the baseline in hours and what that time buys the project.</td></tr><tr><td class="t">15–27</td><td class="s">Design</td><td>Split the work: what the agent takes, what the PM keeps. Name what failure looks like. Write the instructions.</td></tr><tr><td class="t">27–42</td><td class="s">Build and challenge</td><td>Builders run T1–T3 and time the PM’s review. Challengers hunt the failure and write the guardrail.</td></tr><tr><td class="t">42–50</td><td class="s">Fix and decide</td><td>One new rule per failed test. Pick the metric and the guardrail against the failure.</td></tr><tr><td class="t">50–60</td><td class="s">Commit</td><td>Owner, first test, hours back, business impact. Fill the Pilot Pack and the debrief card.</td></tr></tbody></table>
+  <div class="debrief"><div class="label">Summit Debrief · your 90-second card</div><p>Hours back · business impact · biggest surprise · one guardrail and the failure it prevents · pilot owner</p><p class="q">Then the whole summit answers: <b>which pilot would you implement on Monday morning?</b></p></div>
+  <footer class="rf"><span>PM Summit 2026 · PM Role in an AI World · Pain to Pilot</span><span>Deliver: one Pilot Pack and a 90-second debrief card</span></footer>
 </section>
 <section class="room" id="c3">
   <header class="rh"><span class="code">C3</span><div><div class="label">Room readout · Chapter 2 · Monday 16:30 · “The log nobody touched”</div><h2>The Silent Risk</h2></div></header>
@@ -112,12 +131,17 @@ p{margin:.35rem 0 0;font-size:.95rem}
       <div class="label" style="margin-top:.8rem">Candidate chunks to offload</div><ul><li>A Monday-morning risk sweep</li><li>Updates to existing entries only</li></ul></div>
     <div><div class="label">Your agent must</div><ul><li>Quotes the message behind every suggestion</li><li>Suggests, never closes or rates</li><li>Ignores noise</li><li>Keeps names and blame out of risk text</li><li>Marks entries that have gone stale</li></ul></div>
   </div>
+  <div class="stakes">
+    <div class="impact"><div class="label">Hours back → business impact</div><p>Example: 2 hours back a week → risks detected weeks earlier, while there is still time to act.</p></div>
+    <div class="failure"><div class="label">What does failure look like?</div><p>The agent creates false risks: noise logged as risk, or a frustrated remark turned into blame. A noisy log is a log nobody reads.</p></div>
+  </div>
   <div class="grid2">
     <div><div class="label">Your three tests</div><ul><li>T1 · Does the job: sourced risk-log updates, ready for the PM to approve.</li><li>T2 · Time test: the PM’s review against today’s time to prepare a risk review.</li><li>T3 · Trust check: a warning hidden in a relaxed message, or a blaming remark. Surfaced, name left out.</li></ul></div>
-    <div><div class="label">Measure the time you give back</div><p>Days since the last log update, and issues that were never logged as risks.</p><p class="small">Write it in the Pilot Pack as hours returned per PM per week, and name the higher-value work that time goes to.</p></div>
+    <div><div class="label">Measure the time you give back</div><p>Days since the last log update, and issues that were never logged as risks.</p></div>
   </div>
-  <table class="hour"><tbody><tr><td class="t">00–05</td><td class="s">Orient</td><td>Read this page aloud. Name the roles.</td></tr><tr><td class="t">05–15</td><td class="s">Map the hours</td><td>Time each step. Pick the biggest repetitive chunk. Agree the baseline in hours.</td></tr><tr><td class="t">15–27</td><td class="s">Design</td><td>Split the work: what the agent takes, what the PM keeps. Write the instructions.</td></tr><tr><td class="t">27–42</td><td class="s">Build and challenge</td><td>Builders run T1–T3 and time the PM’s review. Challengers test value, data and guardrails.</td></tr><tr><td class="t">42–50</td><td class="s">Fix and decide</td><td>One new rule per failed test. Pick the metric and guardrail.</td></tr><tr><td class="t">50–60</td><td class="s">Commit</td><td>Owner, first test, hours returned. Fill the Pilot Pack.</td></tr></tbody></table>
-  <footer class="rf"><span>PM Summit 2026 · PM Role in an AI World · Pain to Pilot</span><span>Deliver: one Pilot Pack · owner · first test · hours back · guardrail</span></footer>
+  <table class="hour"><tbody><tr><td class="t">00–05</td><td class="s">Orient</td><td>Read this page aloud. Name the roles.</td></tr><tr><td class="t">05–15</td><td class="s">Map the hours</td><td>Time each step. Pick the biggest repetitive chunk. Agree the baseline in hours and what that time buys the project.</td></tr><tr><td class="t">15–27</td><td class="s">Design</td><td>Split the work: what the agent takes, what the PM keeps. Name what failure looks like. Write the instructions.</td></tr><tr><td class="t">27–42</td><td class="s">Build and challenge</td><td>Builders run T1–T3 and time the PM’s review. Challengers hunt the failure and write the guardrail.</td></tr><tr><td class="t">42–50</td><td class="s">Fix and decide</td><td>One new rule per failed test. Pick the metric and the guardrail against the failure.</td></tr><tr><td class="t">50–60</td><td class="s">Commit</td><td>Owner, first test, hours back, business impact. Fill the Pilot Pack and the debrief card.</td></tr></tbody></table>
+  <div class="debrief"><div class="label">Summit Debrief · your 90-second card</div><p>Hours back · business impact · biggest surprise · one guardrail and the failure it prevents · pilot owner</p><p class="q">Then the whole summit answers: <b>which pilot would you implement on Monday morning?</b></p></div>
+  <footer class="rf"><span>PM Summit 2026 · PM Role in an AI World · Pain to Pilot</span><span>Deliver: one Pilot Pack and a 90-second debrief card</span></footer>
 </section>
 <section class="room" id="c4">
   <header class="rh"><span class="code">C4</span><div><div class="label">Room readout · Chapter 5 · Wednesday 21:37 · “Five opinions, one page”</div><h2>Decision Brief in 30 Minutes</h2></div></header>
@@ -133,33 +157,43 @@ p{margin:.35rem 0 0;font-size:.95rem}
       <div class="label" style="margin-top:.8rem">Candidate chunks to offload</div><ul><li>The one-page steering brief</li><li>An options table plus the ask</li></ul></div>
     <div><div class="label">Your agent must</div><ul><li>Presents each option neutrally</li><li>Marks claims without a source</li><li>Shows where every number comes from</li><li>Leaves the recommendation marked PM DECISION</li><li>Fits on one page</li></ul></div>
   </div>
+  <div class="stakes">
+    <div class="impact"><div class="label">Hours back → business impact</div><p>Example: 4 hours back a week → faster steering decisions, taken at the first meeting.</p></div>
+    <div class="failure"><div class="label">What does failure look like?</div><p>The agent recommends instead of informing: it leans toward one option, often the loudest input, and the brief stops being balanced.</p></div>
+  </div>
   <div class="grid2">
     <div><div class="label">Your three tests</div><ul><li>T1 · Does the job: a balanced one-page brief the PM only has to complete with a recommendation.</li><li>T2 · Time test: the PM’s finishing time against today’s hours to prepare a brief.</li><li>T3 · Trust check: an impact bigger than any single input says, or a request for its recommendation. Surfaced; it declines.</li></ul></div>
-    <div><div class="label">Measure the time you give back</div><p>Hours to prepare a brief, and decisions taken at the first meeting.</p><p class="small">Write it in the Pilot Pack as hours returned per PM per week, and name the higher-value work that time goes to.</p></div>
+    <div><div class="label">Measure the time you give back</div><p>Hours to prepare a brief, and decisions taken at the first meeting.</p></div>
   </div>
-  <table class="hour"><tbody><tr><td class="t">00–05</td><td class="s">Orient</td><td>Read this page aloud. Name the roles.</td></tr><tr><td class="t">05–15</td><td class="s">Map the hours</td><td>Time each step. Pick the biggest repetitive chunk. Agree the baseline in hours.</td></tr><tr><td class="t">15–27</td><td class="s">Design</td><td>Split the work: what the agent takes, what the PM keeps. Write the instructions.</td></tr><tr><td class="t">27–42</td><td class="s">Build and challenge</td><td>Builders run T1–T3 and time the PM’s review. Challengers test value, data and guardrails.</td></tr><tr><td class="t">42–50</td><td class="s">Fix and decide</td><td>One new rule per failed test. Pick the metric and guardrail.</td></tr><tr><td class="t">50–60</td><td class="s">Commit</td><td>Owner, first test, hours returned. Fill the Pilot Pack.</td></tr></tbody></table>
-  <footer class="rf"><span>PM Summit 2026 · PM Role in an AI World · Pain to Pilot</span><span>Deliver: one Pilot Pack · owner · first test · hours back · guardrail</span></footer>
+  <table class="hour"><tbody><tr><td class="t">00–05</td><td class="s">Orient</td><td>Read this page aloud. Name the roles.</td></tr><tr><td class="t">05–15</td><td class="s">Map the hours</td><td>Time each step. Pick the biggest repetitive chunk. Agree the baseline in hours and what that time buys the project.</td></tr><tr><td class="t">15–27</td><td class="s">Design</td><td>Split the work: what the agent takes, what the PM keeps. Name what failure looks like. Write the instructions.</td></tr><tr><td class="t">27–42</td><td class="s">Build and challenge</td><td>Builders run T1–T3 and time the PM’s review. Challengers hunt the failure and write the guardrail.</td></tr><tr><td class="t">42–50</td><td class="s">Fix and decide</td><td>One new rule per failed test. Pick the metric and the guardrail against the failure.</td></tr><tr><td class="t">50–60</td><td class="s">Commit</td><td>Owner, first test, hours back, business impact. Fill the Pilot Pack and the debrief card.</td></tr></tbody></table>
+  <div class="debrief"><div class="label">Summit Debrief · your 90-second card</div><p>Hours back · business impact · biggest surprise · one guardrail and the failure it prevents · pilot owner</p><p class="q">Then the whole summit answers: <b>which pilot would you implement on Monday morning?</b></p></div>
+  <footer class="rf"><span>PM Summit 2026 · PM Role in an AI World · Pain to Pilot</span><span>Deliver: one Pilot Pack and a 90-second debrief card</span></footer>
 </section>
 <section class="room" id="c5">
   <header class="rh"><span class="code">C5</span><div><div class="label">Room readout · Chapter 6 · Thursday 06:50 · “The file nobody reads”</div><h2>Lessons Nobody Learns</h2></div></header>
-  <div class="read"><div class="label">Read aloud at minute 0</div><p>At 06:50 on Thursday, KESTREL’s project manager finally opens the lessons file. Half of the week’s problems were already in it, written by people who had lived them before. Our room builds the agent that brings the right lessons to a project manager at the start of each phase, so the time goes into acting on lessons instead of searching for them.</p></div>
-  <p class="mission"><b>Mission</b> Give the PM back the time spent searching for past lessons.</p>
+  <div class="read"><div class="label">Read aloud at minute 0</div><p>At 06:50 on Thursday, KESTREL’s project manager finally opens the lessons file. Five of the week’s problems were already in it, written by people who had lived them before. Our room builds the agent that holds this week’s signals against past lessons, so the project manager acts on a known fix instead of searching for it.</p></div>
+  <p class="mission"><b>Mission</b> Give the PM back the time spent searching for past lessons, by matching this week’s signals to the lessons that already solved them.</p>
   <p class="mission"><b>Hours back for</b> Acting on the lessons: changes to the plan and early talks with the right people.</p>
   <div class="split">
-    <div class="col takes"><div class="label">The agent takes · repetitive work</div><ul><li>Matches the project profile to past lessons</li><li>Explains why each lesson applies</li><li>Turns lessons into checklist items for the next milestone</li><li>Flags outdated and conflicting lessons</li></ul></div>
+    <div class="col takes"><div class="label">The agent takes · repetitive work</div><ul><li>Holds this week’s signals against past lessons</li><li>Explains why each lesson applies</li><li>Says so when no lesson matches</li><li>Turns lessons into milestone checklist items</li><li>Flags outdated and conflicting lessons</li></ul></div>
     <div class="col keeps"><div class="label">The project manager keeps · judgment</div><ul><li>Which lessons apply</li><li>The call where lessons conflict</li><li>Changes to the plan</li></ul></div>
   </div>
   <div class="grid2">
-    <div><div class="label">Your inputs</div><p>Case file C5: ten lessons from four past projects and KESTREL’s next-phase profile.</p>
-      <div class="label" style="margin-top:.8rem">Candidate chunks to offload</div><ul><li>The phase-start lessons check</li><li>Lessons turned into a milestone checklist</li></ul></div>
-    <div><div class="label">Your agent must</div><ul><li>Explains every match</li><li>Leaves out or anonymizes blame</li><li>Flags lessons that refer to things that no longer exist</li><li>Shows contradictions instead of choosing</li><li>Matches different words for the same thing</li></ul></div>
+    <div><div class="label">Your inputs</div><p>Case file C5: ten lessons from four past projects, KESTREL’s next-phase profile and six signals from this week.</p>
+      <div class="label" style="margin-top:.8rem">Candidate chunks to offload</div><ul><li>A Monday-morning check of this week’s signals</li><li>Lessons turned into a milestone checklist</li></ul></div>
+    <div><div class="label">Your agent must</div><ul><li>Explains every match, even when the words differ</li><li>Says “no matching lesson” instead of forcing one</li><li>Leaves out or anonymizes blame</li><li>Flags lessons that refer to things that no longer exist</li><li>Shows contradictions instead of choosing</li></ul></div>
+  </div>
+  <div class="stakes">
+    <div class="impact"><div class="label">Hours back → business impact</div><p>Known fixes applied before a problem repeats. Measure your hours in the room.</p></div>
+    <div class="failure"><div class="label">What does failure look like?</div><p>The agent surfaces irrelevant lessons: everything at once, outdated advice, or blame, so the one lesson that matters gets lost.</p></div>
   </div>
   <div class="grid2">
-    <div><div class="label">Your three tests</div><ul><li>T1 · Does the job: a ranked, explained shortlist the PM can act on.</li><li>T2 · Time test: the PM’s review against today’s time to find relevant lessons, which is often never.</li><li>T3 · Trust check: two lessons that disagree, or one that blames a person. Both shown; blame removed.</li></ul></div>
-    <div><div class="label">Measure the time you give back</div><p>Lessons consulted at phase start, and repeated issues per project.</p><p class="small">Write it in the Pilot Pack as hours returned per PM per week, and name the higher-value work that time goes to.</p></div>
+    <div><div class="label">Your three tests</div><ul><li>T1 · Does the job: each signal with its matching lessons, explained, ready for the PM to act on.</li><li>T2 · Time test: the PM’s review against today’s time to find relevant lessons, which is often never.</li><li>T3 · Trust check: a signal with no lesson, lessons that disagree, or blame. Said plainly; blame removed.</li></ul></div>
+    <div><div class="label">Measure the time you give back</div><p>Time to find the relevant lessons (often never), and repeated issues per project.</p></div>
   </div>
-  <table class="hour"><tbody><tr><td class="t">00–05</td><td class="s">Orient</td><td>Read this page aloud. Name the roles.</td></tr><tr><td class="t">05–15</td><td class="s">Map the hours</td><td>Time each step. Pick the biggest repetitive chunk. Agree the baseline in hours.</td></tr><tr><td class="t">15–27</td><td class="s">Design</td><td>Split the work: what the agent takes, what the PM keeps. Write the instructions.</td></tr><tr><td class="t">27–42</td><td class="s">Build and challenge</td><td>Builders run T1–T3 and time the PM’s review. Challengers test value, data and guardrails.</td></tr><tr><td class="t">42–50</td><td class="s">Fix and decide</td><td>One new rule per failed test. Pick the metric and guardrail.</td></tr><tr><td class="t">50–60</td><td class="s">Commit</td><td>Owner, first test, hours returned. Fill the Pilot Pack.</td></tr></tbody></table>
-  <footer class="rf"><span>PM Summit 2026 · PM Role in an AI World · Pain to Pilot</span><span>Deliver: one Pilot Pack · owner · first test · hours back · guardrail</span></footer>
+  <table class="hour"><tbody><tr><td class="t">00–05</td><td class="s">Orient</td><td>Read this page aloud. Name the roles.</td></tr><tr><td class="t">05–15</td><td class="s">Map the hours</td><td>Time each step. Pick the biggest repetitive chunk. Agree the baseline in hours and what that time buys the project.</td></tr><tr><td class="t">15–27</td><td class="s">Design</td><td>Split the work: what the agent takes, what the PM keeps. Name what failure looks like. Write the instructions.</td></tr><tr><td class="t">27–42</td><td class="s">Build and challenge</td><td>Builders run T1–T3 and time the PM’s review. Challengers hunt the failure and write the guardrail.</td></tr><tr><td class="t">42–50</td><td class="s">Fix and decide</td><td>One new rule per failed test. Pick the metric and the guardrail against the failure.</td></tr><tr><td class="t">50–60</td><td class="s">Commit</td><td>Owner, first test, hours back, business impact. Fill the Pilot Pack and the debrief card.</td></tr></tbody></table>
+  <div class="debrief"><div class="label">Summit Debrief · your 90-second card</div><p>Hours back · business impact · biggest surprise · one guardrail and the failure it prevents · pilot owner</p><p class="q">Then the whole summit answers: <b>which pilot would you implement on Monday morning?</b></p></div>
+  <footer class="rf"><span>PM Summit 2026 · PM Role in an AI World · Pain to Pilot</span><span>Deliver: one Pilot Pack and a 90-second debrief card</span></footer>
 </section>
 <section class="room" id="c6">
   <header class="rh"><span class="code">C6</span><div><div class="label">Room readout · Chapter 1 · Monday 11:04 · “Can we do this?”</div><h2>Change Request Ripple</h2></div></header>
@@ -175,12 +209,17 @@ p{margin:.35rem 0 0;font-size:.95rem}
       <div class="label" style="margin-top:.8rem">Candidate chunks to offload</div><ul><li>Questions to seven functions in ten minutes</li><li>The one-page change-board view</li></ul></div>
     <div><div class="label">Your agent must</div><ul><li>Never commits a date</li><li>Marks what it cannot know and who must answer</li><li>Follows the dependencies in the plan</li><li>Lists open questions per function</li><li>Flags clashes with qualification and capacity</li></ul></div>
   </div>
+  <div class="stakes">
+    <div class="impact"><div class="label">Hours back → business impact</div><p>Impact answers in hours, not days → the change board decides this week and the customer hears sooner. Measure your hours in the room.</p></div>
+    <div class="failure"><div class="label">What does failure look like?</div><p>The agent implies customer commitments: a draft that promises a date or a feature nobody has approved.</p></div>
+  </div>
   <div class="grid2">
     <div><div class="label">Your three tests</div><ul><li>T1 · Does the job: affected functions and their questions, ready to send after a short review.</li><li>T2 · Time test: the PM’s review against today’s days of chasing.</li><li>T3 · Trust check: a dependency the request breaks, or a request to commit a date. Flagged; it declines.</li></ul></div>
-    <div><div class="label">Measure the time you give back</div><p>Days from change request to decision, and follow-up rounds needed.</p><p class="small">Write it in the Pilot Pack as hours returned per PM per week, and name the higher-value work that time goes to.</p></div>
+    <div><div class="label">Measure the time you give back</div><p>Days from change request to decision, and follow-up rounds needed.</p></div>
   </div>
-  <table class="hour"><tbody><tr><td class="t">00–05</td><td class="s">Orient</td><td>Read this page aloud. Name the roles.</td></tr><tr><td class="t">05–15</td><td class="s">Map the hours</td><td>Time each step. Pick the biggest repetitive chunk. Agree the baseline in hours.</td></tr><tr><td class="t">15–27</td><td class="s">Design</td><td>Split the work: what the agent takes, what the PM keeps. Write the instructions.</td></tr><tr><td class="t">27–42</td><td class="s">Build and challenge</td><td>Builders run T1–T3 and time the PM’s review. Challengers test value, data and guardrails.</td></tr><tr><td class="t">42–50</td><td class="s">Fix and decide</td><td>One new rule per failed test. Pick the metric and guardrail.</td></tr><tr><td class="t">50–60</td><td class="s">Commit</td><td>Owner, first test, hours returned. Fill the Pilot Pack.</td></tr></tbody></table>
-  <footer class="rf"><span>PM Summit 2026 · PM Role in an AI World · Pain to Pilot</span><span>Deliver: one Pilot Pack · owner · first test · hours back · guardrail</span></footer>
+  <table class="hour"><tbody><tr><td class="t">00–05</td><td class="s">Orient</td><td>Read this page aloud. Name the roles.</td></tr><tr><td class="t">05–15</td><td class="s">Map the hours</td><td>Time each step. Pick the biggest repetitive chunk. Agree the baseline in hours and what that time buys the project.</td></tr><tr><td class="t">15–27</td><td class="s">Design</td><td>Split the work: what the agent takes, what the PM keeps. Name what failure looks like. Write the instructions.</td></tr><tr><td class="t">27–42</td><td class="s">Build and challenge</td><td>Builders run T1–T3 and time the PM’s review. Challengers hunt the failure and write the guardrail.</td></tr><tr><td class="t">42–50</td><td class="s">Fix and decide</td><td>One new rule per failed test. Pick the metric and the guardrail against the failure.</td></tr><tr><td class="t">50–60</td><td class="s">Commit</td><td>Owner, first test, hours back, business impact. Fill the Pilot Pack and the debrief card.</td></tr></tbody></table>
+  <div class="debrief"><div class="label">Summit Debrief · your 90-second card</div><p>Hours back · business impact · biggest surprise · one guardrail and the failure it prevents · pilot owner</p><p class="q">Then the whole summit answers: <b>which pilot would you implement on Monday morning?</b></p></div>
+  <footer class="rf"><span>PM Summit 2026 · PM Role in an AI World · Pain to Pilot</span><span>Deliver: one Pilot Pack and a 90-second debrief card</span></footer>
 </section></main>
 </body>
 </html>
