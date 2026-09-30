@@ -97,8 +97,8 @@ body.overview .frame .slide{position:absolute;left:0;top:0;transform-origin:0 0}
 <p style="font-size:24px; line-height:1.4; color:#4A5C59">What the AI prepares but never decides</p>
 </div>
 <div style="display:flex; flex-direction:column; gap:8px; background:#D3EAE5; padding:32px; border:1px solid #9FCBC2; border-radius:12px">
-<h3 style="font-size:32px; font-weight:700; line-height:1.2; color:#12201E">Metric</h3>
-<p style="font-size:24px; line-height:1.4; color:#2F4744">How we will know it works</p>
+<h3 style="font-size:32px; font-weight:700; line-height:1.2; color:#12201E">Hours back</h3>
+<p style="font-size:24px; line-height:1.4; color:#2F4744">Per PM per week, and where they go</p>
 </div>
 <div style="display:flex; flex-direction:column; gap:8px; background:#D3EAE5; padding:32px; border:1px solid #9FCBC2; border-radius:12px">
 <h3 style="font-size:32px; font-weight:700; line-height:1.2; color:#12201E">Guardrail</h3>
@@ -150,10 +150,10 @@ body.overview .frame .slide{position:absolute;left:0;top:0;transform-origin:0 0}
 <table style="font-size:28px; color:#12201E; font-family:'Public Sans', Arial, sans-serif">
 <tr style="background:#E5ECEA"><th style="width:16%">Minutes</th><th style="width:30%">Stage</th><th style="width:54%">Leave the stage with</th></tr>
 <tr><td>00–05</td><td>Orient</td><td>Roles named; card read; tool or paper chosen</td></tr>
-<tr><td>05–15</td><td>Frame the pain</td><td>One-sentence problem and a baseline number</td></tr>
+<tr><td>05–15</td><td>Map the hours</td><td>Task map, biggest repetitive chunk, baseline hours</td></tr>
 <tr><td>15–27</td><td>Design the agent</td><td>Instructions drafted; PM decision; three tests</td></tr>
-<tr style="background:#D3EAE5"><td>27–42</td><td>Build and challenge, in two sub-teams</td><td>Test results and the top three risks</td></tr>
-<tr><td>42–50</td><td>Fix and decide</td><td>Final instructions, one guardrail, one metric</td></tr>
+<tr style="background:#D3EAE5"><td>27–42</td><td>Build and challenge, in two sub-teams</td><td>Test results and the measured review time</td></tr>
+<tr><td>42–50</td><td>Fix and decide</td><td>Final instructions, guardrail, hours back</td></tr>
 <tr><td>50–60</td><td>Package and commit</td><td>Owner and first test named; pack submitted</td></tr>
 </table>
 <aside class="notes">Keep this slide or the kit's room timer visible for the whole breakout. The timekeeper calls each checkpoint out loud at 15, 27, 42, 50 and 60. At 27 the room splits: Builders run the three tests in the AI tool, Challengers pressure-test value, data, quality, tool approval, accountability, adoption and the metric.</aside>
@@ -266,13 +266,13 @@ body.overview .frame .slide{position:absolute;left:0;top:0;transform-origin:0 0}
 <h3 style="font-size:36px; font-weight:700; color:#0B6E63">The tests</h3>
 <table style="font-size:26px; color:#12201E; font-family:'Public Sans', Arial, sans-serif">
 <tr style="background:#E5ECEA"><th style="width:26%">Test</th><th style="width:37%">Feed it</th><th style="width:37%">Pass when</th></tr>
-<tr><td>T1 Normal</td><td>The full sample data</td><td>Every item names its source</td></tr>
-<tr><td>T2 Trap</td><td>A contradiction or gap in the data</td><td>Listed under NEEDS PM CHECK</td></tr>
-<tr><td>T3 Boundary</td><td>Something that must not appear</td><td>Left out, or flagged</td></tr>
+<tr><td>T1 Does the job</td><td>The full case file</td><td>Usable after a short PM review</td></tr>
+<tr><td>T2 Time test</td><td>A stopwatch on the PM’s review</td><td>Clearly below the baseline</td></tr>
+<tr><td>T3 Trust check</td><td>A conflict, gap or decision</td><td>Flagged for the PM</td></tr>
 </table>
 </div>
 </div>
-<p style="position:absolute; left:128px; bottom:64px; width:1664px; font-size:24px; color:#4A5C59">Paste only the fictional sample data, or data already approved for the tool. Every data pack hides at least two traps.</p>
+<p style="position:absolute; left:128px; bottom:64px; width:1664px; font-size:24px; color:#4A5C59">Paste only the fictional sample data, or data already approved for the tool. The time test shows the hours given back.</p>
 <aside class="notes">The scaffold with these rules is in the kit (Build the agent) and on the printed handout. Rooms fill in the brackets and may tighten the rules, but should not drop them. A failed test followed by a fix makes a better report-out than three easy passes.</aside>
 </section></div>
 <div class="thumb"><section class="slide" id="paper" style="background:#E5ECEA; color:#12201E; font-family:'Public Sans', Arial, sans-serif; padding:128px; display:grid; grid-template-columns:2fr 3fr; gap:96px; align-items:center">
@@ -285,14 +285,14 @@ body.overview .frame .slide{position:absolute;left:0;top:0;transform-origin:0 0}
 <li>Give them only the instructions and the printed sample data.</li>
 <li>They follow the instructions literally. Where the instructions are silent, they say “my instructions don’t tell me”.</li>
 <li>Everyone notes each gap. Each gap becomes a new rule.</li>
-<li>Run the trap. Does the agent catch the contradiction?</li>
+<li>Run the trust check. Does the agent flag what it cannot resolve?</li>
 </ol>
 <aside class="notes">Use this when the tool login fails, the network drops, or the room has no access. It also works well with AI beginners: they see immediately why precise instructions matter. Experts cannot rush past it either.</aside>
 </section></div>
 <div class="thumb"><section class="slide" id="lastten" style="background:#0B6E63; color:#F2F5F4; font-family:'Public Sans', Arial, sans-serif; padding:128px; display:flex; flex-direction:column; justify-content:center; gap:40px">
 <p style="font-size:32px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:#CDEBE5">Running late at minute 50?</p>
 <h2 style="font-family:'Archivo Narrow', Arial, sans-serif; font-size:120px; font-weight:700; line-height:1.05; color:#F2F5F4">Cut solution detail.</h2>
-<p style="font-size:44px; line-height:1.35; color:#F2F5F4; width:1400px">Never cut the owner, the first test, the metric or the guardrail.</p>
+<p style="font-size:44px; line-height:1.35; color:#F2F5F4; width:1400px">Never cut the owner, the first test, the hours back or the guardrail.</p>
 <aside class="notes">Show this at the minute-50 checkpoint. If the Pilot Pack sections for owner, first test, metric and guardrail are empty, stop everything else and fill them now. If nobody can own the pilot, write the owner role and who confirms a name within five working days.</aside>
 </section></div>
 <div class="thumb"><section class="slide" id="script" style="background:#F2F5F4; color:#12201E; font-family:'Public Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
@@ -302,10 +302,10 @@ body.overview .frame .slide{position:absolute;left:0;top:0;transform-origin:0 0}
 <p style="font-size:44px; line-height:1.35; color:#12201E">Today it costs <b><span style="color:#0B6E63">[baseline]</span></b>.</p>
 <p style="font-size:44px; line-height:1.35; color:#12201E">Our agent <b><span style="color:#0B6E63">[does what]</span></b>, and the PM still decides <b><span style="color:#0B6E63">[what]</span></b>.</p>
 <p style="font-size:44px; line-height:1.35; color:#12201E">We reached <b><span style="color:#0B6E63">[level]</span></b>. Our most useful test showed <b><span style="color:#0B6E63">[finding]</span></b>.</p>
-<p style="font-size:44px; line-height:1.35; color:#12201E">We will know it works when <b><span style="color:#0B6E63">[metric moves]</span></b>.</p>
+<p style="font-size:44px; line-height:1.35; color:#12201E">Every PM gets <b><span style="color:#0B6E63">[hours]</span></b> back a week, for <b><span style="color:#0B6E63">[decisions, stakeholders or strategy]</span></b>.</p>
 <p style="font-size:44px; line-height:1.35; color:#12201E"><b><span style="color:#0B6E63">[Owner]</span></b> runs the first test by <b><span style="color:#0B6E63">[date]</span></b>, guarded by <b><span style="color:#0B6E63">[guardrail]</span></b>.</p>
 </div>
-<p style="position:absolute; left:128px; bottom:64px; width:1664px; font-size:24px; color:#4A5C59">Only 45 seconds? Say lines 1, 3 and 6.</p>
+<p style="position:absolute; left:128px; bottom:64px; width:1664px; font-size:24px; color:#4A5C59">Only 45 seconds? Say lines 1, 3, 5 and 6.</p>
 <aside class="notes">The scribe rehearses this once in the last ten minutes. Each bracket maps to a field in the Pilot Pack, so the pack is the script. Keep to 90 seconds; the host may cut to 45.</aside>
 </section></div>
 <div class="thumb"><section class="slide" id="reportout" style="background:#F2F5F4; color:#12201E; font-family:'Public Sans', Arial, sans-serif; padding:128px; display:flex; flex-direction:column; gap:40px">

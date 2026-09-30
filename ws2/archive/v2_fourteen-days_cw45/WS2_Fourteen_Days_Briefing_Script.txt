@@ -1,0 +1,40 @@
+FOURTEEN DAYS · PRE-WORK BRIEFING · NARRATION SCRIPT
+PM Summit 2026 · PM Role in an AI World · draft v0.1
+
+Use this script to re-record the voice-over with a human narrator. Say "PM" as "project manager", except in the event name "PM Summit 2026". Timings are where each line starts in the current video.
+
+
+OPENING
+[0:04.00]  On the fifth of November, at PM Summit 2026, every breakout room in the session “PM Role in an AI World” will take on a real project problem with an AI agent.
+[0:17.36]  This briefing explains the situation, what to prepare, and what your room will deliver.
+
+PART 1 · THE SITUATION
+[0:23.83]  Meet KESTREL: a new sensor-hub chip and its evaluation kit, fourteen days from tape-out, with a lead customer waiting for samples.
+[0:32.92]  Behind it stands a team across design, verification, test, software, quality, operations and marketing. Every one of them needs something from the project manager this week.
+[0:45.11]  On Monday, you inherit KESTREL as its new project manager. By Thursday morning, you are holding six problems at once.
+[0:53.20]  Sofia forwards a customer change request that nobody can answer yet.
+[0:58.09]  Chen mentions a supplier delay, in a risk log no one has touched in five weeks.
+[1:03.49]  Priya flags a late load board, in a meeting where nobody writes down what was decided.
+[1:09.33]  Marco’s numbers say one thing. Last week’s status report still says green.
+[1:14.39]  Aiko’s design is not ready, and steering needs a decision by two o’clock.
+[1:19.52]  And the lessons Jonas left behind arrive three days too late.
+[1:23.98]  None of this is unusual. It is the week most project managers know.
+[1:28.80]  And none of it is the part of the job that matters most: leading a team to good decisions.
+
+PART 2 · YOUR PRE-WORK
+[1:35.54]  Before the summit, we ask for about twenty minutes of preparation, in four steps.
+[1:40.82]  One. Read “Fourteen Days”, the KESTREL story attached to your invitation. It takes about twelve minutes.
+[1:47.75]  Two. Open your room’s case file at the back of the story. Your invitation tells you which one, from C1 to C6. Read it as if the problem were yours.
+[1:58.19]  Three. Find what doesn’t add up. Every case file hides at least two things a careful project manager would catch. Note them, and keep them to yourself until the session.
+[2:09.09]  Four. Bring one real moment from your own work when this problem cost you time, and a rough estimate of how much.
+[2:16.45]  You don’t need any AI experience. Rooms mix beginners and experts on purpose, and everyone has a role.
+[2:23.49]  Please don’t bring confidential documents. Everything you need is in the case file.
+
+PART 3 · ON THE DAY
+[2:29.79]  On the day, each room takes one of the six moments.
+[2:33.02]  In sixty minutes, you design an agent for it, test it on the case file, and check whether it catches what you caught.
+[2:40.04]  Your room leaves with a Pilot Pack: the agent’s instructions, the decision the project manager keeps, one metric, one guardrail, an owner, and a first test to run on a real project after the summit.
+
+CLOSE
+[2:54.30]  The agent takes the routine. Every decision stays with you.
+[2:58.76]  Read “Fourteen Days” before the fifth of November. We’ll see you in the room.
