@@ -145,6 +145,8 @@ a{color:var(--accent);text-underline-offset:.18em}
 .prework li::before{content:counter(s);font-family:var(--f-display);font-weight:800;font-stretch:70%;font-size:1.9rem;line-height:1;color:var(--accent)}
 .prework li b{display:block;font-size:1.02rem}
 .prework li span{font-family:var(--f-story);font-size:1.02rem;line-height:1.5;color:var(--ink-2)}
+.prework .prereq{margin:0;background:var(--mark-soft);border-radius:4px;padding:.8rem 1rem;font-size:1rem;line-height:1.5}
+.prework .prereq b{display:block;font-family:var(--f-mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mark);margin-bottom:.2rem}
 .prework .fine{font-size:.9rem;color:var(--ink-2);margin:0;border-top:1px solid var(--line);padding-top:.9rem}
 
 /* case files */
@@ -207,7 +209,8 @@ footer.end .tag{font-family:var(--f-story);font-style:italic;font-size:1.1rem;co
   .chead,.cf-head{break-after:avoid}
   .sticky,.subject,.road,.person,.todo li,.ev,.missing,.prework,tr,.chat li,.flow li{break-inside:avoid}
   #casefiles{break-before:page}
-  .casefile{break-before:page;margin-top:0;border-top:0;padding-top:0}
+  .casefile{break-before:page;margin-top:0;border-top:0;padding-top:0;padding-bottom:0}
+  .casefile > :last-child{margin-bottom:0}
   .pb{break-before:page}
   a{color:inherit;text-decoration:none}
 }
@@ -441,13 +444,14 @@ footer.end .tag{font-family:var(--f-story);font-style:italic;font-size:1.1rem;co
     <div class="prework">
       <div class="label">Before 5 November · about 20 minutes</div>
       <h2 id="pwh">Your pre-work</h2>
+      <p class="prereq"><b>Prerequisite for every room</b>At least one member with Agent Builder activated in Copilot Premium. If that is you, check your access before the summit. Everyone else brings ideas and experience; no AI expertise needed.</p>
       <ol>
         <li><div><b>Read the story.</b><span>You just did, or you’re about to. Twelve minutes.</span></div></li>
         <li><div><b>Open your room’s case file.</b><span>Your invitation gives your room a letter, C1 to C6. Read that file as if it were Thursday morning and the work were yours to hand off.</span></div></li>
         <li><div><b>Map your own week.</b><span>How long does this task take you in a normal week? List the steps, time each one, and mark which are repetitive and which need your judgment.</span></div></li>
         <li><div><b>Bring one idea for the time you get back.</b><span>What would you do with those hours: a decision you’d prepare better, a stakeholder you’d see sooner, time to think ahead? Please don’t bring confidential documents.</span></div></li>
       </ol>
-      <p class="fine">No AI experience needed. Rooms mix beginners and experienced users on purpose, and everyone gets a role. The session ends with the Summit Debrief, where everyone votes for the pilot they would implement on Monday morning.</p>
+      <p class="fine">Rooms mix beginners and experienced users on purpose, and everyone gets a role. The session ends with the Summit Debrief, where everyone votes for the pilot they would implement on Monday morning.</p>
     </div>
   </section>
 

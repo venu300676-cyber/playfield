@@ -421,9 +421,9 @@ footer{border-top:1px solid var(--line);margin-top:3rem;padding-top:1.2rem;font-
     <div class="panel level">
       <div class="lv">Level 3</div>
       <h3>Working agent</h3>
-      <div class="tag"><span class="chip open">Depends on tool decision</span></div>
-      <p>Saved as a reusable agent or prompt in the approved tool, so the owner can run it the next working day.</p>
-      <p class="muted small">Needs agent-building access in the room.</p>
+      <div class="tag"><span class="chip prop">Possible in every room</span></div>
+      <p>Saved as a reusable agent in Agent Builder, so the owner can run it the next working day.</p>
+      <p class="muted small">Needs the room’s Builder, with Agent Builder activated in Copilot Premium.</p>
     </div>
   </div>
 
@@ -907,7 +907,7 @@ Design: Aiko | Verification: Marco | Test: Priya | Software: Lukas (team at 50% 
     <div class="role"><h4>Facilitator</h4><p>Runs the process, protects time and voices. Needs no AI expertise and never writes the answer.</p></div>
     <div class="role"><h4>Scribe and team lead</h4><p>Owns the Pilot Pack, synthesizes, reads the debrief card at the Summit Debrief.</p></div>
     <div class="role"><h4>Timekeeper</h4><p>Runs the timer, calls each checkpoint, defends the last 10 minutes.</p></div>
-    <div class="role"><h4>Builder (1–2)</h4><p>Hands on the approved AI tool. Narrates what they type. Named before the summit so access is checked in advance.</p></div>
+    <div class="role"><h4>Builder (1–2)</h4><p>Has Agent Builder activated in Copilot Premium: a prerequisite, at least one per room. Narrates what they type. Named before the summit so access is checked in advance.</p></div>
     <div class="role"><h4>Challenger (1–2)</h4><p>The room’s AI steward. Tests value, data, confidentiality, quality, tool approval and accountability.</p></div>
     <div class="role"><h4>Everyone</h4><p>Brings a real example, challenges assumptions, plays the agent in the paper test.</p></div>
   </div>
@@ -919,7 +919,7 @@ Design: Aiko | Verification: Marco | Test: Priya | Software: Lukas (team at 50% 
       <div class="when">00:00–05:00<b>Orient</b></div>
       <div class="cues">
         <div class="cue say"><span>Say</span><div>“In the next 60 minutes we turn one PM pain point into an agent we can actually test. We are not building a production system. We leave with a Pilot Pack: the problem, a baseline, the agent’s instructions, what the PM still decides, the hours back and what they buy the project, one guardrail, an owner and a first test.”</div></div>
-        <div class="cue"><span>Do</span><div><ul><li>Name the Scribe, Timekeeper, Builders and Challengers.</li><li>Read the challenge card aloud (1 minute). Show the Pilot Pack.</li><li>Check the approved tool is open on the Builder’s screen. If not, choose paper mode now.</li></ul></div></div>
+        <div class="cue"><span>Do</span><div><ul><li>Name the Scribe, Timekeeper, Builders and Challengers.</li><li>Read the challenge card aloud (1 minute). Show the Pilot Pack.</li><li>Check Agent Builder is open on the Builder’s screen. If it fails, choose paper mode now.</li></ul></div></div>
         <div class="checkpoint">05:00 · Roles named, card read, tool or paper mode chosen</div>
       </div>
     </li>
@@ -946,7 +946,7 @@ Design: Aiko | Verification: Marco | Test: Priya | Software: Lukas (team at 50% 
       <div class="when">27:00–42:00<b>Build &amp; challenge</b></div>
       <div class="cues">
         <div class="cue"><span>Split</span><div><p>The room works as two sub-teams in parallel.</p></div></div>
-        <div class="cue"><span>Builders</span><div><p>Paste the instructions and the sample data into the approved tool. Run T1, T2 and T3. Record pass or fail and keep the output. No tool? Run “Be the agent”.</p></div></div>
+        <div class="cue"><span>Builders</span><div><p>Create the agent in Agent Builder with the instructions, then test it with the sample data. Run T1, T2 and T3. Record pass or fail and keep the output. No tool? Run “Be the agent”.</p></div></div>
         <div class="cue"><span>Challengers</span><div><p>Start from the failure the room named: what would make it happen? Then pressure-test with seven checks: value (who saves what?), data (available and allowed?), quality (what if it is wrong?), tool (approved, with access?), accountability (who signs off?), adoption (would you use it on Monday?), metric (can we really measure it?).</p></div></div>
         <div class="cue say"><span>Say</span><div>“Challengers: what does failure look like? Find how it could happen, then write the guardrail that prevents it.”</div></div>
         <div class="checkpoint">42:00 · Test results recorded, review time measured, top three risks listed</div>
@@ -1023,7 +1023,7 @@ Inputs: [what the PM pastes, uploads or connects]
 Source of truth: [which system wins when inputs disagree]
 Hours back -> business impact: [hours per PM per week] -> [what the project gains]
 
-===== INSTRUCTIONS (paste into the approved AI tool) =====
+===== INSTRUCTIONS (paste into Agent Builder) =====
 ROLE
 You are an agent working for a project manager on a cross-functional product development project.
 
@@ -1081,12 +1081,12 @@ T3 Trust check:   [the case that would trigger your failure: a conflict, gap or 
       <p class="small">Beginners learn quickly from this why precise instructions matter, and experts cannot rush past it.</p>
     </div>
     <div class="panel">
-      <h3>Tool readiness <span class="chip open">Open decision</span></h3>
+      <h3>Tool readiness <span class="chip conf">Prerequisite</span></h3>
       <ul>
-        <li>Which AI tool is approved for the breakout, and whether participants can build agents in it, is not yet confirmed. It decides whether Level 3 is possible.</li>
+        <li>Every room needs at least one member with Agent Builder activated in Copilot Premium. That person is the room’s Builder. Everyone else contributes ideas and experience and needs no AI expertise.</li>
         <li>Rooms use only the fictional KESTREL data, or project data already approved for that tool.</li>
         <li>No customer or confidential data goes into an unapproved or public tool, in the room or afterwards.</li>
-        <li>Builders test their login during pre-work, not in the room.</li>
+        <li>Builders check during pre-work that they can create an agent, not in the room.</li>
       </ul>
     </div>
   </div>
@@ -1289,7 +1289,7 @@ T3 Trust check:   [the case that would trigger your failure: a conflict, gap or 
         <li>Map your own week: time each step of this job and mark which steps are repetitive.</li>
         <li>Bring one idea for the hours back: a decision, a stakeholder or thinking time. No confidential documents.</li>
         <li>Know the closing question: at the Summit Debrief everyone votes on which pilot they would implement on Monday morning.</li>
-        <li>Builders only: log in to the approved tool and paste the scaffold once.</li>
+        <li>Builders (at least one per room, a prerequisite): check that Agent Builder is activated in your Copilot Premium, create a test agent and paste the scaffold once.</li>
       </ul>
     </div>
     <div class="panel">
@@ -1307,7 +1307,7 @@ T3 Trust check:   [the case that would trigger your failure: a conflict, gap or 
       <h3>Regional leads</h3>
       <ul>
         <li>Assign one card per room using the allocation rule below: C3 and C6 run in every region.</li>
-        <li>Name a facilitator, a Builder and a backup for every room.</li>
+        <li>Name a facilitator, a Builder with Agent Builder activated in Copilot Premium (a prerequisite), and a backup for every room.</li>
         <li>Optionally propose one swap card for WS2 review.</li>
         <li>Confirm the capture link and the fallback with the site owner.</li>
         <li>Name a debrief host and put the live scoreboard on the plenary screen.</li>
@@ -1343,7 +1343,7 @@ T3 Trust check:   [the case that would trigger your failure: a conflict, gap or 
     <table>
       <thead><tr><th>By</th><th>Milestone</th></tr></thead>
       <tbody>
-        <tr><td>Fri 2 Oct</td><td>WS2 reviews this kit, keeps or swaps cards, starts the tool decision</td></tr>
+        <tr><td>Fri 2 Oct</td><td>WS2 reviews this kit, keeps or swaps cards, starts collecting one Builder per room</td></tr>
         <tr><td>Fri 9 Oct</td><td>Core-team mock run with defect log</td></tr>
         <tr><td>Fri 16 Oct</td><td>Kit v1 frozen and handed to the agenda/playbook team and site owners</td></tr>
         <tr><td>Fri 23 Oct</td><td>Facilitator and Builder briefing; dry run with the summit producer</td></tr>
@@ -1360,7 +1360,7 @@ T3 Trust check:   [the case that would trigger your failure: a conflict, gap or 
     <table>
       <thead><tr><th>Decision</th><th>Why it matters</th><th>Recommendation</th><th>Needed by</th></tr></thead>
       <tbody>
-        <tr><td>Approved AI tool, and agent-building access for participants</td><td>Decides whether Levels 2 and 3 are possible in the tool and what Builders prepare</td><td>Confirm one approved tool; name one Builder with access per room; paper test as fallback</td><td>Mock run</td></tr>
+        <tr><td>One Builder per room with Agent Builder in Copilot Premium</td><td>A prerequisite: without it, a room cannot build or test an agent in the tool</td><td>Regional leads name one Builder per room and confirm activation before the briefing; paper test only as a fallback</td><td>Briefing</td></tr>
         <tr><td>Use of the fictional KESTREL data in that tool</td><td>Rooms need safe data to test on</td><td>Approve the six packs as-is</td><td>Mock run</td></tr>
         <tr><td>Organizer cards or region-prepared cases</td><td>Open decisions 2 and 3 in the knowledge base</td><td>Organizer cards by default; one regional swap card per region after WS2 review</td><td>Kit freeze</td></tr>
         <tr><td>Build &amp; challenge in place of Select</td><td>Changes the 10 September flow</td><td>Adopt if the mock run finishes inside 60 minutes</td><td>Mock run</td></tr>
@@ -1386,12 +1386,12 @@ T3 Trust check:   [the case that would trigger your failure: a conflict, gap or 
   </div>
   <div class="dl-all">
     <a class="btn primary" href="slides.html">Open the room slides</a>
-    <a class="btn" href="files/WS2_Breakout_Files.zip" download>Download all files (.zip, 57100 KB)</a>
+    <a class="btn" href="files/WS2_Breakout_Files.zip" download>Download all files (.zip, 57103 KB)</a>
   </div>
   <div class="grid-3" style="margin-top:1.4rem">
     <div class="panel"><h3>Pre-work story</h3><ul class="dls">
       <li class="dl"><div><b>Fourteen Days, online</b><span class="muted small">The KESTREL story with the six case files. Link for participants.</span><span class="mono small muted">prework.html</span></div><a class="btn" href="prework.html">Read</a></li>
-      <li class="dl"><div><b>Fourteen Days, PDF</b><span class="muted small">Same story as a PDF to attach to the invitation mail.</span><span class="mono small muted">WS2_Prework_Story_Fourteen_Days.pdf · PDF · 937 KB</span></div><a class="btn" href="files/WS2_Prework_Story_Fourteen_Days.pdf" download>Download</a></li>
+      <li class="dl"><div><b>Fourteen Days, PDF</b><span class="muted small">Same story as a PDF to attach to the invitation mail.</span><span class="mono small muted">WS2_Prework_Story_Fourteen_Days.pdf · PDF · 939 KB</span></div><a class="btn" href="files/WS2_Prework_Story_Fourteen_Days.pdf" download>Download</a></li>
       <li class="dl"><div><b>Pre-work briefing video</b><span class="muted small">3:29 narrated briefing: the situation, the pre-work, the day and the Summit Debrief. Captions burned in.</span><span class="mono small muted">WS2_Fourteen_Days_Briefing.mp4 · MP4 · 56047 KB</span></div><a class="btn" href="files/WS2_Fourteen_Days_Briefing.mp4" download>Download</a></li>
       <li class="dl"><div><b>Briefing captions</b><span class="muted small">Caption file for Teams, Stream or SharePoint players.</span><span class="mono small muted">WS2_Fourteen_Days_Briefing.srt · SRT · 5 KB</span></div><a class="btn" href="files/WS2_Fourteen_Days_Briefing.srt" download>Download</a></li>
       <li class="dl"><div><b>Briefing narration script</b><span class="muted small">The voice-over text with timings, to re-record with a human narrator.</span><span class="mono small muted">WS2_Fourteen_Days_Briefing_Script.txt · TXT · 4 KB</span></div><a class="btn" href="files/WS2_Fourteen_Days_Briefing_Script.txt" download>Download</a></li>
