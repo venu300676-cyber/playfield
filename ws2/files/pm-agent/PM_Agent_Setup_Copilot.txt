@@ -55,7 +55,7 @@ ALERT ME AT ONCE WHEN YOU SEE
 STEP 4 · KNOWLEDGE  (Configure > Knowledge)
 By default the agent can already search everything Copilot can: cloud files (OneDrive and
 SharePoint), your Outlook mailbox, Teams meetings and messages, and the web.
-- Add knowledge: the project's SharePoint site, plus the project plan and the RAID log
+- Add knowledge: the project's SharePoint site, plus the project plan and the risk log
 - Work content > Cloud files: on
 - Work content > Outlook: on
 - Work content > Teams: on (meetings and messages)
@@ -84,7 +84,7 @@ STEP 7 · MAKE IT A ROUTINE
 Agent Builder agents run only when you ask them; there is no scheduling.
 - Book a recurring 15-minute calendar slot every Friday at 08:00: open Project Pulse and select "Weekly status".
 - Book a recurring 5-minute slot every weekday at 08:30: select "New risks".
-- For automatic alerts without opening the agent (for example on a new supplier email or a new RAID entry),
+- For automatic alerts without opening the agent (for example on a new supplier email or a new risk log entry),
   ask your Copilot Studio team to rebuild the agent with a schedule or an event trigger.
 
 
