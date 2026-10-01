@@ -143,65 +143,73 @@ Bring one idea for what you would do with those hours back: a decision you would
 a stakeholder you would see sooner, or time to think ahead.
 
 37
-00:02:20,698 --> 00:02:22,863
-You don’t need any AI experience.
+00:02:20,698 --> 00:02:24,393
+One prerequisite: every room needs at least one member
 
 38
-00:02:22,883 --> 00:02:27,585
-Rooms mix beginners and experts on purpose, and everyone has a role.
+00:02:24,413 --> 00:02:27,915
+with Agent Builder activated in Copilot Premium.
 
 39
-00:02:27,735 --> 00:02:30,226
-Please don’t bring confidential documents.
+00:02:28,115 --> 00:02:31,388
+If that is you, check your access before the summit.
 
 40
-00:02:30,246 --> 00:02:32,837
-Everything you need is in the case file.
+00:02:31,408 --> 00:02:35,852
+Everyone else brings ideas and experience, and everyone has a role.
 
 41
-00:02:34,037 --> 00:02:37,091
-On the day, each room takes one of the six jobs.
+00:02:36,002 --> 00:02:38,493
+Please don’t bring confidential documents.
 
 42
-00:02:37,191 --> 00:02:39,888
-In sixty minutes, you map where the hours go,
+00:02:38,513 --> 00:02:41,105
+Everything you need is in the case file.
 
 43
-00:02:39,908 --> 00:02:45,120
-design an agent that takes the repetitive part, and measure the time it gives back.
+00:02:42,305 --> 00:02:45,359
+On the day, each room takes one of the six jobs.
 
 44
-00:02:45,470 --> 00:02:52,045
-Your room leaves with a Pilot Pack: the agent’s instructions, the decisions the project manager keeps,
+00:02:45,459 --> 00:02:48,156
+In sixty minutes, you map where the hours go,
 
 45
-00:02:52,066 --> 00:02:58,861
-the hours it gives back, one guardrail, an owner, and a first test on a real project after the summit.
+00:02:48,176 --> 00:02:53,388
+design an agent that takes the repetitive part, and measure the time it gives back.
 
 46
-00:02:59,961 --> 00:03:03,962
-At the end, every room meets in the Summit Debrief: hours back,
+00:02:53,738 --> 00:03:00,313
+Your room leaves with a Pilot Pack: the agent’s instructions, the decisions the project manager keeps,
 
 47
-00:03:03,982 --> 00:03:07,535
-business impact, the biggest surprise and one guardrail.
+00:03:00,333 --> 00:03:07,128
+the hours it gives back, one guardrail, an owner, and a first test on a real project after the summit.
 
 48
-00:03:07,555 --> 00:03:12,861
-Then one question decides it: which pilot would you implement on Monday morning?
+00:03:08,228 --> 00:03:12,229
+At the end, every room meets in the Summit Debrief: hours back,
 
 49
-00:03:13,861 --> 00:03:15,534
-The agent takes the routine.
+00:03:12,249 --> 00:03:15,803
+business impact, the biggest surprise and one guardrail.
 
 50
-00:03:15,554 --> 00:03:18,899
-You take back the time for the work only you can do.
+00:03:15,823 --> 00:03:21,129
+Then one question decides it: which pilot would you implement on Monday morning?
 
 51
-00:03:19,599 --> 00:03:22,271
-Read “Fourteen Days” before the fifth of November.
+00:03:22,129 --> 00:03:23,802
+The agent takes the routine.
 
 52
-00:03:22,291 --> 00:03:23,891
+00:03:23,822 --> 00:03:27,167
+You take back the time for the work only you can do.
+
+53
+00:03:27,867 --> 00:03:30,539
+Read “Fourteen Days” before the fifth of November.
+
+54
+00:03:30,559 --> 00:03:32,159
 We’ll see you in the room.

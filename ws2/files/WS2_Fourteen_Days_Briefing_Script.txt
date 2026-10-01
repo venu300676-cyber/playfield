@@ -1,5 +1,5 @@
 FOURTEEN DAYS · PRE-WORK BRIEFING · NARRATION SCRIPT
-PM Summit 2026 · PM Role in an AI World · draft v0.4
+PM Summit 2026 · PM Role in an AI World · draft v0.5
 
 Use this script to re-record the voice-over with a human narrator. Say "PM" as "project manager", except in the event name "PM Summit 2026". Timings are where each line starts in the current video.
 
@@ -27,15 +27,16 @@ PART 2 · YOUR PRE-WORK
 [1:48.48]  Two. Open your room’s case file at the back of the story. Your invitation tells you which one, from C1 to C6. Read it as the project manager, and ask: which parts of this work would I hand off?
 [2:02.03]  Three. Map your own week. How long does this task take you, step by step? Mark which steps are repetitive, and which need your judgment.
 [2:10.50]  Four. Bring one idea for what you would do with those hours back: a decision you would prepare better, a stakeholder you would see sooner, or time to think ahead.
-[2:20.70]  You don’t need any AI experience. Rooms mix beginners and experts on purpose, and everyone has a role.
-[2:27.74]  Please don’t bring confidential documents. Everything you need is in the case file.
+[2:20.70]  One prerequisite: every room needs at least one member with Agent Builder activated in Copilot Premium.
+[2:28.12]  If that is you, check your access before the summit. Everyone else brings ideas and experience, and everyone has a role.
+[2:36.00]  Please don’t bring confidential documents. Everything you need is in the case file.
 
 PART 3 · ON THE DAY
-[2:34.04]  On the day, each room takes one of the six jobs.
-[2:37.19]  In sixty minutes, you map where the hours go, design an agent that takes the repetitive part, and measure the time it gives back.
-[2:45.47]  Your room leaves with a Pilot Pack: the agent’s instructions, the decisions the project manager keeps, the hours it gives back, one guardrail, an owner, and a first test on a real project after the summit.
-[2:59.96]  At the end, every room meets in the Summit Debrief: hours back, business impact, the biggest surprise and one guardrail. Then one question decides it: which pilot would you implement on Monday morning?
+[2:42.31]  On the day, each room takes one of the six jobs.
+[2:45.46]  In sixty minutes, you map where the hours go, design an agent that takes the repetitive part, and measure the time it gives back.
+[2:53.74]  Your room leaves with a Pilot Pack: the agent’s instructions, the decisions the project manager keeps, the hours it gives back, one guardrail, an owner, and a first test on a real project after the summit.
+[3:08.23]  At the end, every room meets in the Summit Debrief: hours back, business impact, the biggest surprise and one guardrail. Then one question decides it: which pilot would you implement on Monday morning?
 
 CLOSE
-[3:13.86]  The agent takes the routine. You take back the time for the work only you can do.
-[3:19.60]  Read “Fourteen Days” before the fifth of November. We’ll see you in the room.
+[3:22.13]  The agent takes the routine. You take back the time for the work only you can do.
+[3:27.87]  Read “Fourteen Days” before the fifth of November. We’ll see you in the room.
