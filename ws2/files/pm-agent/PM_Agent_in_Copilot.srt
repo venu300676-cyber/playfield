@@ -19,321 +19,369 @@ Microsoft 365 Copilot that does the collecting for you.
 A weekly status draft, early warnings on risks, and every finding traced to its source.
 
 6
-00:00:28,021 --> 00:00:29,088
-Here is the idea.
+00:00:28,021 --> 00:00:29,658
+First, what is an agent?
 
 7
-00:00:29,108 --> 00:00:34,264
-The agent reads the places where your project actually lives: your Outlook email,
+00:00:29,678 --> 00:00:32,351
+A normal prompt is a one-time question.
 
 8
-00:00:34,284 --> 00:00:40,556
-your Teams meetings and their transcripts, your Teams chats, and the project’s SharePoint site.
+00:00:32,371 --> 00:00:37,198
+You type, Copilot answers, and next time you start again from zero.
 
 9
-00:00:40,656 --> 00:00:44,278
-From them, it prepares three things: the weekly status draft,
+00:00:37,398 --> 00:00:40,748
+An agent is Copilot set up once for a specific job.
 
 10
-00:00:44,298 --> 00:00:48,378
-risk alerts, and the decisions and actions you might have missed.
+00:00:40,768 --> 00:00:45,902
+It has its own instructions, the knowledge it may use, and ready-made prompts.
 
 11
-00:00:48,478 --> 00:00:49,700
-You stay in charge.
+00:00:45,922 --> 00:00:50,351
+It keeps its role and follows your rules, every time you use it.
 
 12
-00:00:49,720 --> 00:00:53,320
-The agent prepares, and the project manager decides.
+00:00:51,151 --> 00:00:52,460
+So why is that better?
 
 13
-00:00:54,320 --> 00:00:56,524
-Before you start, check four things.
+00:00:52,480 --> 00:00:58,200
+With a normal prompt, you re-type the context every week, the answer changes with your wording,
 
 14
-00:00:56,574 --> 00:01:00,969
-One: a Copilot Premium license with Agent Builder activated.
+00:00:58,220 --> 00:01:02,589
+nothing is checked against your rules, and it stays in your own chat.
 
 15
-00:01:01,069 --> 00:01:05,143
-Two: access to the project’s SharePoint site and Teams channels.
+00:01:02,789 --> 00:01:07,909
+With an agent, the context is built in, the output has the same structure every week,
 
 16
-00:01:05,163 --> 00:01:07,921
-The agent can only see what you can see.
+00:01:07,929 --> 00:01:12,724
+every finding comes with its source, and your whole project team can use it.
 
 17
-00:01:08,021 --> 00:01:11,486
-Three: transcription switched on for your project meetings,
+00:01:12,924 --> 00:01:15,800
+Set it up once, and it pays you back every week.
 
 18
-00:01:11,506 --> 00:01:14,009
-so the agent can read what was decided.
+00:01:16,800 --> 00:01:18,924
+Here is how your PM Agent works.
 
 19
-00:01:14,109 --> 00:01:16,605
-And four: agreement on data rules.
+00:01:18,944 --> 00:01:23,881
+It reads the places where your project actually lives: your Outlook email,
 
 20
-00:01:16,625 --> 00:01:20,969
-Project content only, and no personal or HR information.
+00:01:23,901 --> 00:01:30,465
+your Teams meetings and their transcripts, your Teams chats, and the project’s SharePoint site.
 
 21
-00:01:21,969 --> 00:01:22,688
-Step one.
+00:01:30,565 --> 00:01:34,187
+From them, it prepares three things: the weekly status draft,
 
 22
-00:01:22,708 --> 00:01:27,617
-In Microsoft 365 Copilot, select New agent in the left pane.
+00:01:34,207 --> 00:01:38,287
+risk alerts, and the decisions and actions you might have missed.
 
 23
-00:01:27,637 --> 00:01:32,601
-You can also open the Agent Store and select Create agent.
+00:01:38,387 --> 00:01:39,609
+You stay in charge.
 
 24
-00:01:33,101 --> 00:01:33,688
-Step two.
+00:01:39,629 --> 00:01:43,229
+The agent prepares, and the project manager decides.
 
 25
-00:01:33,708 --> 00:01:35,038
-Agent Builder opens.
+00:01:44,229 --> 00:01:46,433
+Before you start, check four things.
 
 26
-00:01:35,058 --> 00:01:39,223
-You could start from a template, such as Project Delta Digest,
+00:01:46,483 --> 00:01:50,878
+One: a Copilot Premium license with Agent Builder activated.
 
 27
-00:01:39,243 --> 00:01:41,586
-or describe your agent in the chat.
+00:01:50,978 --> 00:01:55,052
+Two: access to the project’s SharePoint site and Teams channels.
 
 28
-00:01:41,606 --> 00:01:46,463
-For full control, select Skip, and go straight to the Configure page.
+00:01:55,072 --> 00:01:57,830
+The agent can only see what you can see.
 
 29
-00:01:46,563 --> 00:01:50,316
-Select the pencil next to New Agent to give it a clear name,
+00:01:57,930 --> 00:02:01,395
+Three: transcription switched on for your project meetings,
 
 30
-00:01:50,336 --> 00:01:53,931
-such as Project Pulse, and add a one-line description.
+00:02:01,415 --> 00:02:03,918
+so the agent can read what was decided.
 
 31
-00:01:54,431 --> 00:01:56,196
-Step three: the instructions.
+00:02:04,018 --> 00:02:06,514
+And four: agreement on data rules.
 
 32
-00:01:56,216 --> 00:01:58,104
-This is the heart of the agent.
+00:02:06,534 --> 00:02:10,878
+Project content only, and no personal or HR information.
 
 33
-00:01:58,124 --> 00:02:02,755
-Tell it who it works for, what to produce, and the rules it must follow.
+00:02:11,878 --> 00:02:12,597
+Step one.
 
 34
-00:02:02,855 --> 00:02:06,124
-Ask for a weekly status with a proposed rating,
+00:02:12,617 --> 00:02:17,526
+In Microsoft 365 Copilot, select New agent in the left pane.
 
 35
-00:02:06,144 --> 00:02:10,042
-milestones, top risks, decisions, actions and open asks.
+00:02:17,546 --> 00:02:22,510
+You can also open the Agent Store and select Create agent.
 
 36
-00:02:10,062 --> 00:02:12,282
-Require a source for every line.
+00:02:23,010 --> 00:02:23,597
+Step two.
 
 37
-00:02:12,302 --> 00:02:17,260
-And make it flag conflicts and gaps, instead of smoothing them over.
+00:02:23,617 --> 00:02:24,947
+Agent Builder opens.
 
 38
-00:02:17,360 --> 00:02:21,450
-Finally, list the risk signals to watch for: a date that slips,
+00:02:24,967 --> 00:02:29,132
+You could start from a template, such as Project Delta Digest,
 
 39
-00:02:21,470 --> 00:02:27,410
-a dependency that is overdue, or a reassuring “should be fine” about something critical.
+00:02:29,152 --> 00:02:31,495
+or describe your agent in the chat.
 
 40
-00:02:27,510 --> 00:02:32,719
-Suggest improvements can sharpen your wording, but read every change before you keep it.
+00:02:31,515 --> 00:02:36,372
+For full control, select Skip, and go straight to the Configure page.
 
 41
-00:02:33,219 --> 00:02:34,588
-Step four: knowledge.
+00:02:36,472 --> 00:02:40,225
+Select the pencil next to New Agent to give it a clear name,
 
 42
-00:02:34,608 --> 00:02:38,423
-By default, the agent can already search your cloud files,
+00:02:40,245 --> 00:02:43,840
+such as Project Pulse, and add a one-line description.
 
 43
-00:02:38,443 --> 00:02:42,324
-your Outlook mailbox, and your Teams meetings and messages.
+00:02:44,340 --> 00:02:46,105
+Step three: the instructions.
 
 44
-00:02:42,344 --> 00:02:47,614
-Select Add knowledge to focus it on the project’s SharePoint site and key files,
+00:02:46,125 --> 00:02:48,013
+This is the heart of the agent.
 
 45
-00:02:47,634 --> 00:02:49,884
-like the plan and the risk log.
+00:02:48,033 --> 00:02:52,664
+Tell it who it works for, what to produce, and the rules it must follow.
 
 46
-00:02:49,984 --> 00:02:53,693
-Keep Outlook and Teams switched on, and switch web search off,
+00:02:52,764 --> 00:02:56,033
+Ask for a weekly status with a proposed rating,
 
 47
-00:02:53,713 --> 00:02:56,559
-so answers come only from your work content.
+00:02:56,053 --> 00:02:59,951
+milestones, top risks, decisions, actions and open asks.
 
 48
-00:02:57,059 --> 00:02:57,681
-Step five.
+00:02:59,971 --> 00:03:02,191
+Require a source for every line.
 
 49
-00:02:57,701 --> 00:03:05,388
-Scroll down to Suggested prompts, and give each one a title and a message, so anyone can run the routine with one click:
+00:03:02,211 --> 00:03:07,169
+And make it flag conflicts and gaps, instead of smoothing them over.
 
 50
-00:03:05,408 --> 00:03:12,801
-draft this week’s status, show new risks since Monday, and list decisions and actions from this week’s meetings.
+00:03:07,269 --> 00:03:11,359
+Finally, list the risk signals to watch for: a date that slips,
 
 51
-00:03:13,301 --> 00:03:14,516
-Step six: test it.
+00:03:11,379 --> 00:03:17,319
+a dependency that is overdue, or a reassuring “should be fine” about something critical.
 
 52
-00:03:14,536 --> 00:03:18,566
-Switch to the Preview tab and run the weekly status prompt.
+00:03:17,419 --> 00:03:22,629
+Suggest improvements can sharpen your wording, but read every change before you keep it.
 
 53
-00:03:18,586 --> 00:03:20,213
-Then check three things.
+00:03:23,129 --> 00:03:24,498
+Step four: knowledge.
 
 54
-00:03:20,233 --> 00:03:21,723
-Is every line sourced?
+00:03:24,518 --> 00:03:28,333
+By default, the agent can already search your cloud files,
 
 55
-00:03:21,743 --> 00:03:23,233
-Are conflicts flagged?
+00:03:28,353 --> 00:03:32,234
+your Outlook mailbox, and your Teams meetings and messages.
 
 56
-00:03:23,253 --> 00:03:25,787
-Is anything confidential left out?
+00:03:32,254 --> 00:03:37,524
+Select Add knowledge to focus it on the project’s SharePoint site and key files,
 
 57
-00:03:25,887 --> 00:03:30,238
-When a test fails, add one rule to the instructions and run it again.
+00:03:37,544 --> 00:03:39,794
+like the plan and the risk log.
 
 58
-00:03:30,738 --> 00:03:32,734
-Step seven: make it a routine.
+00:03:39,894 --> 00:03:43,602
+Keep Outlook and Teams switched on, and switch web search off,
 
 59
-00:03:32,754 --> 00:03:38,917
-Agent Builder agents run only when you ask, so book a short recurring slot in your calendar:
+00:03:43,622 --> 00:03:46,468
+so answers come only from your work content.
 
 60
-00:03:38,937 --> 00:03:44,092
-the weekly status every Friday morning, and a quick risk check every morning.
+00:03:46,968 --> 00:03:47,590
+Step five.
 
 61
-00:03:44,112 --> 00:03:47,403
-One click on a suggested prompt does the rest.
+00:03:47,610 --> 00:03:55,297
+Scroll down to Suggested prompts, and give each one a title and a message, so anyone can run the routine with one click:
 
 62
-00:03:47,503 --> 00:03:50,600
-For automatic alerts, without opening the agent,
+00:03:55,317 --> 00:04:02,710
+draft this week’s status, show new risks since Monday, and list decisions and actions from this week’s meetings.
 
 63
-00:03:50,620 --> 00:03:55,949
-ask your Copilot Studio team to rebuild it with a schedule or an event trigger.
+00:04:03,210 --> 00:04:04,425
+Step six: test it.
 
 64
-00:03:56,449 --> 00:03:57,141
-Step eight.
+00:04:04,445 --> 00:04:08,475
+Switch to the Preview tab and run the weekly status prompt.
 
 65
-00:03:57,161 --> 00:03:59,147
-Select Create at the top right,
+00:04:08,495 --> 00:04:10,122
+Then check three things.
 
 66
-00:03:59,167 --> 00:04:03,612
-then share the agent with your project team, or keep it for yourself.
+00:04:10,142 --> 00:04:11,632
+Is every line sourced?
 
 67
-00:04:03,632 --> 00:04:08,168
-Each person only ever sees the content they already have access to.
+00:04:11,652 --> 00:04:13,142
+Are conflicts flagged?
 
 68
-00:04:09,168 --> 00:04:11,115
-Here is what that looks like.
+00:04:13,162 --> 00:04:15,696
+Is anything confidential left out?
 
 69
-00:04:11,135 --> 00:04:14,507
-On Tuesday morning, the daily risk check flags it:
+00:04:15,796 --> 00:04:20,148
+When a test fails, add one rule to the instructions and run it again.
 
 70
-00:04:14,527 --> 00:04:20,070
-the load board has slipped from week 48 to week 50, according to a supplier email.
+00:04:20,648 --> 00:04:22,644
+Step seven: make it a routine.
 
 71
-00:04:20,090 --> 00:04:22,325
-It is not in the risk log yet.
+00:04:22,664 --> 00:04:28,827
+Agent Builder agents run only when you ask, so book a short recurring slot in your calendar:
 
 72
-00:04:22,425 --> 00:04:27,841
-The alert names the source, suggests an owner, and proposes an update to the risk log.
+00:04:28,847 --> 00:04:34,002
+the weekly status every Friday morning, and a quick risk check every morning.
 
 73
-00:04:27,861 --> 00:04:29,894
-You decide what happens next.
+00:04:34,022 --> 00:04:37,313
+One click on a suggested prompt does the rest.
 
 74
-00:04:30,394 --> 00:04:36,194
-On Friday, one click gives you the status draft: sourced, structured, with conflicts flagged.
+00:04:37,413 --> 00:04:40,509
+For automatic alerts, without opening the agent,
 
 75
-00:04:36,214 --> 00:04:39,511
-You review it in fifteen minutes instead of compiling
+00:04:40,529 --> 00:04:45,858
+ask your Copilot Studio team to rebuild it with a schedule or an event trigger.
 
 76
-00:04:39,531 --> 00:04:42,547
-it for three hours, set the rating, and send.
+00:04:46,358 --> 00:04:47,050
+Step eight.
 
 77
-00:04:43,547 --> 00:04:44,969
-Keep five guardrails.
+00:04:47,070 --> 00:04:49,056
+Select Create at the top right,
 
 78
-00:04:44,989 --> 00:04:47,442
-The agent respects your permissions.
+00:04:49,076 --> 00:04:53,521
+then share the agent with your project team, or keep it for yourself.
 
 79
-00:04:47,462 --> 00:04:49,365
-Every line names its source.
+00:04:53,541 --> 00:04:58,077
+Each person only ever sees the content they already have access to.
 
 80
-00:04:49,385 --> 00:04:52,869
-The project manager owns every rating and decision.
+00:04:59,077 --> 00:05:01,024
+Here is what that looks like.
 
 81
-00:04:52,889 --> 00:04:55,479
-No personal data goes into the output.
+00:05:01,044 --> 00:05:04,416
+On Tuesday morning, the daily risk check flags it:
 
 82
-00:04:55,499 --> 00:04:58,721
-And a person checks before anything is sent.
+00:05:04,436 --> 00:05:09,979
+the load board has slipped from week 48 to week 50, according to a supplier email.
 
 83
-00:04:59,521 --> 00:05:00,771
-The agent gathers.
+00:05:09,999 --> 00:05:12,234
+It is not in the risk log yet.
 
 84
-00:05:00,791 --> 00:05:01,767
-You decide.
+00:05:12,334 --> 00:05:17,751
+The alert names the source, suggests an owner, and proposes an update to the risk log.
 
 85
-00:05:02,567 --> 00:05:07,977
+00:05:17,771 --> 00:05:19,804
+You decide what happens next.
+
+86
+00:05:20,304 --> 00:05:26,104
+On Friday, one click gives you the status draft: sourced, structured, with conflicts flagged.
+
+87
+00:05:26,124 --> 00:05:29,420
+You review it in fifteen minutes instead of compiling
+
+88
+00:05:29,440 --> 00:05:32,456
+it for three hours, set the rating, and send.
+
+89
+00:05:33,456 --> 00:05:34,879
+Keep five guardrails.
+
+90
+00:05:34,899 --> 00:05:37,351
+The agent respects your permissions.
+
+91
+00:05:37,371 --> 00:05:39,275
+Every line names its source.
+
+92
+00:05:39,295 --> 00:05:42,778
+The project manager owns every rating and decision.
+
+93
+00:05:42,798 --> 00:05:45,389
+No personal data goes into the output.
+
+94
+00:05:45,409 --> 00:05:48,631
+And a person checks before anything is sent.
+
+95
+00:05:49,431 --> 00:05:50,680
+The agent gathers.
+
+96
+00:05:50,700 --> 00:05:51,676
+You decide.
+
+97
+00:05:52,476 --> 00:05:57,886
 Build your PM Agent this week, and give your Fridays back to the work that matters.

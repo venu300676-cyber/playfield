@@ -4,6 +4,19 @@ Companion to the video "Build your PM Agent in Copilot". Copy and paste each blo
 Menu names and available knowledge sources can vary with your Copilot version and tenant settings.
 
 
+WHAT IS AN AGENT, AND WHY NOT JUST A PROMPT?
+A normal prompt is a one-time question: you type, Copilot answers, and next time you start from zero.
+An agent is Copilot set up once for a specific job, with its own instructions, the knowledge it may
+use and ready-made prompts. It keeps its role and follows your rules every time you use it.
+
+                 NORMAL PROMPT                      AGENT
+Context          Re-typed every week                Built in, once
+Output           Changes with your wording          Same structure every week
+Trust            Not checked against your rules     Every finding with its source
+Team             Stays in your own chat             Shared with the project team
+
+Set it up once, and it pays you back every week.
+
 BEFORE YOU START
 1. Copilot Premium license with Agent Builder activated.
 2. Access to the project's SharePoint site and Teams channels. The agent sees only what you can see.
