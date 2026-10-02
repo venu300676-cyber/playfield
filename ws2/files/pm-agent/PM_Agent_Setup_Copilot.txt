@@ -19,8 +19,9 @@ Set it up once, and it pays you back every week.
 
 BEFORE YOU START
 1. Copilot Premium license with Agent Builder activated.
+   Not enabled yet? Request it here: https://forms.cloud.microsoft/e/KjfvXMztWp
 2. Access to the project's SharePoint site and Teams channels. The agent sees only what you can see.
-3. Transcription switched on for project meetings.
+3. Transcription and Facilitator switched on in Teams project meetings.
 4. Data rules agreed: project content only, no personal or HR information.
 
 
