@@ -1,0 +1,279 @@
+1
+00:00:04,000 --> 00:00:10,399
+On the fifth of November, at PM Summit 2026, every breakout room in the session
+
+2
+00:00:10,419 --> 00:00:16,957
+“PM Role in an AI World” will take on a real project problem with an AI agent.
+
+3
+00:00:17,357 --> 00:00:22,729
+This briefing explains the situation, what to prepare, and what your room will deliver.
+
+4
+00:00:23,529 --> 00:00:26,260
+Our role as project managers is changing.
+
+5
+00:00:26,280 --> 00:00:29,279
+AI can already take over much of the routine:
+
+6
+00:00:29,299 --> 00:00:32,988
+collecting status, chasing updates, writing minutes.
+
+7
+00:00:33,238 --> 00:00:37,672
+That moves the job from managing work to orchestrating outcomes.
+
+8
+00:00:37,692 --> 00:00:39,134
+From tasks to impact.
+
+9
+00:00:39,154 --> 00:00:42,335
+From on time and on budget, to business value.
+
+10
+00:00:42,355 --> 00:00:44,214
+From reporting to deciding.
+
+11
+00:00:44,234 --> 00:00:46,383
+From spreadsheets to agents.
+
+12
+00:00:47,083 --> 00:00:50,931
+What stays with us is what was always the core of the role:
+
+13
+00:00:50,951 --> 00:00:54,692
+vision, judgment, influence, adaptability, and impact.
+
+14
+00:00:54,992 --> 00:00:59,516
+So every project manager now needs to define their own work around AI:
+
+15
+00:00:59,536 --> 00:01:02,527
+what to hand to an agent, and what to keep.
+
+16
+00:01:02,927 --> 00:01:04,939
+This breakout is where you start.
+
+17
+00:01:04,959 --> 00:01:07,463
+In one hour, with a real project problem,
+
+18
+00:01:07,483 --> 00:01:11,931
+your room decides what an agent should take, and what stays with you.
+
+19
+00:01:13,031 --> 00:01:16,895
+Meet KESTREL: a new sensor-hub chip and its evaluation kit,
+
+20
+00:01:16,915 --> 00:01:21,724
+fourteen days from tape-out, with a lead customer waiting for samples.
+
+21
+00:01:22,124 --> 00:01:25,567
+Behind it stands a team across design, verification,
+
+22
+00:01:25,587 --> 00:01:28,896
+test, software, quality, operations and marketing.
+
+23
+00:01:28,916 --> 00:01:33,711
+Every one of them needs something from the project manager this week.
+
+24
+00:01:34,311 --> 00:01:38,035
+On Monday, you inherit KESTREL as its new project manager.
+
+25
+00:01:38,055 --> 00:01:41,999
+By Thursday morning, you are holding six problems at once.
+
+26
+00:01:42,399 --> 00:01:47,044
+Sofia forwards a customer change request that nobody can answer yet.
+
+27
+00:01:47,294 --> 00:01:52,443
+Chen mentions a supplier delay, in a risk log no one has touched in five weeks.
+
+28
+00:01:52,693 --> 00:01:58,283
+Priya flags a late load board, in a meeting where nobody writes down what was decided.
+
+29
+00:01:58,533 --> 00:02:00,406
+Marco’s numbers say one thing.
+
+30
+00:02:00,426 --> 00:02:03,340
+Last week’s status report still says green.
+
+31
+00:02:03,590 --> 00:02:08,468
+Aiko’s design is not ready, and steering needs a decision by two o’clock.
+
+32
+00:02:08,718 --> 00:02:12,585
+And the lessons Jonas left behind arrive three days too late.
+
+33
+00:02:13,185 --> 00:02:14,755
+None of this is unusual.
+
+34
+00:02:14,775 --> 00:02:17,757
+It is the week most project managers know.
+
+35
+00:02:18,007 --> 00:02:21,382
+And none of it is the part of the job that matters most:
+
+36
+00:02:21,402 --> 00:02:24,270
+decisions, stakeholders, and thinking ahead.
+
+37
+00:02:25,470 --> 00:02:28,766
+Before the summit, please complete four preparation steps.
+
+38
+00:02:28,786 --> 00:02:32,702
+They matter: everything your room does on the day builds on them.
+
+39
+00:02:33,052 --> 00:02:33,278
+One.
+
+40
+00:02:33,298 --> 00:02:37,688
+Read “Fourteen Days”, the KESTREL story attached to your invitation.
+
+41
+00:02:37,988 --> 00:02:38,248
+Two.
+
+42
+00:02:38,268 --> 00:02:41,824
+Your invitation names its case file, from C1 to C6.
+
+43
+00:02:41,844 --> 00:02:46,381
+Open it at the back of the story, read it as the project manager,
+
+44
+00:02:46,401 --> 00:02:50,177
+and ask: which parts of this work would I hand off?
+
+45
+00:02:50,477 --> 00:02:50,816
+Three.
+
+46
+00:02:50,836 --> 00:02:51,894
+Map your own week.
+
+47
+00:02:51,914 --> 00:02:54,710
+How long does this task take you, step by step?
+
+48
+00:02:54,730 --> 00:02:58,643
+Mark which steps are repetitive, and which need your judgment.
+
+49
+00:02:58,943 --> 00:02:59,220
+Four.
+
+50
+00:02:59,240 --> 00:03:04,922
+Bring one idea for what you would do with those hours back: a decision you would prepare better,
+
+51
+00:03:04,942 --> 00:03:08,646
+a stakeholder you would see sooner, or time to think ahead.
+
+52
+00:03:09,146 --> 00:03:12,841
+One prerequisite: every room needs at least one member
+
+53
+00:03:12,861 --> 00:03:16,364
+with Agent Builder activated in Copilot Premium.
+
+54
+00:03:16,564 --> 00:03:19,837
+If that is you, check your access before the summit.
+
+55
+00:03:19,857 --> 00:03:24,301
+Everyone else brings ideas and experience, and everyone has a role.
+
+56
+00:03:24,451 --> 00:03:26,942
+Please don’t bring confidential documents.
+
+57
+00:03:26,962 --> 00:03:29,553
+Everything you need is in the case file.
+
+58
+00:03:30,753 --> 00:03:34,191
+On the fifth of November, there is nothing left to prepare.
+
+59
+00:03:34,211 --> 00:03:36,403
+Each room arrives knowing its job.
+
+60
+00:03:36,503 --> 00:03:39,200
+In sixty minutes, you map where the hours go,
+
+61
+00:03:39,220 --> 00:03:44,432
+design an agent that takes the repetitive part, and measure the time it gives back.
+
+62
+00:03:44,782 --> 00:03:51,357
+Your room leaves with a Pilot Pack: the agent’s instructions, the decisions the project manager keeps,
+
+63
+00:03:51,377 --> 00:03:58,172
+the hours it gives back, one guardrail, an owner, and a first test on a real project after the summit.
+
+64
+00:03:59,272 --> 00:04:03,273
+At the end, every room meets in the Summit Debrief: hours back,
+
+65
+00:04:03,293 --> 00:04:06,847
+business impact, the biggest surprise and one guardrail.
+
+66
+00:04:06,867 --> 00:04:12,173
+Then one question decides it: which pilot would you implement on Monday morning?
+
+67
+00:04:13,173 --> 00:04:14,846
+The agent takes the routine.
+
+68
+00:04:14,866 --> 00:04:18,211
+You take back the time for the work only you can do.
+
+69
+00:04:18,911 --> 00:04:21,582
+Read “Fourteen Days” before the fifth of November.
+
+70
+00:04:21,602 --> 00:04:23,202
+We’ll see you in the room.

@@ -1,0 +1,47 @@
+FOURTEEN DAYS · PRE-WORK BRIEFING · NARRATION SCRIPT
+PM Summit 2026 · PM Role in an AI World · draft v0.6
+
+Use this script to re-record the voice-over with a human narrator. Say "PM" as "project manager", except in the event name "PM Summit 2026". Timings are where each line starts in the current video.
+
+
+OPENING
+[0:04.00]  On the fifth of November, at PM Summit 2026, every breakout room in the session “PM Role in an AI World” will take on a real project problem with an AI agent.
+[0:17.36]  This briefing explains the situation, what to prepare, and what your room will deliver.
+[0:23.53]  Our role as project managers is changing. AI can already take over much of the routine: collecting status, chasing updates, writing minutes.
+[0:33.24]  That moves the job from managing work to orchestrating outcomes. From tasks to impact. From on time and on budget, to business value. From reporting to deciding. From spreadsheets to agents.
+[0:47.08]  What stays with us is what was always the core of the role: vision, judgment, influence, adaptability, and impact.
+[0:54.99]  So every project manager now needs to define their own work around AI: what to hand to an agent, and what to keep.
+[1:02.93]  This breakout is where you start. In one hour, with a real project problem, your room decides what an agent should take, and what stays with you.
+
+PART 1 · THE SITUATION
+[1:13.03]  Meet KESTREL: a new sensor-hub chip and its evaluation kit, fourteen days from tape-out, with a lead customer waiting for samples.
+[1:22.12]  Behind it stands a team across design, verification, test, software, quality, operations and marketing. Every one of them needs something from the project manager this week.
+[1:34.31]  On Monday, you inherit KESTREL as its new project manager. By Thursday morning, you are holding six problems at once.
+[1:42.40]  Sofia forwards a customer change request that nobody can answer yet.
+[1:47.29]  Chen mentions a supplier delay, in a risk log no one has touched in five weeks.
+[1:52.69]  Priya flags a late load board, in a meeting where nobody writes down what was decided.
+[1:58.53]  Marco’s numbers say one thing. Last week’s status report still says green.
+[2:03.59]  Aiko’s design is not ready, and steering needs a decision by two o’clock.
+[2:08.72]  And the lessons Jonas left behind arrive three days too late.
+[2:13.19]  None of this is unusual. It is the week most project managers know.
+[2:18.01]  And none of it is the part of the job that matters most: decisions, stakeholders, and thinking ahead.
+
+PART 2 · YOUR PRE-WORK
+[2:25.47]  Before the summit, please complete four preparation steps. They matter: everything your room does on the day builds on them.
+[2:33.05]  One. Read “Fourteen Days”, the KESTREL story attached to your invitation.
+[2:37.99]  Two. Your invitation names its case file, from C1 to C6. Open it at the back of the story, read it as the project manager, and ask: which parts of this work would I hand off?
+[2:50.48]  Three. Map your own week. How long does this task take you, step by step? Mark which steps are repetitive, and which need your judgment.
+[2:58.94]  Four. Bring one idea for what you would do with those hours back: a decision you would prepare better, a stakeholder you would see sooner, or time to think ahead.
+[3:09.15]  One prerequisite: every room needs at least one member with Agent Builder activated in Copilot Premium.
+[3:16.56]  If that is you, check your access before the summit. Everyone else brings ideas and experience, and everyone has a role.
+[3:24.45]  Please don’t bring confidential documents. Everything you need is in the case file.
+
+PART 3 · ON THE DAY
+[3:30.75]  On the fifth of November, there is nothing left to prepare. Each room arrives knowing its job.
+[3:36.50]  In sixty minutes, you map where the hours go, design an agent that takes the repetitive part, and measure the time it gives back.
+[3:44.78]  Your room leaves with a Pilot Pack: the agent’s instructions, the decisions the project manager keeps, the hours it gives back, one guardrail, an owner, and a first test on a real project after the summit.
+[3:59.27]  At the end, every room meets in the Summit Debrief: hours back, business impact, the biggest surprise and one guardrail. Then one question decides it: which pilot would you implement on Monday morning?
+
+CLOSE
+[4:13.17]  The agent takes the routine. You take back the time for the work only you can do.
+[4:18.91]  Read “Fourteen Days” before the fifth of November. We’ll see you in the room.
