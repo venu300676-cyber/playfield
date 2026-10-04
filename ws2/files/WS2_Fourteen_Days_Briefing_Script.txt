@@ -22,21 +22,21 @@ PART 1 · THE SITUATION
 [1:28.80]  And none of it is the part of the job that matters most: decisions, stakeholders, and thinking ahead.
 
 PART 2 · YOUR PRE-WORK
-[1:36.27]  Please finish about twenty minutes of preparation before the summit, in four steps.
-[1:41.57]  One. Read “Fourteen Days”, the KESTREL story attached to your invitation. It takes about twelve minutes.
-[1:48.50]  Two. Your room is allocated in advance, and your invitation names its case file, from C1 to C6. Open it at the back of the story, read it as the project manager, and ask: which parts of this work would I hand off?
-[2:03.57]  Three. Map your own week. How long does this task take you, step by step? Mark which steps are repetitive, and which need your judgment.
-[2:12.03]  Four. Bring one idea for what you would do with those hours back: a decision you would prepare better, a stakeholder you would see sooner, or time to think ahead.
-[2:22.24]  One prerequisite: every room needs at least one member with Agent Builder activated in Copilot Premium.
-[2:29.66]  If that is you, check your access before the summit. Everyone else brings ideas and experience, and everyone has a role.
-[2:37.54]  Please don’t bring confidential documents. Everything you need is in the case file.
+[1:36.27]  Before the summit, please complete four preparation steps. They matter: everything your room does on the day builds on them.
+[1:43.85]  One. Read “Fourteen Days”, the KESTREL story attached to your invitation.
+[1:48.79]  Two. Your invitation names its case file, from C1 to C6. Open it at the back of the story, read it as the project manager, and ask: which parts of this work would I hand off?
+[2:01.28]  Three. Map your own week. How long does this task take you, step by step? Mark which steps are repetitive, and which need your judgment.
+[2:09.74]  Four. Bring one idea for what you would do with those hours back: a decision you would prepare better, a stakeholder you would see sooner, or time to think ahead.
+[2:19.94]  One prerequisite: every room needs at least one member with Agent Builder activated in Copilot Premium.
+[2:27.36]  If that is you, check your access before the summit. Everyone else brings ideas and experience, and everyone has a role.
+[2:35.25]  Please don’t bring confidential documents. Everything you need is in the case file.
 
 PART 3 · ON THE DAY
-[2:43.84]  On the fifth of November, there is nothing left to prepare. Each room arrives knowing its job.
-[2:49.59]  In sixty minutes, you map where the hours go, design an agent that takes the repetitive part, and measure the time it gives back.
-[2:57.87]  Your room leaves with a Pilot Pack: the agent’s instructions, the decisions the project manager keeps, the hours it gives back, one guardrail, an owner, and a first test on a real project after the summit.
-[3:12.36]  At the end, every room meets in the Summit Debrief: hours back, business impact, the biggest surprise and one guardrail. Then one question decides it: which pilot would you implement on Monday morning?
+[2:41.55]  On the fifth of November, there is nothing left to prepare. Each room arrives knowing its job.
+[2:47.30]  In sixty minutes, you map where the hours go, design an agent that takes the repetitive part, and measure the time it gives back.
+[2:55.58]  Your room leaves with a Pilot Pack: the agent’s instructions, the decisions the project manager keeps, the hours it gives back, one guardrail, an owner, and a first test on a real project after the summit.
+[3:10.07]  At the end, every room meets in the Summit Debrief: hours back, business impact, the biggest surprise and one guardrail. Then one question decides it: which pilot would you implement on Monday morning?
 
 CLOSE
-[3:26.26]  The agent takes the routine. You take back the time for the work only you can do.
-[3:32.00]  Read “Fourteen Days” before the fifth of November. We’ll see you in the room.
+[3:23.97]  The agent takes the routine. You take back the time for the work only you can do.
+[3:29.71]  Read “Fourteen Days” before the fifth of November. We’ll see you in the room.
