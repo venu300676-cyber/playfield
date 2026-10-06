@@ -41,9 +41,9 @@ PART 2 · YOUR PRE-WORK
 PART 3 · ON THE DAY
 [3:45.22]  On the fifth of November, there is nothing left to prepare. Each room arrives knowing its job.
 [3:50.97]  In sixty minutes, you map where the hours go, design an agent that takes the repetitive part, and measure the time it gives back.
-[3:59.25]  Your room leaves with a Pilot Pack: the agent’s instructions, the decisions the project manager keeps, the hours it gives back, one guardrail, an owner, and a first test on a real project after the summit.
-[4:13.74]  At the end, every room meets in the Summit Debrief: hours back, business impact, the biggest surprise and one guardrail. Then one question decides it: which pilot would you implement on Monday morning?
+[3:59.25]  Your room leaves with a Pilot Pack: the agent’s instructions, the decisions the project manager keeps, the test results, the time it could save, what still needs fixing, and a feedback coordinator for the week after the summit.
+[4:14.68]  At the end, every room meets in the Summit Debrief and shares a 90-second summary: what you’ll try next week, the time you could save, and what you still need to fix.
 
 CLOSE
-[4:27.64]  The agent takes the routine. You take back the time for the work only you can do.
-[4:33.38]  Read “Fourteen Days” before the fifth of November. We’ll see you in the room.
+[4:25.76]  The agent takes the routine. You take back the time for the work only you can do.
+[4:31.50]  Read “Fourteen Days” before the fifth of November. We’ll see you in the room.

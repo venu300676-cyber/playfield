@@ -267,37 +267,33 @@ In sixty minutes, you map where the hours go,
 design an agent that takes the repetitive part, and measure the time it gives back.
 
 68
-00:03:59,249 --> 00:04:05,824
-Your room leaves with a Pilot Pack: the agent’s instructions, the decisions the project manager keeps,
+00:03:59,249 --> 00:04:06,734
+Your room leaves with a Pilot Pack: the agent’s instructions, the decisions the project manager keeps, the test results,
 
 69
-00:04:05,844 --> 00:04:12,640
-the hours it gives back, one guardrail, an owner, and a first test on a real project after the summit.
+00:04:06,754 --> 00:04:13,583
+the time it could save, what still needs fixing, and a feedback coordinator for the week after the summit.
 
 70
-00:04:13,740 --> 00:04:17,741
-At the end, every room meets in the Summit Debrief: hours back,
+00:04:14,683 --> 00:04:19,574
+At the end, every room meets in the Summit Debrief and shares a 90-second summary:
 
 71
-00:04:17,761 --> 00:04:21,314
-business impact, the biggest surprise and one guardrail.
+00:04:19,594 --> 00:04:24,764
+what you’ll try next week, the time you could save, and what you still need to fix.
 
 72
-00:04:21,334 --> 00:04:26,640
-Then one question decides it: which pilot would you implement on Monday morning?
-
-73
-00:04:27,640 --> 00:04:29,313
+00:04:25,764 --> 00:04:27,437
 The agent takes the routine.
 
-74
-00:04:29,333 --> 00:04:32,678
+73
+00:04:27,457 --> 00:04:30,802
 You take back the time for the work only you can do.
 
-75
-00:04:33,378 --> 00:04:36,050
+74
+00:04:31,502 --> 00:04:34,174
 Read “Fourteen Days” before the fifth of November.
 
-76
-00:04:36,070 --> 00:04:37,670
+75
+00:04:34,194 --> 00:04:35,794
 We’ll see you in the room.
