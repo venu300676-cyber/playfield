@@ -1,0 +1,43 @@
+KESTREL CASE C1 - STILL GREEN? - STATUS REPORT TREADMILL
+Inputs for Friday's weekly status, CW45 (CW = calendar week). Fictional project.
+
+Context: KESTREL is a new sensor-hub chip and its evaluation kit. Tape-out is planned for CW47. The project manager is new this week. The status report is due Friday noon.
+
+
+TEAM INPUTS
+
+[1] Aiko, Design lead - email - Monday
+"Hi, design status: timing closure on the PMU block still open, 3 paths failing, team working the weekend. Everything else frozen. Should be OK for tape-out CW47 if we close by Wednesday."
+
+[2] Priya, Test Engineering - email - Tuesday
+"Test program development on track. Waiting for the load board from the vendor, now expected CW50 (vendor delay)."
+
+[3] Daniel, Quality - email - Tuesday
+"Qualification plan approved. Need samples by CW53 latest to start qualification CW02."
+
+[4] Marco, Verification - chat (status channel) - Monday to Wednesday
+"Regression at 92% coverage, target is 95 before tape-out. 2 new bugs this week, both low."
+
+[5] Lukas, Software/Tools - chat (status channel) - Monday to Wednesday
+"Eval kit SDK beta done. Also FYI Customer Alpha's contract says we owe them a demo of low-power mode at their January tech day, legal is still reviewing the penalty clause."
+
+[6] Chen, Operations - chat (status channel) - Monday to Wednesday
+"Substrate order confirmed. No issues."
+
+[7] Sofia, Product Marketing - NO UPDATE RECEIVED
+
+
+MILESTONE TRACKER EXPORT
+
+Milestone                    | Baseline | Forecast      | Owner
+Design freeze                | CW41     | CW41 (done)   | Aiko
+Tape-out                     | CW47     | CW47          | Aiko
+Load board ready             | CW48     | CW50          | Priya
+First samples + test ready   | CW53     | CW53          | Priya
+Qualification start          | CW02     | CW02          | Daniel
+Customer sampling            | CW04     | CW04          | Sofia
+
+
+LAST WEEK'S STATUS (CW44, by Jonas)
+
+Overall: GREEN. Schedule: GREEN. Top risk: PMU timing closure.
